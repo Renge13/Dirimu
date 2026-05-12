@@ -1,28 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
 :root {
-  /* Color tokens */
-  --ink:        #0d0c14;
-  --ink-2:      #15131f;
-  --ink-3:      #1e1b2e;
-  --gold:       #c9a84c;
-  --gold-dim:   rgba(201,168,76,0.18);
-  --gold-border:rgba(201,168,76,0.35);
-  --pearl:      #e8e4d9;
-  --muted:      #7a7590;
-  --red:        #c94c4c;
-  --separator:  rgba(255,255,255,0.07);
+  /* Parchment canvas palette */
+  --canvas:       #f4ede0;
+  --canvas-warm:  #ede2cc;
+  --canvas-deep:  #e2d4b7;
+  --ink-dark:     #2c2016;
+  --ink:          #3d2e1e;
+  --ink-faded:    #7a6248;
+  --ink-ghost:    #b09a7e;
 
-  --sans:    'Inter', system-ui, sans-serif;
-  --heading: 'Cinzel', Georgia, serif;
-  --mono:    ui-monospace, Consolas, monospace;
+  /* Watercolor washes */
+  --sage:         #8aaa85;
+  --sage-wash:    rgba(138,170,133,0.22);
+  --rose:         #c17a7a;
+  --rose-wash:    rgba(193,122,122,0.18);
+  --indigo:       #6a7aa8;
+  --indigo-wash:  rgba(106,122,168,0.18);
+  --amber:        #b89048;
+  --amber-wash:   rgba(184,144,72,0.20);
 
-  font: 16px/1.6 var(--sans);
-  letter-spacing: 0.15px;
-  color: var(--pearl);
-  background: var(--ink);
+  /* Element watercolors */
+  --wood-paint:   #5c8a5c;
+  --fire-paint:   #b85a40;
+  --earth-paint:  #9a7a38;
+  --metal-paint:  #7a8a9a;
+  --water-paint:  #4a6e96;
+
+  /* Separator */
+  --border:       rgba(60,40,20,0.14);
+  --border-dark:  rgba(60,40,20,0.28);
+
+  --serif:  'IM Fell English', 'Palatino Linotype', Georgia, serif;
+  --body:   'Crimson Pro', 'Palatino Linotype', Georgia, serif;
+  --mono:   ui-monospace, Consolas, monospace;
+
+  font: 17px/1.65 var(--body);
+  letter-spacing: 0.1px;
+  color: var(--ink);
+  background: var(--canvas);
   -webkit-font-smoothing: antialiased;
-  color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -31,9 +48,9 @@ body  { margin: 0; }
 #root { min-height: 100svh; }
 
 h1, h2, h3 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--pearl);
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--ink-dark);
   margin: 0;
 }
 p { margin: 0; }

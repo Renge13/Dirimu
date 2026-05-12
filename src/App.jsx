@@ -78,12 +78,13 @@ function App() {
 
       {/* Hero */}
       <header className="hero">
-        <span className="hero-eyebrow">Ba Zi · 八字</span>
+        <span className="hero-eyebrow">Ba Zi &middot; 八字</span>
         <h1>Dirimu</h1>
         <p className="tagline">
-          Empat Pilar Nasibmu — terungkap dari tanggal dan jam lahirmu.
+          Empat Pilar Nasibmu &mdash; terungkap dari tanggal dan jam lahirmu.
         </p>
       </header>
+      <div className="flourish" aria-hidden="true">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
 
       {/* Form */}
       <div className="form-card">
@@ -115,7 +116,7 @@ function App() {
           </div>
 
           <button className="submit" type="submit">
-            Lihat Empat Pilarku →
+            Baca Empat Pilarku &rarr;
           </button>
         </form>
       </div>
