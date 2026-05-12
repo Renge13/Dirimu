@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { calculateBaziChart, runValidation } from '@/lib/bazi'
+import { calculateBaziChart, getInterpretation, runValidation } from '@/lib/bazi'
 import './App.css'
 
 const ELEMENT_LABEL = {
@@ -62,7 +62,8 @@ function App() {
         birthDate,
         birthTime: birthTime || null,
       })
-      setResult(chart)
+      const interpretation = getInterpretation(chart)
+      setResult({ ...chart, interpretation })
     } catch (err) {
       setError(err.message)
       setResult(null)
@@ -137,6 +138,43 @@ function App() {
             }
           </div>
 
+          {/* Archetype hero */}
+          {result.interpretation && (result.interpretation.dayMasterName || result.interpretation.heroDescription || result.interpretation.shareTagline) && (
+            <div className="archetype-card">
+              {result.interpretation.dayMasterChinese && (
+                <div className="archetype-chinese">{result.interpretation.dayMasterChinese}</div>
+              )}
+              {result.interpretation.dayMasterName && (
+                <h2 className="archetype-name">{result.interpretation.dayMasterName}</h2>
+              )}
+              {result.interpretation.shareTagline && (
+                <p className="archetype-tagline">{result.interpretation.shareTagline}</p>
+              )}
+              {result.interpretation.heroDescription && (
+                <p className="archetype-description">{result.interpretation.heroDescription}</p>
+              )}
+              {result.interpretation.identityPills.length > 0 && (
+                <div className="identity-pills">
+                  {result.interpretation.identityPills.map((p, i) => (
+                    <span className="identity-pill" key={i}>{p}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Personality traits */}
+          {result.interpretation && result.interpretation.personalityTraits.length > 0 && (
+            <div className="info-card traits-card">
+              <div className="section-title">Sifat-sifatmu</div>
+              <ul className="traits-list">
+                {result.interpretation.personalityTraits.map((t, i) => (
+                  <li key={i}>{t}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {/* Day Master + Balance */}
           <div className="lower-grid">
             <div className="info-card">
@@ -170,6 +208,9 @@ function App() {
                   )
                 })}
               </div>
+              {result.interpretation?.elementNote && (
+                <p className="element-note">{result.interpretation.elementNote}</p>
+              )}
             </div>
           </div>
 
@@ -199,6 +240,20 @@ function App() {
                   </div>
                 )}
               </div>
+              {result.interpretation?.compatibleDescription && (
+                <p className="relation-description">{result.interpretation.compatibleDescription}</p>
+              )}
+              {result.interpretation?.clashDescription && (
+                <p className="relation-description">{result.interpretation.clashDescription}</p>
+              )}
+            </div>
+          )}
+
+          {/* Paid hook */}
+          {result.interpretation?.paidHook && (
+            <div className="paid-hook-card">
+              <p className="paid-hook">{result.interpretation.paidHook}</p>
+              <button className="paid-cta" type="button">Buka Bacaan Mendalam →</button>
             </div>
           )}
 

@@ -14,3 +14,4 @@ export { calculateBaziChart, runValidation } from './calculator.js';
 export { STEMS, BRANCHES, STEM_ELEMENTS, BRANCH_ELEMENTS,
          getHarmonyBranches, getClashBranches } from './stems.js';
 export { getBaziMonth, SOLAR_TERMS_CST, MONTH_BRANCHES } from './solarTerms.js';
+export { getInterpretation } from './interpretation/index.js';

@@ -365,3 +365,162 @@
 }
 .chip--harmony { border-color: rgba(90,173,90,0.4); color: #7ecc7e; }
 .chip--clash   { border-color: rgba(217,96,96,0.4); color: #f08080; }
+
+.relation-description {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ── Archetype card (Day Master narrative) ──────────────── */
+.archetype-card {
+  position: relative;
+  background:
+    radial-gradient(120% 80% at 50% -20%, rgba(201,168,76,0.10), transparent 60%),
+    var(--ink-2);
+  border: 1px solid var(--gold-border);
+  border-radius: 18px;
+  padding: 40px 28px 32px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.archetype-chinese {
+  font-family: var(--heading);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.archetype-name {
+  font-family: var(--heading);
+  font-size: clamp(28px, 5vw, 40px);
+  letter-spacing: -0.8px;
+  color: var(--pearl);
+  margin: 0 0 18px;
+  line-height: 1.1;
+}
+
+.archetype-tagline {
+  font-family: var(--heading);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--gold);
+  max-width: 540px;
+  margin: 0 auto 22px;
+  line-height: 1.5;
+}
+
+.archetype-description {
+  color: var(--pearl);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.identity-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.identity-pill {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--pearl);
+  background: var(--ink-3);
+  border: 1px solid var(--separator);
+  padding: 5px 12px;
+  border-radius: 16px;
+}
+
+/* ── Traits card ────────────────────────────────────────── */
+.traits-card {
+  margin-bottom: 16px;
+}
+
+.traits-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.traits-list li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--pearl);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.traits-list li::before {
+  content: '·';
+  position: absolute;
+  left: 6px;
+  top: -2px;
+  color: var(--gold);
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* ── Element note (under Keseimbangan Elemen bars) ─────── */
+.element-note {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--separator);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── Paid hook (the open loop at the bottom) ────────────── */
+.paid-hook-card {
+  margin-top: 32px;
+  padding: 32px 28px;
+  border-radius: 18px;
+  background:
+    linear-gradient(160deg, rgba(201,168,76,0.10) 0%, transparent 60%),
+    var(--ink-2);
+  border: 1px solid var(--gold-border);
+  text-align: center;
+}
+
+.paid-hook {
+  color: var(--pearl);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto 24px;
+}
+
+.paid-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  font: 500 14px var(--sans);
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.paid-cta:hover  { opacity: 0.9; transform: translateY(-1px); }
+.paid-cta:active { transform: translateY(0); }
+.paid-cta:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
