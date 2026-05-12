@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate:solar-terms": "node scripts/generate-solar-terms.js"
+    "generate:solar-terms": "node scripts/generate-solar-terms.js",
+    "check:copy": "node scripts/check-copy.js"
   },
   "dependencies": {
     "html2canvas": "^1.4.1",

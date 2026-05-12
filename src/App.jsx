@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react'
-import { calculateBaziChart, getInterpretation, runValidation } from '@/lib/bazi'
+import { useEffect, useRef, useState } from 'react'
+import { calculateBaziChart, getCardData, getInterpretation, runValidation } from '@/lib/bazi'
+import Sharecard from '@/components/Sharecard.jsx'
+import { useSharecardExport } from '@/lib/useSharecardExport.js'
 import './App.css'
 
 const ELEMENT_LABEL = {
@@ -52,6 +54,9 @@ function App() {
   const [result, setResult]       = useState(null)
   const [error, setError]         = useState(null)
 
+  const sharecardRef = useRef(null)
+  const { exportAsPng, busy: exportBusy, error: exportError } = useSharecardExport()
+
   useEffect(() => { runValidation() }, [])
 
   function onSubmit(e) {
@@ -63,11 +68,20 @@ function App() {
         birthTime: birthTime || null,
       })
       const interpretation = getInterpretation(chart)
-      setResult({ ...chart, interpretation })
+      const cardData = getCardData(chart)
+      setResult({ ...chart, interpretation, cardData })
     } catch (err) {
       setError(err.message)
       setResult(null)
     }
+  }
+
+  function onDownload() {
+    if (!result?.cardData) return
+    exportAsPng(sharecardRef.current, {
+      superpower: result.cardData.superpower,
+      birthDate: result.birthDate,
+    })
   }
 
   const maxBalance = result
@@ -137,6 +151,34 @@ function App() {
               : <PillarEmpty labelKey="hour" />
             }
           </div>
+
+          {/* Sharecard preview + export */}
+          {result.cardData && (
+            <div className="sharecard-preview">
+              <div className="section-title">Kartu Berbagi</div>
+              <div className="sharecard-preview-frame">
+                <Sharecard card={result.cardData} />
+              </div>
+              <div className="sharecard-actions">
+                <button
+                  className="sharecard-download"
+                  type="button"
+                  onClick={onDownload}
+                  disabled={exportBusy}
+                >
+                  {exportBusy ? 'Menyimpan...' : 'Simpan Gambar'}
+                </button>
+              </div>
+              {exportError && <div className="error">{exportError}</div>}
+            </div>
+          )}
+
+          {/* Hidden full-resolution sharecard for html2canvas capture */}
+          {result.cardData && (
+            <div className="sharecard-capture" aria-hidden="true">
+              <Sharecard ref={sharecardRef} card={result.cardData} />
+            </div>
+          )}
 
           {/* Archetype hero */}
           {result.interpretation && (result.interpretation.dayMasterName || result.interpretation.heroDescription || result.interpretation.shareTagline) && (
