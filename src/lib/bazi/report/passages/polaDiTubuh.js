@@ -65,7 +65,7 @@ export default {
   },
 
   '庚': {
-    core: `Tubuh Pedang menyimpan ketajaman sebagai ketegangan: rahang yang mengatup rapat, leher yang kaku seperti menahan pukulan, kepala yang sering terasa seperti diikat erat. Kamu mungkin tidak sadar sedang memotong sampai tubuhmu yang memberitahu: sakit kepala tegang yang muncul setelah rapat panjang, bahu yang naik tanpa sadar saat harus bersabar. Energimu efisien dan langsung, tapi ketika tidak ada yang bisa dipotong, tubuhmu bingung harus meletakkan ketajaman itu di mana. Lelahmu sering hadir sebagai iritasi, bukan kantuk.`,
+    core: `Ketajaman Pedang sering tersimpan sebagai ketegangan di rahang yang mengatup rapat, leher yang kaku seperti menahan pukulan, dan kepala yang terasa diikat erat. Kamu mungkin baru sadar sedang "memotong" setelah tubuhmu mengirimkan sakit kepala tegang usai rapat panjang, atau bahu yang meninggi saat harus bersabar. Energimu efisien dan langsung, tetapi ketika tidak ada yang perlu dipotong, tubuhmu kebingungan meletakkan ketajaman itu. Lelahmu sering hadir dalam bentuk iritasi, bukan kantuk.`,
     inserts: {
       fireExcess: `Api berlebih membuat Logammu meleleh dari suhu yang bukan kamu pilih. Ada sensasi "dibakar" oleh tuntutan eksternal, dan tubuhmu menyimpan panas itu di dada dan pelipis. Kamu mungkin merasa terprovokasi secara fisik oleh stres, seolah ada palu yang terus mengetuk dari dalam.`,
       missingWater: `Tanpa Air yang cukup, kamu kehilangan kemampuan untuk melunak. Tubuhmu tetap tegang bahkan saat istirahat; otot-otot tidak pernah sepenuhnya lepas, dan tidurmu mungkin dangkal. Ada kelelahan yang keras, seperti logam yang tidak bisa berkarat dan istirahat.`,

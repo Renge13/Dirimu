@@ -68,7 +68,7 @@ export default {
   },
 
   '庚': {
-    core: `Pedang mencari rezeki dari ketegasan memotong yang tidak perlu. Uangmu sering datang dari keputusan-keputusan cepat, efisiensi yang kamu bawa ke dalam sistem, atau kemampuanmu menyelesaikan masalah yang orang lain hindari. Kamu tidak suka bertele-tele dalam soal uang, dan mungkin cenderung transaksional. Namun, ada pola yang perlu diperhatikan: saat frustrasi, kamu bisa mengeluarkan uang untuk melampiaskan, atau memotong pengeluaran yang sebenarnya penting hanya demi prinsip. Bagimu, uang adalah alat, dan kamu tidak suka alat yang tidak tajam.`,
+    core: `Pedang mencari rezeki dari ketegasan memotong yang tidak perlu. Uangmu sering datang dari keputusan-keputusan cepat, efisiensi yang kamu bawa ke dalam sistem, atau kemampuanmu menyelesaikan masalah yang orang lain hindari. Kamu tidak suka bertele-tele dalam soal uang, dan mungkin cenderung transaksional. Namun, ada pola yang perlu diperhatikan: saat frustrasi, kamu bisa mengeluarkan uang untuk melampiaskan, atau memotong pengeluaran yang sebenarnya penting hanya demi prinsip. Bagimu, uang terasa paling berarti saat ia bisa dipakai untuk menyelesaikan sesuatu, bukan saat ia menumpuk tanpa tujuan.`,
     inserts: {
       metalMeetsWood: `Logam mengontrol Kayu sebagai rezeki: kamu memotong opsi yang banyak menjadi satu yang berkualitas. Pendapatanmu sering dari mengubah visi orang lain menjadi produk nyata, atau dari mengambil keputusan tegas di tengah kebingungan.`,
       earthDominantSavings: `Bumi memberimu banyak sumber daya, tapi justru membuatmu terlalu lama menimbang sebelum bertindak. Uangmu mungkin banyak yang mengendap karena kamu menunggu momen sempurna untuk memotong.`,

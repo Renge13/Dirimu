@@ -54,7 +54,7 @@ Di kerangka simbolik 八字, 甲 diibaratkan pohon oak yang menjulang kokoh. Bag
   '庚': {
     core: `Bukan ramalan tentang masa depan. Tapi cermin pola yang sering muncul tanpa kamu sadari.
 
-庚 disimbolkan sebagai pedang: tajam, tegas, dan tidak merayap. Orang dengan konfigurasi ini sering menunjukkan pola kejujuran yang langsung. Kamu tidak suka bertele-tele, dan prinsip sering ditempatkan di atas kenyamanan perasaan. Ini membuatmu diandalkan saat keputusan sulit harus diambil. Namun ketajaman juga bisa menciptakan jarak. Ada kemungkinan kamu pernah dianggap terlalu keras, padahal niatmu justru memotong kebingungan, bukan melukai. Kamu setia pada kebenaran versimu, meski itu berarti berdiri sendiri.`,
+庚 disimbolkan sebagai pedang: tajam, tegas, dan tanpa basa-basi. Orang dengan konfigurasi ini sering menunjukkan pola kejujuran yang langsung. Kamu tidak suka bertele-tele, dan prinsip sering ditempatkan di atas kenyamanan perasaan. Ini membuatmu diandalkan saat keputusan sulit harus diambil. Namun ketajaman juga bisa menciptakan jarak. Ada kemungkinan kamu pernah dianggap terlalu keras, padahal niatmu justru memotong kebingungan, bukan melukai. Kamu setia pada kebenaran versimu, meski itu berarti berdiri sendiri.`,
     inserts: {},
   },
 
