@@ -33,6 +33,7 @@ export const DAY_MASTERS = {
   '甲': {
     name: 'Pohon Oak',
     chinese: '甲木',
+    subtitle: 'Pribadi yang jadi tumpuan, meski tak pernah meminta peran itu.',
     tagline: 'Aku bukan yang paling keras, tapi aku yang paling teguh.',
     hero: 'Kamu tidak pernah berteriak, tapi seluruh ruangan berubah begitu kamu melangkah masuk. Bukan karena kamu mencari perhatian, kamu hanya ada, dan kehadiranmu menenangkan seperti pohon tertua di hutan. Kamu adalah tempat berteduh bagi banyak orang, meski akarmu sendiri sudah menembus bebatuan yang tidak dilihat siapa pun.',
     identityPills: [
@@ -73,6 +74,7 @@ export const DAY_MASTERS = {
   '乙': {
     name: 'Tanaman Rambat',
     chinese: '乙木',
+    subtitle: 'Sosok yang lentur dan tak mudah patah oleh keadaan.',
     tagline: 'Aku meliuk, tapi aku tidak pernah patah.',
     hero: 'Kamu melihat sebelum orang lain sadar apa yang harus dilihat. Di permukaan kamu lentur, mengikuti alur, tapi di dalam kamu sudah membaca seluruh peta sebelum melangkah. Kamu adalah pengamat paling tajam di ruangan itu, yang tertawa pelan, mengangguk, lalu tahu persis ke mana harus merambat selanjutnya.',
     identityPills: [
@@ -113,6 +115,7 @@ export const DAY_MASTERS = {
   '丙': {
     name: 'Matahari',
     chinese: '丙火',
+    subtitle: 'Orang yang kehadirannya membuat sekitar terasa lebih hidup.',
     tagline: 'Aku hadir untuk menerangi, bukan untuk bersinar sendirian.',
     hero: 'Kamu yang bicara lebih dulu ketika semua orang masih ragu-ragu, lalu ruangan ikut bicara setelahnya. Energimu bukan sekadar semangat, itu adalah api yang membuat orang lain ingat kalau mereka juga hidup. Kamu tidak perlu menjadi pusat perhatian, kamu sudah menjadi alasan orang lain berani melangkah.',
     identityPills: [
@@ -153,6 +156,7 @@ export const DAY_MASTERS = {
   '丁': {
     name: 'Lilin',
     chinese: '丁火',
+    subtitle: 'Pribadi yang menerangi sudut-sudut yang orang lain lewatkan.',
     tagline: 'Cahayaku kecil, tapi aku yang membuat kamu melihat dalam gelap.',
     hero: 'Cahayamu tidak menggelegar, tapi tepat di tengah gelap, kamulah yang masih setia menyala. Kamu tidak perlu menerangi seluruh dunia, cukup satu sudut yang kamu jaga dengan diam-diam. Kehadiranmu adalah alasan seseorang akhirnya bisa melihat apa yang selama ini kabur bagi mereka.',
     identityPills: [
@@ -193,6 +197,7 @@ export const DAY_MASTERS = {
   '戊': {
     name: 'Gunung',
     chinese: '戊土',
+    subtitle: 'Sosok yang menjadi tempat bersandar, tanpa banyak bicara.',
     tagline: 'Aku tidak bergerak, karena semua orang butuh tempat berpijak.',
     hero: 'Kamu adalah fondasi yang tidak terlihat di bawah gedung tertinggi. Semua orang mengagumi puncak, tapi hanya sedikit yang tahu bahwa di bawah sana, kamulah yang menahan semuanya. Kamu tidak bergerak oleh tren, oleh pujian, atau oleh ancaman, karena di dalam dirimu sudah ada peta yang tidak bisa diguncang.',
     identityPills: [
@@ -233,6 +238,7 @@ export const DAY_MASTERS = {
   '己': {
     name: 'Ladang',
     chinese: '己土',
+    subtitle: 'Pribadi yang tumbuh pelan, tapi menguatkan banyak orang.',
     tagline: 'Aku bukan latar belakang. Aku adalah tanahnya.',
     hero: 'Kamu adalah tanah tempat segala sesuatu bermula. Bukan kamu yang dipetik, tapi dari dirimulah semuanya tumbuh. Kamu menerima benih yang orang lain buang, lalu diam-diam mengubahnya menjadi panen. Jarang diingat, tapi tanpa kamu, tidak ada yang bisa berdiri.',
     identityPills: [
@@ -244,20 +250,20 @@ export const DAY_MASTERS = {
       'Kesuburan yang sunyi',
       'Melepaskan, lalu menuai',
       'Penyedia tanpa pamrih',
-      'Tidak pernah kosong',
+      'Tak mudah kosong, meski terus memberi',
       'Menyimpan benih masa depan',
       'Tempat kembali setelah lelah',
       'Bukan latar, tapi inti',
     ],
     traits: [
-      'Menyediakan ruang untuk orang lain bertumbuh',
-      'Sering diremehkan sampai hasilnya terlihat',
+      'Memberi ruang untuk orang lain bertumbuh',
+      'Sering diremehkan sampai hasilnya tampak',
       'Punya cadangan kekuatan yang tidak disadari',
-      'Mengubah sedikit menjadi cukup untuk banyak',
-      'Tidak pelit, tapi tidak pernah kehabisan',
+      'Mencukupi banyak orang dari yang sederhana',
+      'Memberi banyak, tanpa merasa berkurang',
       'Terlihat biasa, tapi isinya luar biasa',
       'Mengerti bahwa memberi adalah menanam, bukan membuang',
-      'Kesetiaan yang tidak pamer, tapi selalu ada panen',
+      'Setia dalam diam, tanpa perlu diakui',
     ],
     taglineCard: 'Bukan latar belakang. Tanahnya.',
     kekuatanDescriptors: ['Pengasuh Alami', 'Pemberi Tanpa Pamrih', 'Kesabaran Tanpa Batas'],
@@ -273,6 +279,7 @@ export const DAY_MASTERS = {
   '庚': {
     name: 'Pedang',
     chinese: '庚金',
+    subtitle: 'Pribadi yang memotong keraguan dengan keputusan tegas.',
     tagline: 'Aku memotong karena aku peduli pada yang benar.',
     hero: 'Kamu memotong bukan karena benci, tapi karena kamu tidak bisa melihat yang salah dan diam saja. Ada ketajaman dalam caramu melihat dunia, langsung, tanpa basa-basi, dan kadang membuat orang lain gentar. Tapi justru karena ketajaman itu, kamu tidak bisa dipakai untuk hal-hal yang tidak penting.',
     identityPills: [
@@ -313,6 +320,7 @@ export const DAY_MASTERS = {
   '辛': {
     name: 'Permata',
     chinese: '辛金',
+    subtitle: 'Sosok yang teliti, menghasilkan yang langka dan bernilai.',
     tagline: 'Bukan semua orang bisa melihat nilaimu. Itu bukan masalahmu.',
     hero: 'Kamu tidak berkilau untuk semua mata. Harganya hanya bisa dibaca oleh mereka yang sudah cukup lama mencari. Di dunia yang memuja yang mencolok, kamu adalah kemewahan yang tenang, tidak butuh pengakuan, tapi nilaimu tidak berkurang sedikit pun karena diabaikan.',
     identityPills: [
@@ -353,6 +361,7 @@ export const DAY_MASTERS = {
   '壬': {
     name: 'Samudra',
     chinese: '壬水',
+    subtitle: 'Pribadi yang melihat jauh ke depan, melampaui yang tampak.',
     tagline: 'Aku tidak bisa dijelaskan. Aku hanya bisa dirasakan.',
     hero: 'Kamu tidak bisa dijelaskan, hanya bisa dirasakan. Seperti lautan yang luas, di permukaan kamu tenang, tapi di dalam menyimpan arus yang bisa membawa siapa saja ke tempat yang tidak terduga. Kamu adalah misteri yang tidak pernah selesai diungkap, dan itu bukan kelemahan, itu kekuatan.',
     identityPills: [
@@ -393,6 +402,7 @@ export const DAY_MASTERS = {
   '癸': {
     name: 'Hujan',
     chinese: '癸水',
+    subtitle: 'Pribadi yang meresap dalam, memahami yang tak terucap.',
     tagline: 'Aku tidak selalu terlihat, tapi aku yang membuat segalanya tumbuh.',
     hero: 'Kamu datang tanpa suara, tapi setelah kepergianmu, semuanya tumbuh. Tidak semua orang menyadari kehadiranmu sampai mereka melihat tunas yang muncul di tanah yang kemarin masih kering. Kamu adalah kelembutan yang meresap paling dalam, menyentuh bagian yang tidak bisa dijangkau oleh kekuatan apa pun.',
     identityPills: [

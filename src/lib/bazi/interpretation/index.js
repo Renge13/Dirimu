@@ -132,6 +132,7 @@ export function getInterpretation(chart) {
     paidHook,
 
     // Card-surface fields (no subject pronoun, watercolor canvas)
+    subtitle: dm.subtitle || '',
     taglineCard: dm.taglineCard || '',
     kekuatanDescriptors: dm.kekuatanDescriptors || [],
     bayanganDescriptors: dm.bayanganDescriptors || [],
