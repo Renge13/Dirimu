@@ -115,6 +115,59 @@
   box-shadow: 0 0 0 3px var(--gold-dim);
 }
 
+/* ── Select dropdowns (date + time) ─────────────────────── */
+.select-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding-right: 36px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 50%,
+    calc(100% - 13px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+.select-input:focus {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--gold) 50%),
+    linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+}
+.select-input option {
+  background: var(--ink-2);
+  color: var(--pearl);
+}
+
+.date-selects {
+  display: grid;
+  grid-template-columns: 90px 1fr 100px;
+  gap: 8px;
+}
+
+.time-selects {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 240px;
+}
+.time-selects .select-input {
+  flex: 1;
+}
+.time-separator {
+  color: var(--muted);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .date-selects {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 .submit {
   display: flex;
   align-items: center;

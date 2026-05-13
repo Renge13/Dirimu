@@ -21,6 +21,41 @@ const PILLAR_LABELS = {
   hour:  'Jam',
 }
 
+/* Indonesian month names, 1-indexed via .value strings */
+const MONTHS = [
+  { v: '1',  label: 'Januari' },
+  { v: '2',  label: 'Februari' },
+  { v: '3',  label: 'Maret' },
+  { v: '4',  label: 'April' },
+  { v: '5',  label: 'Mei' },
+  { v: '6',  label: 'Juni' },
+  { v: '7',  label: 'Juli' },
+  { v: '8',  label: 'Agustus' },
+  { v: '9',  label: 'September' },
+  { v: '10', label: 'Oktober' },
+  { v: '11', label: 'November' },
+  { v: '12', label: 'Desember' },
+]
+
+/* Year range covers the solar-terms table bounds (1975–2030). */
+const YEAR_MIN = 1900
+const YEAR_MAX = 2030
+const YEARS = Array.from({ length: YEAR_MAX - YEAR_MIN + 1 }, (_, i) => YEAR_MAX - i)
+
+const HOURS = Array.from({ length: 24 }, (_, i) => i)
+const MINUTES = Array.from({ length: 60 }, (_, i) => i)
+
+function daysInMonth(monthStr, yearStr) {
+  if (!monthStr) return 31
+  const m = parseInt(monthStr, 10)
+  const y = yearStr ? parseInt(yearStr, 10) : 2000 // leap, generous default
+  if (m === 2) {
+    const isLeap = (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0
+    return isLeap ? 29 : 28
+  }
+  return [4, 6, 9, 11].includes(m) ? 30 : 31
+}
+
 /* ── Sub-components ─────────────────────────────────────── */
 
 function Pillar({ labelKey, pillar, isDayMaster }) {
@@ -49,63 +84,52 @@ function PillarEmpty({ labelKey }) {
 /* ── Main App ───────────────────────────────────────────── */
 
 function App() {
-  const [birthDate, setBirthDate] = useState('')
-  const [birthTime, setBirthTime] = useState('')
-  const [result, setResult]       = useState(null)
-  const [error, setError]         = useState(null)
+  const [day, setDay]     = useState('')
+  const [month, setMonth] = useState('')
+  const [year, setYear]   = useState('')
+  const [hour, setHour]     = useState('')
+  const [minute, setMinute] = useState('')
+  const [result, setResult] = useState(null)
+  const [error, setError]   = useState(null)
 
   const sharecardRef = useRef(null)
   const { exportAsPng, busy: exportBusy, error: exportError } = useSharecardExport()
 
   useEffect(() => { runValidation() }, [])
 
+  // Cap the day dropdown when month/year change (e.g. picking Feb after 31 was set).
+  const maxDay = daysInMonth(month, year)
+  useEffect(() => {
+    if (day && parseInt(day, 10) > maxDay) setDay(String(maxDay))
+  }, [maxDay, day])
+
   function onSubmit(e) {
     e.preventDefault()
     setError(null)
 
-    // Parse DD-MM-YYYY (also accepts DD/MM/YYYY or DD.MM.YYYY)
-    const dateMatch = /^\s*(\d{1,2})[-/.](\d{1,2})[-/.](\d{4})\s*$/.exec(birthDate)
-    if (!dateMatch) {
-      setError('Format tanggal salah. Gunakan DD-MM-YYYY (contoh: 13-09-1989).')
-      setResult(null)
-      return
-    }
-    const [, ddStr, mmStr, yyyyStr] = dateMatch
-    const dd = parseInt(ddStr, 10)
-    const mm = parseInt(mmStr, 10)
-    const yyyy = parseInt(yyyyStr, 10)
-    const isoDate = `${yyyy}-${String(mm).padStart(2,'0')}-${String(dd).padStart(2,'0')}`
-    const checkDate = new Date(`${isoDate}T12:00:00+07:00`)
-    if (
-      isNaN(checkDate.getTime()) ||
-      checkDate.getUTCDate() !== dd ||
-      checkDate.getUTCMonth() + 1 !== mm ||
-      checkDate.getUTCFullYear() !== yyyy ||
-      yyyy < 1900 || yyyy > 2030
-    ) {
-      setError(`Tanggal tidak valid: ${birthDate}. Pastikan hari dan bulan benar, tahun antara 1900–2030.`)
+    if (!day || !month || !year) {
+      setError('Lengkapi tanggal lahirmu (tanggal, bulan, dan tahun).')
       setResult(null)
       return
     }
 
-    // Parse HH:MM 24-hour (optional)
+    const dd = parseInt(day, 10)
+    const mm = parseInt(month, 10)
+    const yyyy = parseInt(year, 10)
+    const isoDate = `${yyyy}-${String(mm).padStart(2,'0')}-${String(dd).padStart(2,'0')}`
+
+    // Hour and minute can both be empty (full unknown), or both filled.
+    // If one is filled and the other isn't, treat as ambiguous.
     let isoTime = null
-    const trimmedTime = birthTime.trim()
-    if (trimmedTime) {
-      const timeMatch = /^(\d{1,2})[:.](\d{2})$/.exec(trimmedTime)
-      if (!timeMatch) {
-        setError('Format jam salah. Gunakan HH:MM 24-jam (contoh: 09:00 atau 23:30).')
-        setResult(null)
-        return
-      }
-      const h = parseInt(timeMatch[1], 10)
-      const mi = parseInt(timeMatch[2], 10)
-      if (h < 0 || h > 23 || mi < 0 || mi > 59) {
-        setError(`Jam tidak valid: ${trimmedTime}. Gunakan 00:00 sampai 23:59.`)
-        setResult(null)
-        return
-      }
-      isoTime = `${String(h).padStart(2,'0')}:${String(mi).padStart(2,'0')}`
+    const hasHour = hour !== ''
+    const hasMinute = minute !== ''
+    if (hasHour !== hasMinute) {
+      setError('Jam dan menit harus diisi keduanya, atau dikosongkan keduanya.')
+      setResult(null)
+      return
+    }
+    if (hasHour && hasMinute) {
+      isoTime = `${String(parseInt(hour, 10)).padStart(2,'0')}:${String(parseInt(minute, 10)).padStart(2,'0')}`
     }
 
     try {
@@ -149,36 +173,76 @@ function App() {
       {/* Form */}
       <div className="form-card">
         <form className="form" onSubmit={onSubmit}>
-          <div className="fields-row">
-            <div className="field">
-              <label className="field-label" htmlFor="birthDate">Tanggal Lahir</label>
-              <input
-                id="birthDate"
-                className="field-input"
-                type="text"
-                inputMode="numeric"
-                placeholder="DD-MM-YYYY"
-                maxLength={10}
-                autoComplete="bday"
-                value={birthDate}
-                onChange={(e) => setBirthDate(e.target.value)}
+          <div className="field">
+            <label className="field-label">Tanggal Lahir</label>
+            <div className="date-selects">
+              <select
+                className="field-input select-input"
+                aria-label="Tanggal"
+                value={day}
+                onChange={(e) => setDay(e.target.value)}
                 required
-              />
+              >
+                <option value="">Tgl</option>
+                {Array.from({ length: maxDay }, (_, i) => i + 1).map((d) => (
+                  <option key={d} value={d}>{d}</option>
+                ))}
+              </select>
+              <select
+                className="field-input select-input"
+                aria-label="Bulan"
+                value={month}
+                onChange={(e) => setMonth(e.target.value)}
+                required
+              >
+                <option value="">Bulan</option>
+                {MONTHS.map((m) => (
+                  <option key={m.v} value={m.v}>{m.label}</option>
+                ))}
+              </select>
+              <select
+                className="field-input select-input"
+                aria-label="Tahun"
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
+                required
+              >
+                <option value="">Tahun</option>
+                {YEARS.map((y) => (
+                  <option key={y} value={y}>{y}</option>
+                ))}
+              </select>
             </div>
-            <div className="field">
-              <label className="field-label" htmlFor="birthTime">
-                Jam Lahir <span style={{ opacity: 0.5 }}>(opsional)</span>
-              </label>
-              <input
-                id="birthTime"
-                className="field-input"
-                type="text"
-                inputMode="numeric"
-                placeholder="HH:MM (24-jam)"
-                maxLength={5}
-                value={birthTime}
-                onChange={(e) => setBirthTime(e.target.value)}
-              />
+          </div>
+
+          <div className="field">
+            <label className="field-label">
+              Jam Lahir <span style={{ opacity: 0.5 }}>(opsional)</span>
+            </label>
+            <div className="time-selects">
+              <select
+                className="field-input select-input"
+                aria-label="Jam"
+                value={hour}
+                onChange={(e) => setHour(e.target.value)}
+              >
+                <option value="">Jam</option>
+                {HOURS.map((h) => (
+                  <option key={h} value={h}>{String(h).padStart(2, '0')}</option>
+                ))}
+              </select>
+              <span className="time-separator" aria-hidden="true">:</span>
+              <select
+                className="field-input select-input"
+                aria-label="Menit"
+                value={minute}
+                onChange={(e) => setMinute(e.target.value)}
+              >
+                <option value="">Menit</option>
+                {MINUTES.map((m) => (
+                  <option key={m} value={m}>{String(m).padStart(2, '0')}</option>
+                ))}
+              </select>
             </div>
           </div>
 
