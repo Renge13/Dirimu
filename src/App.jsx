@@ -4,6 +4,7 @@ import BaziCard from '@/components/card/BaziCard.jsx'
 import Report from '@/components/Report.jsx'
 import { exportCardAsPNG } from '@/utils/exportCard.jsx'
 import { ARCHETYPE_EMOJI } from '@/lib/bazi/elementConfig.js'
+import { PILLAR_STEM_MEANINGS } from '@/lib/bazi/interpretation/pillarMeanings.js'
 import './App.css'
 
 const ELEMENT_LABEL = {
@@ -34,9 +35,9 @@ const PILLAR_LABELS = {
   hour:  'Jam',
 }
 
-/* One-line meaning per pillar — converts the technical 八字 readout
-   into emotionally legible labels for non-BaZi-fluent readers. */
-const PILLAR_MEANINGS = {
+/* Generic role label per pillar — short, scannable. The full
+   stem-specific interpretation comes from PILLAR_STEM_MEANINGS. */
+const PILLAR_ROLE = {
   year:  'cara dunia melihatmu',
   month: 'cara kamu bekerja',
   day:   'inti dirimu',
@@ -81,6 +82,7 @@ function daysInMonth(monthStr, yearStr) {
 /* ── Sub-components ─────────────────────────────────────── */
 
 function Pillar({ labelKey, pillar, isDayMaster }) {
+  const interpretation = PILLAR_STEM_MEANINGS[labelKey]?.[pillar.stem]
   return (
     <div className={`pillar${isDayMaster ? ' pillar--day' : ''}`}>
       {isDayMaster && <div className="pillar-badge">Energi Intimu</div>}
@@ -90,7 +92,10 @@ function Pillar({ labelKey, pillar, isDayMaster }) {
       <div className="pillar-element">
         {ELEMENT_LABEL[pillar.element]} · {pillar.polarity}
       </div>
-      <div className="pillar-meaning">{PILLAR_MEANINGS[labelKey]}</div>
+      <div className="pillar-role">{PILLAR_ROLE[labelKey]}</div>
+      {interpretation && (
+        <p className="pillar-interpretation">{interpretation}</p>
+      )}
     </div>
   )
 }
@@ -100,7 +105,7 @@ function PillarEmpty({ labelKey }) {
     <div className="pillar pillar-empty">
       <div className="pillar-label">{PILLAR_LABELS[labelKey]}</div>
       <div className="pillar-empty-text">Tidak diketahui</div>
-      <div className="pillar-meaning">{PILLAR_MEANINGS[labelKey]}</div>
+      <div className="pillar-role">{PILLAR_ROLE[labelKey]}</div>
     </div>
   )
 }

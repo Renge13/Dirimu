@@ -17,6 +17,7 @@ import { DAY_MASTERS }                            from '../src/lib/bazi/interpre
 import { DAY_BRANCHES }                           from '../src/lib/bazi/interpretation/dayBranches.js'
 import { DOMINANT_ELEMENT, MISSING_ELEMENT }      from '../src/lib/bazi/interpretation/elementImpact.js'
 import { PAID_HOOK_TEMPLATE }                     from '../src/lib/bazi/interpretation/paidHooks.js'
+import { PILLAR_STEM_MEANINGS }                   from '../src/lib/bazi/interpretation/pillarMeanings.js'
 
 // Report passage banks (Phase 4)
 import REPORT_PEMBUKAAN              from '../src/lib/bazi/report/passages/pembukaan.js'
@@ -49,11 +50,12 @@ function walk(node, path) {
   }
 }
 
-walk(DAY_MASTERS,         'DAY_MASTERS')
-walk(DAY_BRANCHES,        'DAY_BRANCHES')
-walk(DOMINANT_ELEMENT,    'DOMINANT_ELEMENT')
-walk(MISSING_ELEMENT,     'MISSING_ELEMENT')
-walk(PAID_HOOK_TEMPLATE,  'PAID_HOOK_TEMPLATE')
+walk(DAY_MASTERS,           'DAY_MASTERS')
+walk(DAY_BRANCHES,          'DAY_BRANCHES')
+walk(DOMINANT_ELEMENT,      'DOMINANT_ELEMENT')
+walk(MISSING_ELEMENT,       'MISSING_ELEMENT')
+walk(PAID_HOOK_TEMPLATE,    'PAID_HOOK_TEMPLATE')
+walk(PILLAR_STEM_MEANINGS,  'PILLAR_STEM_MEANINGS')
 
 // Report passages + prompts (Phase 4 onward)
 walk(REPORT_PEMBUKAAN,              'REPORT.pembukaan')
@@ -75,4 +77,4 @@ if (issues.length > 0) {
   process.exit(1)
 }
 
-console.log(`✓ No em-dashes in copy banks. Checked: DAY_MASTERS, DAY_BRANCHES, DOMINANT_ELEMENT, MISSING_ELEMENT, PAID_HOOK_TEMPLATE, 7 REPORT passage banks, REPORT.PROMPTS.`)
+console.log(`✓ No em-dashes in copy banks. Checked: DAY_MASTERS, DAY_BRANCHES, DOMINANT_ELEMENT, MISSING_ELEMENT, PAID_HOOK_TEMPLATE, PILLAR_STEM_MEANINGS, 7 REPORT passage banks, REPORT.PROMPTS.`)
