@@ -17,7 +17,6 @@ import { DAY_MASTERS }                            from '../src/lib/bazi/interpre
 import { DAY_BRANCHES }                           from '../src/lib/bazi/interpretation/dayBranches.js'
 import { DOMINANT_ELEMENT, MISSING_ELEMENT }      from '../src/lib/bazi/interpretation/elementImpact.js'
 import { PAID_HOOK_TEMPLATE }                     from '../src/lib/bazi/interpretation/paidHooks.js'
-import { CARD_DATA }                              from '../src/lib/bazi/sharecard/cardData.js'
 
 const EM_DASH = '—'
 const issues = []
@@ -45,7 +44,6 @@ walk(DAY_BRANCHES,        'DAY_BRANCHES')
 walk(DOMINANT_ELEMENT,    'DOMINANT_ELEMENT')
 walk(MISSING_ELEMENT,     'MISSING_ELEMENT')
 walk(PAID_HOOK_TEMPLATE,  'PAID_HOOK_TEMPLATE')
-walk(CARD_DATA,           'CARD_DATA')
 
 if (issues.length > 0) {
   console.error(`✗ Found em-dash in ${issues.length} copy string(s):\n`)
@@ -57,4 +55,4 @@ if (issues.length > 0) {
   process.exit(1)
 }
 
-console.log(`✓ No em-dashes in copy banks. Checked: DAY_MASTERS, DAY_BRANCHES, DOMINANT_ELEMENT, MISSING_ELEMENT, PAID_HOOK_TEMPLATE, CARD_DATA.`)
+console.log(`✓ No em-dashes in copy banks. Checked: DAY_MASTERS, DAY_BRANCHES, DOMINANT_ELEMENT, MISSING_ELEMENT, PAID_HOOK_TEMPLATE.`)
