@@ -405,18 +405,10 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         ...lastZone(28),
         padding:        `0 ${s(14)}px`,
         display:        'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-end',
         alignItems:     'center',
         borderTop:      `${scale}px solid ${BASE.divider}`,
       }}>
-        <span style={{
-          fontSize:      s(9),
-          letterSpacing: s(1.5),
-          color:         BASE.muted,
-          fontWeight:    500,
-        }}>
-          DIRIMU · 八字命理
-        </span>
         <span style={{
           fontSize:      s(9),
           color:         BASE.veryMuted,
