@@ -1,0 +1,202 @@
+/* ============================================================
+   Report — watercolor canvas styling
+   ============================================================
+   Cream/brown palette matching BaziCard. Sits as a contrasting
+   block within the existing dark reading page (Phase 5 will
+   restyle the surrounding page).
+   ============================================================ */
+
+:root {
+  --rpt-bg:        #FEFCF8;
+  --rpt-bg-2:      #FBF7F3;
+  --rpt-border:    #E4DAD0;
+  --rpt-divider:   #EDE5DC;
+  --rpt-ink:       #3A2E24;
+  --rpt-ink-soft:  #5A4A3A;
+  --rpt-muted:     #A8927E;
+  --rpt-accent:    #8B3A1A;
+  --rpt-prompt-bg: rgba(201, 168, 76, 0.08);
+}
+
+/* ── CTA card (collapsed state) ─────────────────────────── */
+
+.report-cta-card {
+  background: var(--rpt-bg);
+  border: 1px solid var(--rpt-border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  margin: 32px auto;
+  max-width: 640px;
+  text-align: center;
+  color: var(--rpt-ink);
+  box-shadow: 0 8px 32px -16px rgba(0, 0, 0, 0.4);
+}
+
+.report-cta-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--rpt-muted);
+  margin-bottom: 14px;
+}
+
+.report-cta-title {
+  font-family: Georgia, 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin: 0 0 14px;
+  color: var(--rpt-accent);
+}
+
+.report-cta-blurb {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--rpt-ink-soft);
+  margin: 0 auto 22px;
+  max-width: 440px;
+}
+
+.report-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 10px;
+  background: var(--rpt-accent);
+  color: #FEFCF8;
+  border: none;
+  font: 500 14px var(--sans);
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.report-cta-btn:hover  { opacity: 0.92; transform: translateY(-1px); }
+.report-cta-btn:active { transform: translateY(0); }
+.report-cta-btn:focus-visible {
+  outline: 2px solid var(--rpt-accent);
+  outline-offset: 3px;
+}
+
+/* ── Body (expanded state) ──────────────────────────────── */
+
+.report-body {
+  background: var(--rpt-bg);
+  border: 1px solid var(--rpt-border);
+  border-radius: 16px;
+  padding: 40px 28px 28px;
+  margin: 32px auto;
+  max-width: 640px;
+  color: var(--rpt-ink);
+  box-shadow: 0 8px 32px -16px rgba(0, 0, 0, 0.4);
+}
+
+.report-header {
+  text-align: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--rpt-divider);
+}
+
+.report-header-eyebrow {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: var(--rpt-muted);
+  margin-bottom: 10px;
+}
+
+.report-header-title {
+  font-family: Georgia, 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  margin: 0;
+  color: var(--rpt-accent);
+}
+
+/* ── Section ──────────────────────────────────────────── */
+
+.report-section {
+  margin-bottom: 36px;
+}
+
+.report-section:last-of-type {
+  margin-bottom: 24px;
+}
+
+.report-section-title {
+  font-family: Georgia, 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: var(--rpt-accent);
+  margin: 0 0 14px;
+}
+
+.report-paragraph {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--rpt-ink);
+  margin: 0 0 14px;
+}
+
+.report-paragraph:last-of-type {
+  margin-bottom: 0;
+}
+
+.report-prompt {
+  font-family: var(--sans);
+  font-style: italic;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--rpt-ink-soft);
+  background: var(--rpt-prompt-bg);
+  border-left: 3px solid var(--rpt-accent);
+  padding: 14px 18px;
+  margin: 18px 0 0;
+  border-radius: 4px;
+}
+
+/* ── Collapse button ───────────────────────────────────── */
+
+.report-collapse-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--rpt-muted);
+  border: 1px solid var(--rpt-border);
+  font: 500 13px var(--sans);
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.report-collapse-btn:hover {
+  color: var(--rpt-ink);
+  border-color: var(--rpt-ink-soft);
+}
+.report-collapse-btn:focus-visible {
+  outline: 2px solid var(--rpt-accent);
+  outline-offset: 3px;
+}
+
+/* ── Mobile ────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .report-cta-card,
+  .report-body {
+    padding: 24px 20px;
+    margin: 24px 16px;
+  }
+  .report-cta-title    { font-size: 26px; }
+  .report-header-title { font-size: 28px; }
+  .report-paragraph    { font-size: 14.5px; }
+}

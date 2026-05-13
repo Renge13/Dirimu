@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { calculateBaziChart, getInterpretation, runValidation } from '@/lib/bazi'
 import BaziCard from '@/components/card/BaziCard.jsx'
+import Report from '@/components/Report.jsx'
 import { exportCardAsPNG } from '@/utils/exportCard.jsx'
 import './App.css'
 
@@ -408,6 +409,9 @@ function App() {
               )}
             </div>
           )}
+
+          {/* Reflective Report — free deep reading, gated behind CTA */}
+          <Report chart={result} />
 
           {/* Paid hook */}
           {result.interpretation?.paidHook && (

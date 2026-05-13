@@ -17,3 +17,4 @@ export { getBaziMonth, SOLAR_TERMS_CST, MONTH_BRANCHES } from './solarTerms.js';
 export { getInterpretation } from './interpretation/index.js';
 export { getSelarasPemicuStems, ELEMENT_STEMS } from './elementCycle.js';
 export { ELEMENT_CONFIG } from './elementConfig.js';
+export { getReport } from './report/composer.js';
