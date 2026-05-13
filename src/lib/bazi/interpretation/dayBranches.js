@@ -7,8 +7,8 @@
 //
 // FIELD SCHEMA per entry:
 //   harmony   ~20 words, Bahasa Indonesia. Describes WHO
-//             harmonizes with this branch and WHY — framed
-//             relationally.
+//             harmonizes with this branch and WHY. Relational
+//             framing, direct voice, minimal abstract metaphor.
 //   clash     ~20 words. Describes WHO challenges this branch
 //             and WHY. Framed as growth, not threat.
 //
@@ -19,51 +19,51 @@
 
 export const DAY_BRANCHES = {
   '子': {
-    harmony: 'Hanya ketenangan mereka yang mampu menjinakkan arus pikiranmu yang tak pernah berhenti. Bersama mereka, ambisimu menemukan rumah dan jangkar.',
-    clash: 'Kehadiran mereka adalah interupsi bagi kedalamanmu. Mereka memaksamu keluar ke permukaan sebelum kamu siap, menguji seberapa kuat integritas batinmu.',
+    harmony: 'Mereka membuat pikiranmu yang ribut akhirnya tenang. Di dekat mereka, ambisimu punya jangkar.',
+    clash: 'Mereka menarikmu ke permukaan saat kamu belum siap. Bukan untuk mengganggu, tapi menguji apakah kamu yakin pada apa yang kamu sembunyikan.',
   },
   '丑': {
-    harmony: 'Ada kesepahaman sunyi di antara kalian. Mereka adalah sedikit dari orang yang tak perlu penjelasan untuk mengerti beban tanggung jawabmu.',
-    clash: 'Mereka datang untuk mengguncang kemapanan yang kamu bangun. Gesekan ini bukan untuk menghancurkan, tapi memastikan kamu tidak terjebak dalam zona nyaman.',
+    harmony: 'Mereka mengerti beban tanggung jawabmu tanpa kamu perlu menjelaskan. Sedikit orang yang bisa membaca diammu seperti mereka.',
+    clash: 'Mereka mengguncang kemapanan yang kamu bangun. Bukan untuk menghancurkan, tapi memastikan kamu tidak nyaman di tempat yang salah.',
   },
   '寅': {
-    harmony: 'Mereka menyediakan nutrisi bagi visi besarmu. Tanpa banyak bicara, mereka memahami bahwa kebebasan adalah oksigen yang membuatmu tetap hidup.',
-    clash: 'Mereka adalah pemangkas bagi dahanmu yang terlalu liar. Pertemuan ini menyakitkan, namun perlu agar energimu tidak terbuang sia-sia pada hal yang salah.',
+    harmony: 'Mereka memberi ruang untuk visi besarmu. Tanpa banyak bicara, mereka tahu kamu butuh kebebasan seperti udara.',
+    clash: 'Mereka memangkas dahanmu yang terlalu liar. Sakit, tapi memastikan energimu tidak terbuang ke arah yang salah.',
   },
   '卯': {
-    harmony: 'Kesetiaan mereka adalah perisai bagi sisi lembutmu yang jarang diperlihatkan. Di dekat mereka, kamu tidak perlu selalu waspada terhadap dunia.',
-    clash: 'Ketajaman mereka seringkali melukai sensitivitasmu. Namun, mereka adalah cermin yang jujur tentang bagian dari dirimu yang selama ini terlalu rapuh.',
+    harmony: 'Mereka melindungi sisi lembutmu yang jarang kamu perlihatkan. Di dekat mereka, kamu tidak perlu selalu waspada.',
+    clash: 'Ketajaman mereka sering melukai sensitivitasmu. Tapi mereka jujur tentang bagian dirimu yang selama ini terlalu rapuh.',
   },
   '辰': {
-    harmony: 'Hanya mereka yang sanggup mengimbangi intensitasmu tanpa merasa terancam. Sebuah kemitraan yang mengubah energi mentah menjadi sesuatu yang bernilai tinggi.',
-    clash: 'Dua otoritas dalam satu ruang. Mereka menantang dominasimu, memaksa kamu belajar bahwa kekuatan sejati terkadang muncul dari kemampuan untuk mengalah.',
+    harmony: 'Mereka mengimbangi intensitasmu tanpa merasa terancam. Bersama mereka, energi mentahmu berubah jadi sesuatu yang bernilai.',
+    clash: 'Dua otoritas dalam satu ruang. Mereka menantang dominasimu, mengajarkan bahwa kekuatan sejati kadang muncul dari kemampuan mengalah.',
   },
   '巳': {
-    harmony: 'Kalian berbagi bahasa rahasia yang sama. Mereka memahami strategi di balik diammu, membuat eksekusi rencana besarmu terasa jauh lebih mudah.',
-    clash: 'Mereka memprovokasi emosi yang biasanya kamu sembunyikan dengan rapat. Kehadiran mereka adalah ujian bagi ketenangan yang selama ini kamu banggakan.',
+    harmony: 'Kalian berbagi bahasa rahasia yang sama. Mereka mengerti strategi di balik diammu, membuat rencanamu jauh lebih mudah dieksekusi.',
+    clash: 'Mereka memprovokasi emosi yang biasanya kamu sembunyikan rapat-rapat. Ujian bagi ketenangan yang selama ini kamu banggakan.',
   },
   '午': {
-    harmony: 'Mereka adalah tempat bernaung saat apimu mulai melelahkan diri sendiri. Kehadiran mereka memberikan kesejukan yang menjaga momentummu tetap stabil dan panjang.',
-    clash: 'Arus mereka berlawanan dengan gairahmu. Mereka akan sering menghentikan langkahmu secara tiba-tiba, memaksa kamu mengevaluasi arah tujuan sebelum terlambat.',
+    harmony: 'Mereka tempat bernaung saat apimu mulai melelahkan diri sendiri. Kesejukan mereka menjaga momentummu tetap stabil.',
+    clash: 'Arus mereka berlawanan dengan gairahmu. Mereka sering menghentikan langkahmu tiba-tiba, memaksamu mengevaluasi arah sebelum terlambat.',
   },
   '未': {
-    harmony: 'Mereka memberi kehangatan yang membuat ketangguhanmu melunak secara alami. Bersama mereka, kamu tidak perlu memikul beban dunia sendirian.',
-    clash: 'Mereka merobek ketenangan yang kamu jaga dengan susah payah. Konflik ini adalah cara semesta membongkar struktur hidupmu yang sudah tidak lagi relevan.',
+    harmony: 'Kehangatan mereka melunakkan ketangguhanmu secara alami. Bersama mereka, kamu tidak perlu memikul beban dunia sendirian.',
+    clash: 'Mereka merobek ketenangan yang kamu jaga susah payah. Tanda bahwa ada bagian hidupmu yang sudah harus dibongkar.',
   },
   '申': {
-    harmony: 'Sinergi ini adalah tentang pemurnian. Mereka mampu menangkap ide-ide liarmu dan mengasahnya menjadi instrumen yang tajam dan siap pakai.',
-    clash: 'Langkah mereka seringkali mengacaukan ritme kerjamu. Mereka adalah ujian bagi fleksibilitasmu, memaksamu beradaptasi saat rencana yang paling matang sekalipun berantakan.',
+    harmony: 'Mereka mengasah ide-ide liarmu menjadi instrumen yang siap pakai. Sinergi yang mempertajam, bukan menumpulkan.',
+    clash: 'Langkah mereka mengacaukan ritme kerjamu. Ujian bagi fleksibilitasmu saat rencana paling matang sekalipun berantakan.',
   },
   '酉': {
-    harmony: 'Mereka memberikan struktur pada kilauanmu. Ada pengakuan tulus yang membuatmu merasa divalidasi tanpa harus berteriak meminta perhatian.',
-    clash: 'Mereka mencabut akar kenyamananmu dengan kritik yang tak terduga. Kehadiran mereka memaksa kamu tumbuh di luar taman yang selama ini kamu batasi.',
+    harmony: 'Mereka memberi struktur pada kilauanmu. Pengakuan tulus yang membuatmu merasa divalidasi tanpa harus meminta perhatian.',
+    clash: 'Kritik mereka mencabut akar kenyamananmu tiba-tiba. Memaksamu tumbuh di luar taman yang selama ini kamu batasi.',
   },
   '戌': {
-    harmony: 'Di balik dinding yang kamu bangun, hanya mereka yang diizinkan masuk. Kelembutan mereka adalah satu-satunya hal yang bisa meruntuhkan kewaspadaanmu.',
-    clash: 'Mereka adalah badai yang menghantam tembok pertahananmu. Pertemuan ini menuntutmu untuk jujur: apakah yang kamu lindungi itu harta, atau hanya rasa takut?',
+    harmony: 'Hanya mereka yang diizinkan masuk ke balik dinding yang kamu bangun. Kelembutan mereka satu-satunya hal yang bisa meruntuhkan kewaspadaanmu.',
+    clash: 'Mereka badai yang menghantam tembok pertahananmu. Menuntutmu jujur: apa yang kamu lindungi itu harta, atau hanya rasa takut?',
   },
   '亥': {
-    harmony: 'Mereka adalah ruang bagi pertumbuhanmu. Bersama mereka, wawasanmu meluas dan intuisi yang biasanya kamu ragukan mulai menemukan kebenaran praktisnya.',
-    clash: 'Kehadiran mereka memicu gejolak di bawah permukaan tenangmu. Mereka menantangmu untuk berhenti mengalir tanpa arah dan mulai menentukan sikap yang nyata.',
+    harmony: 'Mereka ruang untuk pertumbuhanmu. Bersama mereka, wawasanmu meluas dan intuisimu mulai menemukan kebenaran praktis.',
+    clash: 'Mereka memicu gejolak di bawah permukaan tenangmu. Menantangmu berhenti mengalir tanpa arah dan mulai punya sikap nyata.',
   },
 }
