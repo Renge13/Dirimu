@@ -3,6 +3,7 @@ import { calculateBaziChart, getInterpretation, runValidation } from '@/lib/bazi
 import BaziCard from '@/components/card/BaziCard.jsx'
 import Report from '@/components/Report.jsx'
 import { exportCardAsPNG } from '@/utils/exportCard.jsx'
+import { ARCHETYPE_EMOJI } from '@/lib/bazi/elementConfig.js'
 import './App.css'
 
 const ELEMENT_LABEL = {
@@ -20,6 +21,15 @@ const PILLAR_LABELS = {
   month: 'Bulan',
   day:   'Hari',
   hour:  'Jam',
+}
+
+/* One-line meaning per pillar — converts the technical 八字 readout
+   into emotionally legible labels for non-BaZi-fluent readers. */
+const PILLAR_MEANINGS = {
+  year:  'cara dunia melihatmu',
+  month: 'cara kamu bekerja',
+  day:   'inti dirimu',
+  hour:  'sisi pribadi yang jarang terlihat',
 }
 
 /* Indonesian month names, 1-indexed via .value strings */
@@ -62,13 +72,14 @@ function daysInMonth(monthStr, yearStr) {
 function Pillar({ labelKey, pillar, isDayMaster }) {
   return (
     <div className={`pillar${isDayMaster ? ' pillar--day' : ''}`}>
-      {isDayMaster && <div className="pillar-badge">Hari Master</div>}
+      {isDayMaster && <div className="pillar-badge">Energi Intimu</div>}
       <div className="pillar-label">{PILLAR_LABELS[labelKey]}</div>
       <div className="pillar-stem">{pillar.stem}</div>
       <div className="pillar-branch">{pillar.branch}</div>
       <div className="pillar-element">
         {ELEMENT_LABEL[pillar.element]} · {pillar.polarity}
       </div>
+      <div className="pillar-meaning">{PILLAR_MEANINGS[labelKey]}</div>
     </div>
   )
 }
@@ -78,6 +89,7 @@ function PillarEmpty({ labelKey }) {
     <div className="pillar pillar-empty">
       <div className="pillar-label">{PILLAR_LABELS[labelKey]}</div>
       <div className="pillar-empty-text">Tidak diketahui</div>
+      <div className="pillar-meaning">{PILLAR_MEANINGS[labelKey]}</div>
     </div>
   )
 }
@@ -264,6 +276,9 @@ function App() {
 
           {/* Pillars */}
           <div className="section-title">Empat Pilarmu</div>
+          <p className="section-caption">
+            Kepribadianmu dibentuk dari empat lapisan energi.
+          </p>
           <div className="pillars">
             <Pillar labelKey="year"  pillar={result.year} />
             <Pillar labelKey="month" pillar={result.month} />
@@ -335,7 +350,10 @@ function App() {
           {/* Day Master + Balance */}
           <div className="lower-grid">
             <div className="info-card">
-              <div className="section-title">Hari Master</div>
+              <div className="section-title">Energi Intimu</div>
+              <p className="section-caption">
+                Dalam 八字, energi inti diambil dari elemen pada hari kelahiranmu.
+              </p>
               <div className="day-master-display">
                 <span className="day-master-stem">{result.dayMaster.stem}</span>
                 <span className="day-master-meta">
@@ -371,18 +389,22 @@ function App() {
             </div>
           </div>
 
-          {/* Relations — each block pairs label + branch chips + description */}
-          {(result.harmonyBranches.length > 0 || result.clashBranches.length > 0) && (
+          {/* Relations — archetype-named chips so reader doesn't have to remember branches */}
+          {((result.interpretation?.selarasArchetypes?.length > 0) ||
+            (result.interpretation?.pemicuArchetypes?.length > 0)) && (
             <div className="relations-card">
               <div className="section-title">Relasi Cabang</div>
 
-              {result.harmonyBranches.length > 0 && (
+              {result.interpretation?.selarasArchetypes?.length > 0 && (
                 <div className="relation-block relation-block--harmony">
                   <div className="relation-header">
-                    <span className="relation-label">Selaras</span>
+                    <span className="relation-label">Cocok Dengan</span>
                     <span className="relation-chips">
-                      {result.harmonyBranches.map((b) => (
-                        <span className="chip chip--harmony" key={b}>{b}</span>
+                      {result.interpretation.selarasArchetypes.map((a) => (
+                        <span className="chip chip--harmony" key={a.stem}>
+                          <span className="chip-emoji" aria-hidden="true">{ARCHETYPE_EMOJI[a.stem] || ''}</span>
+                          {a.name}
+                        </span>
                       ))}
                     </span>
                   </div>
@@ -392,13 +414,16 @@ function App() {
                 </div>
               )}
 
-              {result.clashBranches.length > 0 && (
+              {result.interpretation?.pemicuArchetypes?.length > 0 && (
                 <div className="relation-block relation-block--clash">
                   <div className="relation-header">
-                    <span className="relation-label">Pemicu</span>
+                    <span className="relation-label">Perlu Dijaga Dengan</span>
                     <span className="relation-chips">
-                      {result.clashBranches.map((b) => (
-                        <span className="chip chip--clash" key={b}>{b}</span>
+                      {result.interpretation.pemicuArchetypes.map((a) => (
+                        <span className="chip chip--clash" key={a.stem}>
+                          <span className="chip-emoji" aria-hidden="true">{ARCHETYPE_EMOJI[a.stem] || ''}</span>
+                          {a.name}
+                        </span>
                       ))}
                     </span>
                   </div>

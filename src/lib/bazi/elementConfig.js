@@ -60,3 +60,21 @@ export const ELEMENT_CONFIG = {
     label:       'LOGAM',
   },
 }
+
+/* ── Per-archetype emoji ─────────────────────────────────────
+   Used by sharecard COCOK DENGAN / PERLU DIJAGA DENGAN chips and
+   the Relasi Cabang section on the reading page. Pictographic
+   recall — reader recognizes the archetype without reading.
+   ============================================================ */
+export const ARCHETYPE_EMOJI = {
+  '甲': '🌳', // Pohon Oak
+  '乙': '🌱', // Tanaman Rambat
+  '丙': '☀️', // Matahari
+  '丁': '🕯️', // Lilin
+  '戊': '⛰️', // Gunung
+  '己': '🌾', // Ladang
+  '庚': '⚔️', // Pedang
+  '辛': '💎', // Permata
+  '壬': '🌊', // Samudra
+  '癸': '🌧️', // Hujan
+}

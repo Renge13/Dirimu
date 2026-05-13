@@ -10,7 +10,7 @@
 // container stays at its declared height — fixed-grid invariant.
 // ============================================================
 
-import { ELEMENT_CONFIG } from '../../lib/bazi/elementConfig.js'
+import { ELEMENT_CONFIG, ARCHETYPE_EMOJI } from '../../lib/bazi/elementConfig.js'
 import { WatercolorIllustration } from './WatercolorIllustration.jsx'
 import {
   IconFlame,
@@ -116,8 +116,8 @@ function SocialColumn({ label, element, archetypes, scale, align = 'left' }) {
   if (!archetypes || archetypes.length === 0) return <div />
   return (
     <div style={{
-      paddingLeft:  align === 'right' ? scale * 10 : 0,
-      paddingRight: align === 'left'  ? scale * 10 : 0,
+      paddingLeft:  align === 'right' ? scale * 8 : 0,
+      paddingRight: align === 'left'  ? scale * 8 : 0,
     }}>
       <div style={{
         display:       'flex',
@@ -125,11 +125,13 @@ function SocialColumn({ label, element, archetypes, scale, align = 'left' }) {
         gap:           scale * 4,
         marginBottom:  scale * 3,
       }}>
-        <ElementIcon element={element} size={scale * 11} color={BASE.muted} />
+        <ElementIcon element={element} size={scale * 10} color={BASE.muted} />
         <span style={{
-          fontSize:      scale * 9,
-          letterSpacing: scale * 1.5,
+          fontSize:      scale * 7.5,
+          letterSpacing: scale * 1.1,
           color:         BASE.muted,
+          fontWeight:    600,
+          whiteSpace:    'nowrap',
         }}>
           {label}
         </span>
@@ -139,7 +141,11 @@ function SocialColumn({ label, element, archetypes, scale, align = 'left' }) {
           fontSize:   scale * 10,
           color:      BASE.textPrimary,
           lineHeight: 1.55,
+          whiteSpace: 'nowrap',
         }}>
+          <span style={{ marginRight: scale * 4 }}>
+            {ARCHETYPE_EMOJI[a.stem] || ''}
+          </span>
           {a.name}
         </div>
       ))}
@@ -164,6 +170,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
     dayMasterName,
     dayMasterChinese,
     taglineCard,
+    subtitle,
     kekuatanDescriptors = [],
     bayanganDescriptors = [],
     dampakDescriptors   = [],
@@ -251,7 +258,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         </div>
         {/* Archetype name */}
         <div style={{
-          fontSize:      s(30),
+          fontSize:      s(28),
           fontFamily:    'Georgia, "Playfair Display", "Times New Roman", serif',
           fontWeight:    700,
           color:         cfg.deep,
@@ -261,15 +268,27 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         }}>
           {dayMasterName}
         </div>
+        {/* Subtitle — person-first identity gloss */}
+        {subtitle && (
+          <div style={{
+            fontSize:    s(9.5),
+            color:       BASE.textSecondary,
+            marginTop:   s(5),
+            lineHeight:  1.4,
+            fontWeight:  500,
+          }}>
+            {subtitle}
+          </div>
+        )}
         {/* Tagline (no subject pronoun) */}
         {taglineCard && (
           <div style={{
-            fontSize:    s(10.5),
+            fontSize:    s(10),
             fontStyle:   'italic',
             fontFamily:  'Georgia, "Playfair Display", "Times New Roman", serif',
             color:       BASE.textSecondary,
-            marginTop:   s(6),
-            lineHeight:  1.45,
+            marginTop:   s(subtitle ? 3 : 6),
+            lineHeight:  1.4,
           }}>
             “{taglineCard}”
           </div>
@@ -308,7 +327,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
           showTopBorder={false}
         />
         <DimRow
-          label="BAYANGAN"
+          label="SISI LAIN"
           dotColor={BASE.bayanganDot}
           labelColor={BASE.bayanganDot}
           items={bayanganDescriptors}
@@ -373,7 +392,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         alignItems:          'center',
       }}>
         <SocialColumn
-          label="SELARAS"
+          label="COCOK DENGAN"
           element={selarasElement}
           archetypes={selarasArchetypes}
           scale={scale}
@@ -385,7 +404,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
           width:      scale,
         }} />
         <SocialColumn
-          label="PEMICU"
+          label="PERLU DIJAGA DENGAN"
           element={pemicuElement}
           archetypes={pemicuArchetypes}
           scale={scale}
@@ -408,7 +427,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
           color:         BASE.muted,
           fontWeight:    500,
         }}>
-          DIRIMU · 八字
+          DIRIMU · 八字命理
         </span>
         <span style={{
           fontSize:      s(9),

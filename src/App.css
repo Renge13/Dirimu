@@ -215,6 +215,16 @@
   margin-bottom: 20px;
 }
 
+/* Narrative caption directly under a section-title.
+   Bridges the technical 八字 readouts to plain-Indonesian meaning. */
+.section-caption {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  margin: -10px 0 18px;
+  max-width: 560px;
+}
+
 /* ── Pillars grid ───────────────────────────────────────── */
 .pillars {
   display: grid;
@@ -233,9 +243,7 @@
   padding: 24px 12px 18px;
   text-align: center;
   background: var(--ink-2);
-  transition: border-color 0.2s;
 }
-.pillar:hover { border-color: rgba(201,168,76,0.25); }
 
 .pillar--day {
   border-color: var(--gold-border);
@@ -287,6 +295,19 @@
   color: var(--muted);
   margin-top: 10px;
   letter-spacing: 0.5px;
+}
+
+/* Per-pillar meaning micro-caption.
+   Converts year/month/day/hour from technical labels into emotionally
+   legible phrases (cara dunia melihatmu / cara kamu bekerja / etc.). */
+.pillar-meaning {
+  font-size: 10px;
+  font-style: italic;
+  color: var(--muted);
+  opacity: 0.7;
+  margin-top: 8px;
+  line-height: 1.35;
+  padding: 0 4px;
 }
 
 .pillar-empty {
@@ -418,14 +439,21 @@
 }
 
 .chip {
-  display: inline-block;
-  padding: 3px 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 12px;
   border-radius: 20px;
   background: var(--ink-3);
   border: 1px solid var(--separator);
   color: var(--pearl);
   font-family: var(--heading);
   font-size: 13px;
+}
+
+.chip-emoji {
+  font-size: 14px;
+  line-height: 1;
 }
 /* Softer than red/green: harmony uses brand gold, clash uses muted pearl */
 .chip--harmony { border-color: var(--gold-border); color: var(--gold);  background: rgba(201,168,76,0.05); }

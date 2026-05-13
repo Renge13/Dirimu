@@ -30,8 +30,8 @@ export default function Report({ chart }) {
         <div className="report-cta-eyebrow">REFLEKSI · 反思</div>
         <h2 className="report-cta-title">Pola Pribadimu</h2>
         <p className="report-cta-blurb">
-          Bukan ramalan. Cermin reflektif untuk mengenali pola yang sering muncul
-          dalam diri orang dengan konfigurasi {report.chinese}.
+          Ini bukan tentang masa depanmu. Ini tentang pola dirimu yang sering
+          muncul tanpa sadar — refleksi mendalam untuk konfigurasi {report.chinese}.
         </p>
         <button
           className="report-cta-btn"

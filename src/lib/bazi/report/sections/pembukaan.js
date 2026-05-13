@@ -9,7 +9,7 @@
 import passages from '../passages/pembukaan.js'
 import { sectionFromPassage } from './_helpers.js'
 
-const TITLE = 'Pembukaan'
+const TITLE = 'Pola Dasarmu'
 const SECTION_KEY = 'pembukaan'
 
 // Opening rarely branches on chart features. Keep rules empty
