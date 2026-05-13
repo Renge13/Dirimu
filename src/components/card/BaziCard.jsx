@@ -184,7 +184,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
 
   const cardStyle = {
     width:        s(270),
-    height:       s(410),
+    height:       s(410),  // 28+115+135+76+56 = 410 (no footer)
     display:      'flex',
     flexDirection:'column',
     overflow:     'hidden',
@@ -221,18 +221,18 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         alignItems:     'center',
       }}>
         <span style={{
+          fontSize: s(9),
+          color:    BASE.muted,
+        }}>
+          {formatBirthDate(chart.birthDate)}
+        </span>
+        <span style={{
           fontSize:      s(9),
           letterSpacing: s(1.5),
           color:         BASE.muted,
           fontWeight:    500,
         }}>
-          DIRIMU · 八字命理
-        </span>
-        <span style={{
-          fontSize: s(9),
-          color:    BASE.muted,
-        }}>
-          {formatBirthDate(chart.birthDate)}
+          DIRIMU
         </span>
       </div>
 
@@ -298,10 +298,10 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
 
       {/* ── Zone 3 — REMOVED (watercolor image; reintroduce when art ready) ── */}
 
-      {/* ── Zone 4 — Three Dimensions (111px) ─────────────── */}
+      {/* ── Zone 4 — Three Dimensions (135px — expanded to fit DAMPAK without overflow clipping) */}
       <div style={{
-        ...zone(111),
-        padding:        `${s(4)}px ${s(14)}px`,
+        ...zone(135),
+        padding:        `${s(6)}px ${s(14)}px`,
         display:        'flex',
         flexDirection:  'column',
         justifyContent: 'space-around',
@@ -334,10 +334,10 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         />
       </div>
 
-      {/* ── Zone 5 — SIFAT (68px) ──────────────────────────── */}
+      {/* ── Zone 5 — SIFAT (76px) ──────────────────────────── */}
       <div style={{
-        ...zone(68),
-        padding: `${s(8)}px ${s(14)}px ${s(14)}px`,
+        ...zone(76),
+        padding: `${s(10)}px ${s(14)}px ${s(16)}px`,
       }}>
         <div style={{
           fontSize:      s(9),
@@ -371,9 +371,9 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         </div>
       </div>
 
-      {/* ── Zone 6 — Selaras / Pemicu (58px) ──────────────── */}
+      {/* ── Zone 6 — Selaras / Pemicu (56px, last zone — no bottom border) */}
       <div style={{
-        ...zone(58),
+        ...lastZone(56),
         padding:             `${s(10)}px ${s(14)}px ${s(14)}px`,
         display:             'grid',
         gridTemplateColumns: `1fr ${scale}px 1fr`,
@@ -400,24 +400,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         />
       </div>
 
-      {/* ── Zone 7 — Footer (28px, no bottom border) ─────── */}
-      <div style={{
-        ...lastZone(28),
-        padding:        `0 ${s(14)}px`,
-        display:        'flex',
-        justifyContent: 'flex-end',
-        alignItems:     'center',
-        borderTop:      `${scale}px solid ${BASE.divider}`,
-      }}>
-        <span style={{
-          fontSize:      s(9),
-          color:         BASE.veryMuted,
-          fontFamily:    'ui-monospace, Consolas, monospace',
-          letterSpacing: s(0.5),
-        }}>
-          dirimu.id
-        </span>
-      </div>
+      {/* Zone 7 removed — DIRIMU brand now appears once in Zone 1 header. */}
 
     </div>
   )
