@@ -60,8 +60,21 @@ export default function Report({ chart }) {
   }
 
   const section = report.sections[currentBab]
-  const remaining = report.sections.slice(currentBab + 1)
   const ordinal = BAB_ORDINALS[currentBab] || String(currentBab + 1)
+  const isLast = currentBab === report.sections.length - 1
+  const navLabel = isLast ? 'JELAJAHI BAB LAIN' : 'LANJUT KE BAB BERIKUTNYA'
+
+  function jumpTo(i) {
+    setCurrentBab(i)
+    // Scroll to top of the report so the reader lands on the new chapter
+    // header, not somewhere mid-body. requestAnimationFrame so the new
+    // chapter has rendered before we scroll.
+    requestAnimationFrame(() => {
+      document
+        .querySelector('.report-bab-header')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  }
 
   return (
     <article className="report-body">
@@ -86,40 +99,31 @@ export default function Report({ chart }) {
         )}
       </div>
 
-      {remaining.length > 0 ? (
-        <nav className="report-bab-nav">
-          <div className="report-bab-nav-label">LANJUT KE BAB BERIKUTNYA</div>
-          <ul className="report-bab-nav-list">
-            {remaining.map((s, idx) => {
-              const i = currentBab + 1 + idx
-              return (
-                <li key={s.sectionKey}>
-                  <button
-                    type="button"
-                    className="report-bab-nav-item"
-                    onClick={() => setCurrentBab(i)}
-                  >
-                    <span className="report-bab-nav-num">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="report-bab-nav-title">{s.title}</span>
-                    <span className="report-bab-nav-arrow" aria-hidden="true">→</span>
-                  </button>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
-      ) : (
-        <div className="report-bab-end">
-          <div className="report-bab-end-label">REFLEKSI SELESAI</div>
-          <button
-            type="button"
-            className="report-bab-restart-btn"
-            onClick={() => setCurrentBab(0)}
-          >
-            ← Kembali ke Bab Satu
-          </button>
-        </div>
-      )}
+      <nav className="report-bab-nav">
+        <div className="report-bab-nav-label">{navLabel}</div>
+        <ul className="report-bab-nav-list">
+          {report.sections.map((s, i) => {
+            const isCurrent = i === currentBab
+            return (
+              <li key={s.sectionKey}>
+                <button
+                  type="button"
+                  className={`report-bab-nav-item${isCurrent ? ' report-bab-nav-item--current' : ''}`}
+                  onClick={isCurrent ? undefined : () => jumpTo(i)}
+                  aria-current={isCurrent ? 'true' : undefined}
+                  disabled={isCurrent}
+                >
+                  <span className="report-bab-nav-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="report-bab-nav-title">{s.title}</span>
+                  <span className="report-bab-nav-arrow" aria-hidden="true">
+                    {isCurrent ? '●' : '→'}
+                  </span>
+                </button>
+              </li>
+            )
+          })}
+        </ul>
+      </nav>
 
       <button
         className="report-collapse-btn"

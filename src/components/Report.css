@@ -226,6 +226,20 @@
   border-bottom: none;
 }
 
+/* Current chapter — visually distinct, not clickable. Marker dot
+   replaces the arrow; accent color signals "you are here". */
+.report-bab-nav-item--current,
+.report-bab-nav-item--current:hover {
+  background: var(--rpt-prompt-bg);
+  cursor: default;
+}
+
+.report-bab-nav-item--current .report-bab-nav-num,
+.report-bab-nav-item--current .report-bab-nav-title,
+.report-bab-nav-item--current .report-bab-nav-arrow {
+  color: var(--rpt-accent);
+}
+
 .report-bab-nav-num {
   font-family: var(--sans);
   font-size: 11px;
