@@ -1,0 +1,245 @@
+# Dirimu — BaZi reading webapp
+
+Personal project. Live at https://dirimu.vercel.app (private demo), code at https://github.com/Renge13/Dirimu.
+
+**Critical identity note**: this is a **personal** project on Reyner's personal GitHub (`Renge13`), not the Cata work account (`reynercata`). Local repo has `user.email = reynersoendojo@gmail.com` and `user.name = Reyner Soendojo` so commits attribute correctly even though the default global identity is the work one. Never push under work credentials; never amend git config globally from this repo.
+
+---
+
+## Product positioning
+
+A **reflective lens for emotionally intelligent skeptics** — urban millennial / Gen Z professionals, creatives, knowledge workers who use systems like MBTI / Human Design / tarot as **self-reflection interfaces**, not as oracles.
+
+- **NOT predictive astrology.** No fortune-telling vocabulary, no "akan / pasti / selalu" forecasts.
+- The product wins on emotional resonance, identity articulation, narrative coherence. Never on metaphysical authority.
+- Winners in this category own a **ritual**, not just content. The free reading is the ritual.
+- Target reader: Indonesian female, 20s–40s, intelligent, real adult stakes (career, relationships, money). She wants to feel **seen effortlessly**. Every moment of confusion / terminology / abstraction reduces immersion.
+
+**Two surfaces, two strategies:**
+- **Sharecard** = marketing / viral distribution. Lightweight, screenshot-bait, posted to IG Story. PNG export 1080×1920 via html2canvas.
+- **Free reading** = paywall hook. Deep, validating, opens a loop. Long-form reflective report engine.
+
+Deterministic system — **explicitly no AI API at runtime**. The reflective voice generalises naturally across same-Day-Master charts via deterministic seeded selection.
+
+---
+
+## Stack
+
+- Vite + React 19 (JSX, no TypeScript)
+- Vercel deployment from `main` branch
+- `@tabler/icons-react` for element icons
+- `html2canvas` for PNG export
+- `astronomia` (dev) for precomputed solar terms table
+- No Tailwind, no shadcn — handwritten CSS with named tokens
+
+---
+
+## Architecture overview
+
+```
+src/
+  App.jsx                          # main reading page
+  App.css                          # site-wide styling
+  index.css                        # global tokens (watercolor palette)
+  lib/
+    bazi/
+      stems.js                     # 10 Heavenly Stems + 12 Earthly Branches data
+      solarTerms.js                # precomputed solar terms 1900–2030
+      calculator.js                # chart calculation (deterministic, pure)
+      elementCycle.js              # 5-element generation / control cycles
+      elementConfig.js             # element palette + ARCHETYPE_EMOJI map
+      index.js                     # public API: calculateBaziChart, getInterpretation, getReport, runValidation
+      interpretation/
+        index.js                   # chart → InterpretationJSON composer
+        dayMasters.js              # 10 archetype banks (name, chinese, subtitle, tagline, hero, identityPills, traits, taglineCard, kekuatan/bayangan/dampakDescriptors, sifatPills)
+        dayBranches.js             # 12 branches with harmony/clash narratives
+        elementImpact.js           # DOMINANT_ELEMENT and MISSING_ELEMENT prose
+        paidHooks.js               # PAID_HOOK_TEMPLATE for the paywall blurb
+        pickN.js                   # deterministic seeded picker
+      report/
+        composer.js                # chart → report (7 sections in narrative order)
+        features.js                # ~15 chart-feature detectors (used by inserts)
+        prompts.js                 # reflection prompts library (intentionally empty — see decisions)
+        sections/                  # 7 composers, one per section
+        passages/                  # 7 banks, one per section, each keyed by stem
+  components/
+    Report.jsx + Report.css        # accordion-style 7-chapter reader
+    card/
+      BaziCard.jsx                 # 6-zone TCG-style sharecard (was 7, Zone 3 image removed)
+      WatercolorIllustration.jsx   # SVG abstract wash per element (currently unused)
+  utils/
+    exportCard.jsx                 # html2canvas → PNG download
+scripts/
+  check-copy.js                    # em-dash guard run on every commit (npm run check:copy)
+  generate-solar-terms.js          # builds solarTerms.js from astronomia
+```
+
+---
+
+## Voice rules (non-negotiable)
+
+Carried across every passage bank. Violations are bugs.
+
+1. **Observation, never declaration.** Write what the *pattern* tends to be, not what the reader IS. Use "sering / cenderung / kadang / mungkin pernah". Avoid "kamu adalah X."
+2. **Invite, don't predict.** No "akan / pasti / selalu" forecasting. (Negation is fine: "tidak pernah X" describes felt state, not forecast.)
+3. **Archetype as metaphor, not fact.** The system is a **mirror**, not a destiny diagram.
+4. **No mystical authority.** Banned: "alam semesta mengatur", "energi kosmis", "ramalan", "takdir". OK: "pola simbolik", "kerangka refleksi", "cermin".
+5. **Hyper-specific phrases**, not single nouns. ❌ `"workaholic"` → ✓ `"kerja keras sampai lupa istirahat"`.
+6. **No em-dashes** anywhere in copy. Use commas, periods, or parentheses. Enforced by `npm run check:copy`.
+7. **One metaphor system per phrase.** No stacking. ❌ `"Kesetiaan yang tidak pamer, tapi selalu ada panen"` (emotion + farming collision).
+8. **Sharecard surface = no subject pronoun** (no aku/kamu/dia in tagline, descriptors, subtitle). Reading surface = `kamu` is fine and expected.
+9. **Section subtitle direction = person-first**, not symbol-first. ✓ `"Pribadi yang tumbuh pelan..."` ❌ `"Bumi yang menumbuhkan..."`.
+10. **Plain Indonesian.** If a phrase reads as translated from English, reject it. The reader can sense it doesn't fit.
+
+---
+
+## The 10 Day Master archetypes
+
+| Stem | Element | Polarity | Indonesian name | Emoji | Tegangan |
+|------|---------|----------|-----------------|-------|----------|
+| 甲 | Wood | Yang | Pohon Oak | 🌳 | Kekokohan vs. sulit bertumpu |
+| 乙 | Wood | Yin | Tanaman Rambat | 🌱 | Kelenturan vs. lupa bentuk asli |
+| 丙 | Fire | Yang | Matahari | ☀️ | Kehangatan vs. jarang ditanya butuh dihangatkan |
+| 丁 | Fire | Yin | Lilin | 🕯️ | Nyala setia vs. terbakar tanpa disadari |
+| 戊 | Earth | Yang | Gunung | ⛰️ | Stabilitas vs. sulit bergerak |
+| 己 | Earth | Yin | Ladang | 🌾 | Kesuburan vs. lupa menyisakan panen sendiri |
+| 庚 | Metal | Yang | Pedang | ⚔️ | Ketajaman vs. melukai tanpa sengaja |
+| 辛 | Metal | Yin | Permata | 💎 | Standar tinggi vs. jarang merasa cukup |
+| 壬 | Water | Yang | Samudra | 🌊 | Keluasan vs. sulit dipegang sendiri |
+| 癸 | Water | Yin | Hujan | 🌧️ | Meresap vs. kehilangan batas |
+
+Reyner himself is **丙 Matahari** (1989-09-13 09:00 → 丙子日). All voice locks done against his chart; he can validate against felt experience.
+
+---
+
+## Reading flow (App.jsx surfaces, top to bottom)
+
+1. Hero — `DIRIMU` wordmark + `Empat Pilar Nasibmu...` tagline
+2. Form — date selectors + optional time + `Lihat Empat Pilarku →` submit (smooth-scrolls to result)
+3. **Empat Pilarmu** — 4-pillar grid with `Energi Intimu` badge on day pillar, per-pillar meaning captions
+4. **Persona** = sharecard (BaziCard) + Simpan Gambar (PNG download)
+5. **Archetype card** — hero description + identity pills
+6. **Sifat-sifatmu** — personality traits list
+7. **Komposisi Energimu** — 5-element bars with plain-Indonesian meaning per element, dominant/missing prose note
+8. **Relasi Cabang** — `Cocok Dengan / Perlu Dijaga Dengan` archetype chips (with emoji)
+9. **Refleksi** (gated behind `Buka Refleksi →` CTA) — opens to accordion with 7 chapters
+10. **Bacaan Mendalam** — gold-foil bordered paywall block
+
+---
+
+## Refleksi (the deep read)
+
+7 chapters, accordion pattern (shadcn-style, single-open, Bab 1 default-open). Click any closed row to expand; previous one collapses. Click the open row = no-op.
+
+| Bab | Section title | Source file | Purpose |
+|-----|--------------|-------------|---------|
+| 1 | Pola Dasar | `passages/pembukaan.js` | Orientation. Frames the archetype as metaphor. |
+| 2 | Cara Kamu Hadir | `passages/caraKamuHadir.js` | Personality pattern. How this archetype shows up. |
+| 3 | Pola di Hubungan | `passages/polaDiHubungan.js` | Relationship pattern. |
+| 4 | Pola di Pekerjaan | `passages/polaDiPekerjaan.js` | Work pattern. |
+| 5 | Hubunganmu dengan Rezeki | `passages/hubunganDenganRezeki.js` | Relationship with money (not financial advice). |
+| 6 | Tubuh & Energi | `passages/polaDiTubuh.js` | Body/energy pattern (not wellness advice). |
+| 7 | Refleksi Akhir | `passages/penutup.js` | Closing. Names central tension + open declarative invitation. |
+
+**Variation structure:**
+- Each section has 10 unique cores keyed by stem (`'甲' / '乙' / ... / '癸'`) → **70 unique passages site-wide**.
+- Within each core, conditional inserts fire based on chart features (`missing_Water`, `fireExcess`, `doubleBranch_巳`, etc.) — defined in `report/features.js`.
+- Same chart → same output (deterministic seeded `pickN`). Different charts of the same archetype can read differently.
+- The ONLY content shared across all 10 archetypes is the unified Pola Dasar opener: `"Bukan ramalan tentang masa depan. Tapi cermin pola yang sering muncul tanpa kamu sadari."` That's product framing, not archetype voice.
+- `prompts.js` is intentionally empty — partner directive: "deliver epiphany, not rhetorics". Renderer skips the italic prompt line when empty.
+
+---
+
+## Watercolor palette (Phase 6 lock)
+
+Site-wide named tokens in `src/index.css`:
+
+| Token | Hex | Use |
+|-------|-----|-----|
+| `--kertas` | `#F6F1E8` | Primary bg (paper cream) |
+| `--kertas-2` | `#FBF7F3` | Card bg (slightly off) |
+| `--tinta` | `#2A2520` | Primary text (deep ink) |
+| `--tinta-soft` | `#5A4A3A` | Secondary text |
+| `--kayu` | `#5B3A22` | Drop caps, archetype names, section titles |
+| `--emas` | `#B08442` | Eyebrows, paywall accent, gold-foil ring |
+| `--terra` | `#C56F50` | Primary CTAs, action accents |
+| `--sage` | `#7C8B6F` | Cocok Dengan (harmony), Wood balance bar |
+| `--senja` | `#6B7F94` | Perlu Dijaga Dengan (clash), Water balance bar |
+
+Legacy aliases (`--ink`, `--pearl`, `--gold`) remap to the new palette so existing CSS rules continue to work. Future cleanup can deprecate.
+
+Per-element balance bars: Wood→Sage, Fire→Terra, Earth→Emas, Metal→`#9DA1A8` (neutral slate), Water→Senja.
+
+BaziCard inline `BASE` palette uses literal hex (not `var()`) for html2canvas PNG export reliability.
+
+---
+
+## Tooling commands
+
+```bash
+npm run dev                    # vite dev server (localhost:5173)
+npm run build                  # production build → dist/
+npm run check:copy             # em-dash guard across all copy banks
+npm run generate:solar-terms   # rebuild solarTerms.js (rarely needed)
+```
+
+**Pre-commit ritual:**
+1. `npm run check:copy` — must pass
+2. `npm run build` — must succeed
+3. Smoke-test on Reyner's chart (1989-09-13 09:00 → 丙 Matahari) via Node REPL or browser
+4. Then commit + push
+
+---
+
+## Working with the copywriter (C2)
+
+Content is drafted by an external copywriter referenced as "C2". The workflow for each content bank:
+
+1. I draft a tightly-scoped prompt with voice rules, BAD/GOOD examples, exact deliverable format (single JS object), and exact existing text being replaced.
+2. User pastes prompt into C2's chat.
+3. User pastes C2's reply back.
+4. I integrate (surgical `Edit` calls on the relevant passage files), preserve positions in arrays so deterministic `pickN` selections stay stable, run `check:copy + build + smoke`, commit, push.
+5. Tester reads live. New flags become next bank's brief.
+
+Bank history (most recent first):
+- **Bank 9d** — 庚 metaphor fixes (4) + systemic Penutup opener pattern rewrite (10 archetypes, "X hidup di tegangan ini:" → "Kekuatan terbesarmu sebagai X sering juga menjadi sumber kelelahannya:")
+- **Bank 9c-pilot** — 己 Ladang trait audit (8 traits + 12 pills); editorial guardrail "one metaphor system per phrase" established
+- **Bank 9a** — 10 person-first archetype subtitles for the card
+- **Banks 1–7** — the 7 reflection sections × 10 archetypes filled (70 cores)
+
+Pending content work:
+- **Bank 9c-extended** — propagate the trait audit to the other 9 archetypes (after 己 voice locks in user review)
+- Potential 9d-style metaphor audit on the other 9 archetypes' middle sections (Hubungan / Pekerjaan / Tubuh / Rezeki / Penutup) — Pedang is unlikely to be the only one with awkward stretch
+
+---
+
+## Recent UX evolution (most recent first)
+
+- **Phase 6** — full watercolor canvas redesign (palette migration, shadcn accordion for Refleksi, gold-foil paywall branding, form hug-content, scroll-to-result anchor, sharecard padding fix, footer redundancy removed)
+- **Phase 5c** — accordion back-nav fix, form compact-pill submit
+- **Phase 5a–b** — first tester legibility pass: archetype subtitles, person-first Ladang traits, BAYANGAN → SISI LAIN, SELARAS/PEMICU → COCOK DENGAN / PERLU DIJAGA DENGAN with archetype emoji
+- **Phase 4** — long-form report engine (composer + 70 passage cores)
+- **Phase 3** — TCG-style 7-zone sharecard on watercolor canvas (later reduced to 6 zones)
+- **Phase 2** — initial sharecard + project relocated from C:\ to D:\claude-projects\dirimu
+- **Phase 0–1** — Vite scaffold + BaZi engine integration
+
+---
+
+## Out of scope (do not work on unless explicitly asked)
+
+- **Reflection prompts library** — explicitly killed per partner directive.
+- **Major luck pillars (大运) / annual luck (流年)** — paid tier, not in scope until paywall is built.
+- **AI API integration** — explicitly off the table; deterministic only.
+- **Mobile-specific layout passes** beyond the existing breakpoints.
+- **Bundle size optimisation** — main chunk ~544 KB. Defer until users complain.
+- **Real watercolor archetype illustrations** — BaziCard Zone 3 removed in Phase 6 pending real art.
+
+---
+
+## Defaults for any new session
+
+- Read this file first. The plan file at `~/.claude/plans/build-a-react-webapp-streamed-candle.md` has the long historical context across all phases.
+- Confirm the user wants you to write code before doing anything destructive. Default to plan mode for sizeable changes.
+- For copy work: draft a tightly-scoped C2 prompt, never write Indonesian copy directly unless the user explicitly delegates it.
+- Smoke chart is **1989-09-13 09:00** (Reyner, 丙 Matahari) unless the user is testing a different archetype.
+- Commit attribution must be the personal identity (`reynersoendojo@gmail.com`). Push only to `Renge13/Dirimu`.
