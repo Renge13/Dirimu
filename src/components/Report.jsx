@@ -1,17 +1,16 @@
 // ============================================================
-// Report — long-form reflective reading (accordion / Bab pattern)
+// Report — long-form reflective reading (shadcn-style accordion)
 // ============================================================
 // Renders the report from getReport(chart). Behind a CTA so the
 // click itself is the tiny ritual of entering the deeper read.
 //
-// Inside, only ONE chapter (Bab) is visible at a time. After the
-// body, a numbered list of remaining chapters lets the reader
-// step forward. Modelled on Claude Design's mobile reader pattern
-// (BAB SATU / drop cap / LANJUT KE BAB BERIKUTNYA).
+// Inside: a vertical stack of 7 chapter rows (accordion items).
+// Single-open behavior — clicking a closed row opens it and
+// collapses the currently open one. Bab 1 (Pola Dasar) opens
+// by default. Clicking the currently-open row is a no-op so
+// the reader always has one chapter visible.
 //
-// Watercolor canvas styling matches the BaziCard. Sits as a
-// cream-on-dark contrasting block within the existing reading
-// page (Phase 6 will restyle the surrounding page to match).
+// Watercolor canvas styling unified with the site palette.
 // ============================================================
 
 import { useMemo, useState } from 'react'
@@ -30,7 +29,7 @@ const ELEMENT_LABEL_ID = {
 
 export default function Report({ chart }) {
   const [expanded, setExpanded] = useState(false)
-  const [currentBab, setCurrentBab] = useState(0)
+  const [openBab, setOpenBab] = useState(0)
   const report = useMemo(() => getReport(chart), [chart])
 
   if (!report?.sections?.length) return null
@@ -51,7 +50,7 @@ export default function Report({ chart }) {
         <button
           className="report-cta-btn"
           type="button"
-          onClick={() => { setExpanded(true); setCurrentBab(0) }}
+          onClick={() => { setExpanded(true); setOpenBab(0) }}
         >
           Buka Refleksi →
         </button>
@@ -59,71 +58,57 @@ export default function Report({ chart }) {
     )
   }
 
-  const section = report.sections[currentBab]
-  const ordinal = BAB_ORDINALS[currentBab] || String(currentBab + 1)
-  const isLast = currentBab === report.sections.length - 1
-  const navLabel = isLast ? 'JELAJAHI BAB LAIN' : 'LANJUT KE BAB BERIKUTNYA'
-
-  function jumpTo(i) {
-    setCurrentBab(i)
-    // Scroll to top of the report so the reader lands on the new chapter
-    // header, not somewhere mid-body. requestAnimationFrame so the new
-    // chapter has rendered before we scroll.
-    requestAnimationFrame(() => {
-      document
-        .querySelector('.report-bab-header')
-        ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    })
-  }
-
   return (
     <article className="report-body">
 
-      <header className="report-bab-header">
-        <div className="report-bab-eyebrow">BAB {ordinal}</div>
-        <h2 className="report-bab-title">{section.title}</h2>
-        {meta && <div className="report-bab-meta">{meta}</div>}
+      <header className="report-header">
+        <div className="report-eyebrow">REFLEKSI · {report.chinese}</div>
+        <h2 className="report-archetype">{report.archetype}</h2>
+        {meta && <div className="report-meta">{meta}</div>}
       </header>
 
-      <div className="report-bab-body">
-        {section.paragraphs.map((p, i) => (
-          <p
-            key={i}
-            className={`report-paragraph${i === 0 ? ' report-paragraph--first' : ''}`}
-          >
-            {p}
-          </p>
-        ))}
-        {section.reflectionPrompt && (
-          <p className="report-prompt">{section.reflectionPrompt}</p>
-        )}
-      </div>
+      <div className="report-accordion">
+        {report.sections.map((section, i) => {
+          const isOpen = i === openBab
+          const ordinal = BAB_ORDINALS[i] || String(i + 1)
+          return (
+            <div
+              key={section.sectionKey}
+              className={`bab-item${isOpen ? ' bab-item--open' : ''}`}
+            >
+              <button
+                type="button"
+                className="bab-row"
+                aria-expanded={isOpen}
+                aria-controls={`bab-panel-${i}`}
+                onClick={isOpen ? undefined : () => setOpenBab(i)}
+                disabled={isOpen}
+              >
+                <span className="bab-num">{String(i + 1).padStart(2, '0')}</span>
+                <span className="bab-title">{section.title}</span>
+                <span className="bab-chevron" aria-hidden="true">▾</span>
+              </button>
 
-      <nav className="report-bab-nav">
-        <div className="report-bab-nav-label">{navLabel}</div>
-        <ul className="report-bab-nav-list">
-          {report.sections.map((s, i) => {
-            const isCurrent = i === currentBab
-            return (
-              <li key={s.sectionKey}>
-                <button
-                  type="button"
-                  className={`report-bab-nav-item${isCurrent ? ' report-bab-nav-item--current' : ''}`}
-                  onClick={isCurrent ? undefined : () => jumpTo(i)}
-                  aria-current={isCurrent ? 'true' : undefined}
-                  disabled={isCurrent}
-                >
-                  <span className="report-bab-nav-num">{String(i + 1).padStart(2, '0')}</span>
-                  <span className="report-bab-nav-title">{s.title}</span>
-                  <span className="report-bab-nav-arrow" aria-hidden="true">
-                    {isCurrent ? '●' : '→'}
-                  </span>
-                </button>
-              </li>
-            )
-          })}
-        </ul>
-      </nav>
+              {isOpen && (
+                <div className="bab-panel" id={`bab-panel-${i}`} role="region">
+                  <div className="bab-panel-meta">BAB {ordinal}</div>
+                  {section.paragraphs.map((p, j) => (
+                    <p
+                      key={j}
+                      className={`report-paragraph${j === 0 ? ' report-paragraph--first' : ''}`}
+                    >
+                      {p}
+                    </p>
+                  ))}
+                  {section.reflectionPrompt && (
+                    <p className="report-prompt">{section.reflectionPrompt}</p>
+                  )}
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
 
       <button
         className="report-collapse-btn"

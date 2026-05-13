@@ -24,13 +24,13 @@ import {
 /* ── Palette (canvas neutrals shared across all elements) ──── */
 
 const BASE = {
-  bg:            '#FEFCF8',
+  bg:            '#F6F1E8',  // Kertas
   border:        '#E4DAD0',
   divider:       '#EDE5DC',
-  textPrimary:   '#3A2E24',
-  textSecondary: '#5A4A3A',
-  muted:         '#A8927E',
-  pillBg:        '#FBF7F3',
+  textPrimary:   '#2A2520',  // Tinta
+  textSecondary: '#5A4A3A',  // Tinta-soft
+  muted:         '#A8927E',  // muted-warm
+  pillBg:        '#FBF7F3',  // Kertas-2
   pillBorder:    '#E0D4C8',
   bayanganDot:   '#9A8878',
   veryMuted:     '#D4CAC0',
@@ -337,7 +337,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
       {/* ── Zone 5 — SIFAT (68px) ──────────────────────────── */}
       <div style={{
         ...zone(68),
-        padding: `${s(8)}px ${s(14)}px ${s(8)}px`,
+        padding: `${s(8)}px ${s(14)}px ${s(14)}px`,
       }}>
         <div style={{
           fontSize:      s(9),
@@ -374,7 +374,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
       {/* ── Zone 6 — Selaras / Pemicu (58px) ──────────────── */}
       <div style={{
         ...zone(58),
-        padding:             `${s(8)}px ${s(14)}px`,
+        padding:             `${s(10)}px ${s(14)}px ${s(14)}px`,
         display:             'grid',
         gridTemplateColumns: `1fr ${scale}px 1fr`,
         alignItems:          'center',

@@ -6,16 +6,18 @@
    restyle the surrounding page).
    ============================================================ */
 
+/* Report tokens — now aliased to the unified site palette
+   so the report block matches the rest of the page exactly. */
 :root {
-  --rpt-bg:        #FEFCF8;
-  --rpt-bg-2:      #FBF7F3;
-  --rpt-border:    #E4DAD0;
-  --rpt-divider:   #EDE5DC;
-  --rpt-ink:       #3A2E24;
-  --rpt-ink-soft:  #5A4A3A;
-  --rpt-muted:     #A8927E;
-  --rpt-accent:    #8B3A1A;
-  --rpt-prompt-bg: rgba(201, 168, 76, 0.08);
+  --rpt-bg:        var(--kertas);
+  --rpt-bg-2:      var(--kertas-2);
+  --rpt-border:    var(--border);
+  --rpt-divider:   var(--divider);
+  --rpt-ink:       var(--tinta);
+  --rpt-ink-soft:  var(--tinta-soft);
+  --rpt-muted:     var(--muted-warm);
+  --rpt-accent:    var(--kayu);
+  --rpt-prompt-bg: var(--emas-dim);
 }
 
 /* ── CTA card (collapsed state) ─────────────────────────── */
@@ -93,15 +95,15 @@
   box-shadow: 0 8px 32px -16px rgba(0, 0, 0, 0.4);
 }
 
-/* ── Bab (chapter) header ──────────────────────────────── */
+/* ── Report header (once at top, above accordion) ─────── */
 
-.report-bab-header {
+.report-header {
   margin-bottom: 28px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--rpt-divider);
 }
 
-.report-bab-eyebrow {
+.report-eyebrow {
   font-family: var(--sans);
   font-size: 11px;
   font-weight: 500;
@@ -110,27 +112,107 @@
   margin-bottom: 10px;
 }
 
-.report-bab-title {
+.report-archetype {
   font-family: Georgia, 'Playfair Display', serif;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 700;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.6px;
   color: var(--rpt-accent);
   margin: 0 0 8px;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
-.report-bab-meta {
+.report-meta {
   font-family: Georgia, 'Playfair Display', serif;
   font-style: italic;
   font-size: 14px;
   color: var(--rpt-muted);
 }
 
-/* ── Bab body ──────────────────────────────────────────── */
+/* ── Accordion ─────────────────────────────────────────── */
 
-.report-bab-body {
-  margin-bottom: 32px;
+.report-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.bab-item {
+  border-bottom: 1px solid var(--rpt-divider);
+}
+.bab-item:last-of-type {
+  border-bottom: none;
+}
+
+.bab-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 28px;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 18px 4px;
+  text-align: left;
+  cursor: pointer;
+  font-family: Georgia, 'Playfair Display', serif;
+  transition: background 0.15s;
+}
+.bab-row:hover { background: var(--rpt-bg-2); }
+.bab-row:focus-visible {
+  outline: 2px solid var(--rpt-accent);
+  outline-offset: -2px;
+}
+.bab-row[disabled] {
+  cursor: default;
+  background: transparent;
+}
+
+.bab-num {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--rpt-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.bab-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--rpt-ink);
+  letter-spacing: -0.2px;
+}
+
+.bab-chevron {
+  font-size: 14px;
+  color: var(--rpt-muted);
+  text-align: right;
+  transition: transform 0.2s ease-out;
+}
+
+.bab-item--open .bab-title,
+.bab-item--open .bab-chevron {
+  color: var(--rpt-accent);
+}
+.bab-item--open .bab-chevron {
+  transform: rotate(180deg);
+}
+
+.bab-panel {
+  padding: 4px 4px 28px;
+  animation: bab-fade-in 0.25s ease-out;
+}
+
+@keyframes bab-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bab-panel-meta {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--rpt-muted);
+  margin-bottom: 18px;
 }
 
 .report-paragraph {
@@ -170,127 +252,6 @@
   border-radius: 4px;
 }
 
-/* ── Bab navigation (next chapters) ───────────────────── */
-
-.report-bab-nav {
-  border-top: 1px solid var(--rpt-divider);
-  padding-top: 24px;
-  margin-top: 4px;
-}
-
-.report-bab-nav-label {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 3px;
-  color: var(--rpt-muted);
-  text-align: center;
-  margin-bottom: 18px;
-}
-
-.report-bab-nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.report-bab-nav-item {
-  display: grid;
-  grid-template-columns: 36px 1fr 28px;
-  gap: 16px;
-  align-items: center;
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--rpt-divider);
-  padding: 16px 4px;
-  text-align: left;
-  cursor: pointer;
-  font-family: Georgia, 'Playfair Display', serif;
-  transition: background 0.15s;
-}
-
-.report-bab-nav-item:hover {
-  background: var(--rpt-bg-2);
-}
-
-.report-bab-nav-item:focus-visible {
-  outline: 2px solid var(--rpt-accent);
-  outline-offset: -2px;
-}
-
-.report-bab-nav-list li:last-child .report-bab-nav-item {
-  border-bottom: none;
-}
-
-/* Current chapter — visually distinct, not clickable. Marker dot
-   replaces the arrow; accent color signals "you are here". */
-.report-bab-nav-item--current,
-.report-bab-nav-item--current:hover {
-  background: var(--rpt-prompt-bg);
-  cursor: default;
-}
-
-.report-bab-nav-item--current .report-bab-nav-num,
-.report-bab-nav-item--current .report-bab-nav-title,
-.report-bab-nav-item--current .report-bab-nav-arrow {
-  color: var(--rpt-accent);
-}
-
-.report-bab-nav-num {
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--rpt-muted);
-  font-variant-numeric: tabular-nums;
-}
-
-.report-bab-nav-title {
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--rpt-ink);
-  letter-spacing: -0.2px;
-}
-
-.report-bab-nav-arrow {
-  font-size: 18px;
-  color: var(--rpt-muted);
-  text-align: right;
-}
-
-/* ── End-of-report state ───────────────────────────────── */
-
-.report-bab-end {
-  text-align: center;
-  padding: 28px 0 8px;
-  border-top: 1px solid var(--rpt-divider);
-  margin-top: 4px;
-}
-
-.report-bab-end-label {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 3px;
-  color: var(--rpt-muted);
-  margin-bottom: 14px;
-}
-
-.report-bab-restart-btn {
-  background: transparent;
-  color: var(--rpt-accent);
-  border: 1px solid var(--rpt-border);
-  border-radius: 10px;
-  padding: 10px 18px;
-  font: 500 13px var(--sans);
-  letter-spacing: 0.3px;
-  cursor: pointer;
-}
-.report-bab-restart-btn:hover { background: var(--rpt-bg-2); }
-
 /* ── Collapse button ───────────────────────────────────── */
 
 .report-collapse-btn {
@@ -325,10 +286,10 @@
     padding: 24px 20px;
     margin: 24px 16px;
   }
-  .report-cta-title           { font-size: 26px; }
-  .report-bab-title           { font-size: 26px; }
-  .report-paragraph           { font-size: 14.5px; }
+  .report-cta-title    { font-size: 26px; }
+  .report-archetype    { font-size: 28px; }
+  .report-paragraph    { font-size: 14.5px; }
   .report-paragraph--first::first-letter { font-size: 44px; }
-  .report-bab-nav-title       { font-size: 15px; }
-  .report-bab-nav-item        { grid-template-columns: 30px 1fr 24px; gap: 12px; }
+  .bab-title           { font-size: 16px; }
+  .bab-row             { grid-template-columns: 32px 1fr 24px; gap: 12px; }
 }

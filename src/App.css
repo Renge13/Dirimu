@@ -30,7 +30,7 @@
   letter-spacing: -1.5px;
   line-height: 1.05;
   margin-bottom: 14px;
-  background: linear-gradient(160deg, var(--pearl) 40%, var(--gold));
+  background: linear-gradient(160deg, var(--kayu) 40%, var(--terra));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -70,7 +70,8 @@
   border: 1px solid var(--separator);
   border-radius: 16px;
   padding: 32px;
-  margin-bottom: 48px;
+  margin: 0 auto 48px;
+  max-width: 520px;
 }
 
 .form {
@@ -101,13 +102,13 @@
 
 .field-input {
   padding: 12px 14px;
-  border: 1px solid var(--separator);
+  border: 1px solid var(--border);
   border-radius: 10px;
   font: 15px var(--sans);
-  background: var(--ink-3);
-  color: var(--pearl);
+  background: var(--kertas);
+  color: var(--tinta);
   transition: border-color 0.2s;
-  color-scheme: dark;
+  color-scheme: light;
 }
 .field-input:focus {
   outline: none;
@@ -137,8 +138,8 @@
     linear-gradient(135deg, var(--gold) 50%, transparent 50%);
 }
 .select-input option {
-  background: var(--ink-2);
-  color: var(--pearl);
+  background: var(--kertas-2);
+  color: var(--tinta);
 }
 
 .date-selects {
@@ -175,8 +176,8 @@
   gap: 8px;
   padding: 13px 32px;
   border-radius: 999px;
-  background: var(--gold);
-  color: var(--ink);
+  background: var(--terra);
+  color: var(--kertas);
   border: none;
   font: 500 14px var(--sans);
   letter-spacing: 0.4px;
@@ -198,9 +199,9 @@
   margin-bottom: 20px;
   padding: 12px 16px;
   border-radius: 10px;
-  background: rgba(201, 76, 76, 0.1);
-  border: 1px solid rgba(201, 76, 76, 0.3);
-  color: #f08080;
+  background: rgba(201, 76, 76, 0.08);
+  border: 1px solid rgba(201, 76, 76, 0.28);
+  color: #A04040;
   font-size: 14px;
 }
 
@@ -213,7 +214,7 @@
   font-weight: 500;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--kayu);
   margin-bottom: 20px;
 }
 
@@ -248,8 +249,8 @@
 }
 
 .pillar--day {
-  border-color: var(--gold-border);
-  background: linear-gradient(160deg, var(--ink-3) 0%, rgba(201,168,76,0.06) 100%);
+  border-color: var(--emas-glow);
+  background: linear-gradient(160deg, var(--kertas-2) 0%, rgba(176,132,66,0.08) 100%);
 }
 
 .pillar-badge {
@@ -257,8 +258,8 @@
   top: -11px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--gold);
-  color: var(--ink);
+  background: var(--terra);
+  color: var(--kertas);
   font-size: 10px;
   font-weight: 600;
   font-family: var(--sans);
@@ -289,7 +290,7 @@
 
 .pillar--day .pillar-stem,
 .pillar--day .pillar-branch {
-  color: var(--gold);
+  color: var(--terra);
 }
 
 .pillar-element {
@@ -400,7 +401,7 @@
 
 .balance-bar {
   height: 8px;
-  background: rgba(255,255,255,0.06);
+  background: rgba(42, 37, 32, 0.08);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -415,11 +416,11 @@
   .balance-row { grid-template-columns: 1fr; gap: 4px; }
 }
 
-.balance-fill[data-element="Wood"]  { background: #5aad5a; }
-.balance-fill[data-element="Fire"]  { background: #d96060; }
-.balance-fill[data-element="Earth"] { background: #c4a055; }
-.balance-fill[data-element="Metal"] { background: #a0aab4; }
-.balance-fill[data-element="Water"] { background: #5090d9; }
+.balance-fill[data-element="Wood"]  { background: var(--sage); }
+.balance-fill[data-element="Fire"]  { background: var(--terra); }
+.balance-fill[data-element="Earth"] { background: var(--emas); }
+.balance-fill[data-element="Metal"] { background: #9DA1A8; }
+.balance-fill[data-element="Water"] { background: var(--senja); }
 
 /* ── Relations ──────────────────────────────────────────── */
 .relations-card {
@@ -479,9 +480,17 @@
   font-size: 14px;
   line-height: 1;
 }
-/* Softer than red/green: harmony uses brand gold, clash uses muted pearl */
-.chip--harmony { border-color: var(--gold-border); color: var(--gold);  background: rgba(201,168,76,0.05); }
-.chip--clash   { border-color: rgba(232,228,217,0.2); color: var(--pearl); opacity: 0.8; }
+/* Element-coded: harmony reads sage (calm/nourishing), clash reads senja (cool tension) */
+.chip--harmony {
+  border-color: rgba(124, 139, 111, 0.4);
+  color: #5A6A4D;
+  background: rgba(124, 139, 111, 0.08);
+}
+.chip--clash {
+  border-color: rgba(107, 127, 148, 0.4);
+  color: #4A5C70;
+  background: rgba(107, 127, 148, 0.08);
+}
 
 .relation-description {
   margin-top: 4px;
@@ -494,9 +503,9 @@
 .archetype-card {
   position: relative;
   background:
-    radial-gradient(120% 80% at 50% -20%, rgba(201,168,76,0.10), transparent 60%),
-    var(--ink-2);
-  border: 1px solid var(--gold-border);
+    radial-gradient(120% 80% at 50% -20%, rgba(176, 132, 66, 0.12), transparent 60%),
+    var(--kertas-2);
+  border: 1px solid var(--emas-glow);
   border-radius: 18px;
   padding: 40px 28px 32px;
   margin-bottom: 24px;
@@ -516,7 +525,7 @@
   font-family: var(--heading);
   font-size: clamp(28px, 5vw, 40px);
   letter-spacing: -0.8px;
-  color: var(--pearl);
+  color: var(--kayu);
   margin: 0 0 18px;
   line-height: 1.1;
 }
@@ -552,9 +561,9 @@
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.5px;
-  color: var(--pearl);
-  background: var(--ink-3);
-  border: 1px solid var(--separator);
+  color: var(--tinta-soft);
+  background: var(--kertas);
+  border: 1px solid var(--border);
   padding: 5px 12px;
   border-radius: 16px;
 }
@@ -585,7 +594,7 @@
   position: absolute;
   left: 6px;
   top: -2px;
-  color: var(--gold);
+  color: var(--kayu);
   font-size: 22px;
   line-height: 1;
 }
@@ -601,22 +610,42 @@
   font-style: italic;
 }
 
-/* ── Paid hook (the open loop at the bottom) ────────────── */
+/* ── Paid hook (gold-foil bordered premium insert) ──────── */
 .paid-hook-card {
-  margin-top: 32px;
-  padding: 32px 28px;
+  position: relative;
+  margin-top: 40px;
+  padding: 36px 28px 28px;
   border-radius: 18px;
   background:
-    linear-gradient(160deg, rgba(201,168,76,0.10) 0%, transparent 60%),
-    var(--ink-2);
-  border: 1px solid var(--gold-border);
+    radial-gradient(80% 60% at 50% 0%, var(--emas-dim), transparent 70%),
+    var(--kertas-2);
+  border: 1.5px solid var(--emas);
   text-align: center;
+  box-shadow:
+    0 0 0 4px rgba(176, 132, 66, 0.08),
+    0 12px 32px -16px rgba(91, 58, 34, 0.25);
+}
+
+.paid-hook-eyebrow {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: var(--emas);
+  padding: 4px 14px;
+  border: 1px solid var(--emas-glow);
+  border-radius: 999px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
 }
 
 .paid-hook {
-  color: var(--pearl);
-  font-size: 15px;
-  line-height: 1.7;
+  color: var(--tinta);
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.75;
   max-width: 520px;
   margin: 0 auto 24px;
 }
@@ -625,20 +654,23 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
-  border-radius: 10px;
-  background: var(--gold);
-  color: var(--ink);
+  padding: 13px 30px;
+  border-radius: 999px;
+  background: var(--emas);
+  color: var(--kertas);
   border: none;
-  font: 500 14px var(--sans);
-  letter-spacing: 0.3px;
+  font: 600 14px var(--sans);
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.15s;
+  transition: transform 0.15s, box-shadow 0.2s;
 }
-.paid-cta:hover  { opacity: 0.9; transform: translateY(-1px); }
+.paid-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px -8px var(--emas-glow);
+}
 .paid-cta:active { transform: translateY(0); }
 .paid-cta:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--emas);
   outline-offset: 3px;
 }
 

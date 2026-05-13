@@ -1,17 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
 
 :root {
-  /* Color tokens */
-  --ink:        #0d0c14;
-  --ink-2:      #15131f;
-  --ink-3:      #1e1b2e;
-  --gold:       #c9a84c;
-  --gold-dim:   rgba(201,168,76,0.18);
-  --gold-border:rgba(201,168,76,0.35);
-  --pearl:      #e8e4d9;
-  --muted:      #7a7590;
-  --red:        #c94c4c;
-  --separator:  rgba(255,255,255,0.07);
+  /* ── Watercolor canvas — named palette (Kairos reference) ── */
+  --kertas:       #F6F1E8;  /* paper cream — primary bg */
+  --kertas-2:     #FBF7F3;  /* off-cream for cards */
+  --tinta:        #2A2520;  /* deep ink — primary text */
+  --tinta-soft:   #5A4A3A;  /* warm brown for secondary text */
+  --kayu:         #5B3A22;  /* wood brown — drop caps, archetype names */
+  --emas:         #B08442;  /* gold ochre — eyebrows, paywall accent */
+  --emas-glow:    rgba(176, 132, 66, 0.35);
+  --emas-dim:     rgba(176, 132, 66, 0.12);
+  --terra:        #C56F50;  /* terracotta — primary CTA */
+  --sage:         #7C8B6F;  /* sage green — Cocok Dengan (harmony) */
+  --senja:        #6B7F94;  /* dusk blue — Perlu Dijaga Dengan (clash) */
+  --muted-warm:   #A8927E;  /* warm tan for muted labels */
+  --divider:      #EDE5DC;
+  --border:       #E4DAD0;
+
+  /* ── Legacy aliases — existing CSS rules keep working ── */
+  --ink:         var(--kertas);
+  --ink-2:       var(--kertas-2);
+  --ink-3:       var(--kertas);
+  --pearl:       var(--tinta);
+  --gold:        var(--terra);
+  --gold-border: var(--emas-glow);
+  --gold-dim:    var(--emas-dim);
+  --muted:       var(--muted-warm);
+  --separator:   var(--border);
+  --red:         #C94C4C;
 
   --sans:    'Inter', system-ui, sans-serif;
   --heading: 'Cinzel', Georgia, serif;
@@ -19,10 +35,10 @@
 
   font: 16px/1.6 var(--sans);
   letter-spacing: 0.15px;
-  color: var(--pearl);
-  background: var(--ink);
+  color: var(--tinta);
+  background: var(--kertas);
   -webkit-font-smoothing: antialiased;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -33,7 +49,7 @@ body  { margin: 0; }
 h1, h2, h3 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--pearl);
+  color: var(--tinta);
   margin: 0;
 }
 p { margin: 0; }

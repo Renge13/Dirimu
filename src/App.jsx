@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { calculateBaziChart, getInterpretation, runValidation } from '@/lib/bazi'
 import BaziCard from '@/components/card/BaziCard.jsx'
 import Report from '@/components/Report.jsx'
@@ -119,6 +119,8 @@ function App() {
   const [exporting, setExporting] = useState(false)
   const [exportError, setExportError] = useState(null)
 
+  const resultRef = useRef(null)
+
   useEffect(() => { runValidation() }, [])
 
   // Cap the day dropdown when month/year change (e.g. picking Feb after 31 was set).
@@ -163,6 +165,10 @@ function App() {
       })
       const interpretation = getInterpretation(chart)
       setResult({ ...chart, interpretation })
+      // Smooth-scroll to the result section once React has painted it.
+      requestAnimationFrame(() => {
+        resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      })
     } catch (err) {
       setError(err.message)
       setResult(null)
@@ -283,7 +289,7 @@ function App() {
       {error && <div className="error">{error}</div>}
 
       {result && (
-        <section className="result">
+        <section className="result" ref={resultRef}>
 
           {/* Pillars */}
           <div className="section-title">Empat Pilarmu</div>
@@ -440,9 +446,10 @@ function App() {
           {/* Reflective Report — free deep reading, gated behind CTA */}
           <Report chart={result} />
 
-          {/* Paid hook */}
+          {/* Paid hook — gold-foil bordered premium insert */}
           {result.interpretation?.paidHook && (
             <div className="paid-hook-card">
+              <span className="paid-hook-eyebrow">Bacaan Mendalam</span>
               <p className="paid-hook">{result.interpretation.paidHook}</p>
               <button className="paid-cta" type="button">Buka Bacaan Mendalam →</button>
             </div>
