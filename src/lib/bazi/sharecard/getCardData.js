@@ -35,9 +35,14 @@ export function getCardData(chart) {
 
   const tagline = card.shareTagline || dm.tagline || ''
 
+  // Pill priority:
+  //   1. card.cardPills        — purpose-built short pills for the card (preferred)
+  //   2. pickN(identityPills)  — seeded sample from the reading's longer pool (fallback)
   const pool = dm.identityPills || []
   let pills
-  if (card.pillIndices && card.pillIndices.length > 0) {
+  if (Array.isArray(card.cardPills) && card.cardPills.length > 0) {
+    pills = card.cardPills.slice(0, PILLS_ON_CARD)
+  } else if (Array.isArray(card.pillIndices) && card.pillIndices.length > 0) {
     pills = card.pillIndices.map((i) => pool[i]).filter(Boolean).slice(0, PILLS_ON_CARD)
   } else {
     pills = pickN(pool, PILLS_ON_CARD, `${stem}:${chart.birthDate}:card`)

@@ -44,7 +44,7 @@ const Sharecard = forwardRef(function Sharecard({ card }, ref) {
         <div className="sc-relations">
           {team.length > 0 && (
             <div className="sc-rel-group">
-              <div className="sc-rel-label">Tim</div>
+              <div className="sc-rel-label">Selaras</div>
               <div className="sc-rel-chips">
                 {team.map((t) => (
                   <span key={t.stem} className="sc-rel-chip sc-rel-chip--team">{t.name}</span>
@@ -54,7 +54,7 @@ const Sharecard = forwardRef(function Sharecard({ card }, ref) {
           )}
           {lawan.length > 0 && (
             <div className="sc-rel-group">
-              <div className="sc-rel-label">Lawan</div>
+              <div className="sc-rel-label">Pemicu</div>
               <div className="sc-rel-chips">
                 {lawan.map((l) => (
                   <span key={l.stem} className="sc-rel-chip sc-rel-chip--lawan">{l.name}</span>

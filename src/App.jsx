@@ -96,7 +96,7 @@ function App() {
         <span className="hero-eyebrow">Ba Zi · 八字</span>
         <h1>Dirimu</h1>
         <p className="tagline">
-          Empat Pilar Nasibmu — terungkap dari tanggal dan jam lahirmu.
+          Empat Pilar Nasibmu, terungkap dari tanggal dan jam lahirmu.
         </p>
       </header>
 
@@ -110,6 +110,7 @@ function App() {
                 id="birthDate"
                 className="field-input"
                 type="date"
+                lang="id-ID"
                 value={birthDate}
                 onChange={(e) => setBirthDate(e.target.value)}
                 required
@@ -123,6 +124,8 @@ function App() {
                 id="birthTime"
                 className="field-input"
                 type="time"
+                lang="id-ID"
+                step="60"
                 value={birthTime}
                 onChange={(e) => setBirthTime(e.target.value)}
               />
@@ -155,7 +158,7 @@ function App() {
           {/* Sharecard preview + export */}
           {result.cardData && (
             <div className="sharecard-preview">
-              <div className="section-title">Kartu Berbagi</div>
+              <div className="section-title">Persona</div>
               <div className="sharecard-preview-frame">
                 <Sharecard card={result.cardData} />
               </div>
@@ -256,37 +259,41 @@ function App() {
             </div>
           </div>
 
-          {/* Relations */}
+          {/* Relations — each block pairs label + branch chips + description */}
           {(result.harmonyBranches.length > 0 || result.clashBranches.length > 0) && (
             <div className="relations-card">
               <div className="section-title">Relasi Cabang</div>
-              <div className="relations">
-                {result.harmonyBranches.length > 0 && (
-                  <div className="relation-group">
-                    <span className="relation-label">Harmoni</span>
-                    <span>
+
+              {result.harmonyBranches.length > 0 && (
+                <div className="relation-block relation-block--harmony">
+                  <div className="relation-header">
+                    <span className="relation-label">Selaras</span>
+                    <span className="relation-chips">
                       {result.harmonyBranches.map((b) => (
                         <span className="chip chip--harmony" key={b}>{b}</span>
                       ))}
                     </span>
                   </div>
-                )}
-                {result.clashBranches.length > 0 && (
-                  <div className="relation-group">
-                    <span className="relation-label">Bentrok</span>
-                    <span>
+                  {result.interpretation?.compatibleDescription && (
+                    <p className="relation-description">{result.interpretation.compatibleDescription}</p>
+                  )}
+                </div>
+              )}
+
+              {result.clashBranches.length > 0 && (
+                <div className="relation-block relation-block--clash">
+                  <div className="relation-header">
+                    <span className="relation-label">Pemicu</span>
+                    <span className="relation-chips">
                       {result.clashBranches.map((b) => (
                         <span className="chip chip--clash" key={b}>{b}</span>
                       ))}
                     </span>
                   </div>
-                )}
-              </div>
-              {result.interpretation?.compatibleDescription && (
-                <p className="relation-description">{result.interpretation.compatibleDescription}</p>
-              )}
-              {result.interpretation?.clashDescription && (
-                <p className="relation-description">{result.interpretation.clashDescription}</p>
+                  {result.interpretation?.clashDescription && (
+                    <p className="relation-description">{result.interpretation.clashDescription}</p>
+                  )}
+                </div>
               )}
             </div>
           )}

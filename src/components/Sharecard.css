@@ -71,10 +71,11 @@
 
 .sc-chinese {
   font-family: var(--heading);
-  font-size: 38px;
-  letter-spacing: 16px;
-  color: var(--gold);
-  margin-top: 32px;
+  font-size: 22px;
+  letter-spacing: 10px;
+  color: var(--muted);
+  opacity: 0.6;
+  margin-top: 24px;
 }
 
 /* ── Tagline strip ──────────────────────────────────────── */
@@ -186,8 +187,8 @@
   background: var(--ink-3);
 }
 
-.sc-rel-chip--team  { border-color: rgba(90,173,90,0.5);  color: #7ecc7e; }
-.sc-rel-chip--lawan { border-color: rgba(217,96,96,0.5);  color: #f08080; }
+.sc-rel-chip--team  { border-color: rgba(201,168,76,0.4); color: var(--gold);  background: rgba(201,168,76,0.05); }
+.sc-rel-chip--lawan { border-color: rgba(232,228,217,0.2); color: var(--pearl); background: rgba(232,228,217,0.04); opacity: 0.75; }
 
 /* ── Footer ──────────────────────────────────────────────── */
 .sc-footer {
