@@ -15,5 +15,5 @@ export { STEMS, BRANCHES, STEM_ELEMENTS, BRANCH_ELEMENTS,
          getHarmonyBranches, getClashBranches } from './stems.js';
 export { getBaziMonth, SOLAR_TERMS_CST, MONTH_BRANCHES } from './solarTerms.js';
 export { getInterpretation } from './interpretation/index.js';
-export { getCardData } from './sharecard/getCardData.js';
-export { getTeamLawan } from './sharecard/elementCycle.js';
+export { getSelarasPemicuStems, ELEMENT_STEMS } from './elementCycle.js';
+export { ELEMENT_CONFIG } from './elementConfig.js';

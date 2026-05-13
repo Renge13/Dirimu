@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
-import { calculateBaziChart, getCardData, getInterpretation, runValidation } from '@/lib/bazi'
-import Sharecard from '@/components/Sharecard.jsx'
-import { useSharecardExport } from '@/lib/useSharecardExport.js'
+import { useEffect, useState } from 'react'
+import { calculateBaziChart, getInterpretation, runValidation } from '@/lib/bazi'
+import BaziCard from '@/components/card/BaziCard.jsx'
+import { exportCardAsPNG } from '@/utils/exportCard.jsx'
 import './App.css'
 
 const ELEMENT_LABEL = {
@@ -92,8 +92,8 @@ function App() {
   const [result, setResult] = useState(null)
   const [error, setError]   = useState(null)
 
-  const sharecardRef = useRef(null)
-  const { exportAsPng, busy: exportBusy, error: exportError } = useSharecardExport()
+  const [exporting, setExporting] = useState(false)
+  const [exportError, setExportError] = useState(null)
 
   useEffect(() => { runValidation() }, [])
 
@@ -138,20 +138,24 @@ function App() {
         birthTime: isoTime,
       })
       const interpretation = getInterpretation(chart)
-      const cardData = getCardData(chart)
-      setResult({ ...chart, interpretation, cardData })
+      setResult({ ...chart, interpretation })
     } catch (err) {
       setError(err.message)
       setResult(null)
     }
   }
 
-  function onDownload() {
-    if (!result?.cardData) return
-    exportAsPng(sharecardRef.current, {
-      superpower: result.cardData.superpower,
-      birthDate: result.birthDate,
-    })
+  async function onDownload() {
+    if (!result?.interpretation) return
+    setExporting(true)
+    setExportError(null)
+    try {
+      await exportCardAsPNG(result, result.interpretation, BaziCard)
+    } catch (err) {
+      setExportError(err?.message || 'Gagal menyimpan gambar.')
+    } finally {
+      setExporting(false)
+    }
   }
 
   const maxBalance = result
@@ -269,31 +273,24 @@ function App() {
             }
           </div>
 
-          {/* Sharecard preview + export */}
-          {result.cardData && (
-            <div className="sharecard-preview">
+          {/* BaziCard — watercolor canvas, 7-zone TCG layout */}
+          {result.interpretation && (
+            <div className="bazi-card-preview">
               <div className="section-title">Persona</div>
-              <div className="sharecard-preview-frame">
-                <Sharecard card={result.cardData} />
-              </div>
-              <div className="sharecard-actions">
-                <button
-                  className="sharecard-download"
-                  type="button"
-                  onClick={onDownload}
-                  disabled={exportBusy}
-                >
-                  {exportBusy ? 'Menyimpan...' : 'Simpan Gambar'}
-                </button>
-              </div>
+              <BaziCard
+                chart={result}
+                interpretation={result.interpretation}
+                mode="preview"
+              />
+              <button
+                className="bazi-card-download"
+                type="button"
+                onClick={onDownload}
+                disabled={exporting}
+              >
+                {exporting ? 'Menyimpan...' : 'Simpan Gambar'}
+              </button>
               {exportError && <div className="error">{exportError}</div>}
-            </div>
-          )}
-
-          {/* Hidden full-resolution sharecard for html2canvas capture */}
-          {result.cardData && (
-            <div className="sharecard-capture" aria-hidden="true">
-              <Sharecard ref={sharecardRef} card={result.cardData} />
             </div>
           )}
 

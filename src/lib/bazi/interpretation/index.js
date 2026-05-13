@@ -10,13 +10,20 @@
 //   3. Dominant element (max count)      → element flavor
 //   4. Missing element (count === 0)     → vulnerability framing
 //
-// For "pick N from pool" slots (traits, identityPills), selection is
-// seeded by `${stem}${branch}:${birthDate}:${birthTime}`. Charts with
-// different seeds → different selections. Same chart → same selection.
+// For "pick N from pool" slots (traits, identityPills, sifatPills),
+// selection is seeded by `${stem}${branch}:${birthDate}:${birthTime}`.
+// Charts with different seeds → different selections.
+// Same chart → same selection.
 //
-// If a bank entry is empty, the field returns ''. Empty arrays for
-// pool-driven slots. The UI is built to hide empty sections, so a
-// half-filled bank degrades gracefully — you can ship as you write.
+// Output supports two surfaces:
+//   1. Reading page below the card — heroDescription, identityPills,
+//      personalityTraits, elementNote, compatibleDescription, etc.
+//   2. The 7-zone BaziCard (watercolor canvas) — taglineCard, the
+//      three descriptor arrays, sifatPills, selarasArchetypes,
+//      pemicuArchetypes.
+//
+// Empty bank entries return '' or []. Card and reading components
+// must hide their respective sections gracefully on empty content.
 // ============================================================
 
 import { DAY_MASTERS } from './dayMasters.js'
@@ -25,10 +32,12 @@ import { DOMINANT_ELEMENT, MISSING_ELEMENT } from './elementImpact.js'
 import { PAID_HOOK_TEMPLATE } from './paidHooks.js'
 import { pickN } from './pickN.js'
 import { STEM_ELEMENTS, STEM_POLARITY } from '../stems.js'
+import { getSelarasPemicuStems } from '../elementCycle.js'
 
 const ELEMENTS = ['Wood', 'Fire', 'Earth', 'Metal', 'Water']
 const TRAITS_TO_SHOW = 6
 const PILLS_TO_SHOW = 5
+const SIFAT_TO_SHOW = 4
 
 function getDominantElement(balance) {
   let dom = null
@@ -55,6 +64,18 @@ function interpolate(template, vars) {
   return template.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '')
 }
 
+/**
+ * Maps an array of stem characters to { stem, name } objects using
+ * DAY_MASTERS for the Indonesian archetype name lookup. Used for
+ * Selaras / Pemicu archetype rendering on the card.
+ */
+function stemsToArchetypes(stems) {
+  return stems.map((stem) => ({
+    stem,
+    name: DAY_MASTERS[stem]?.name || stem,
+  }))
+}
+
 export function getInterpretation(chart) {
   const stem = chart.day.stem
   const branch = chart.day.branch
@@ -68,6 +89,7 @@ export function getInterpretation(chart) {
 
   const traits = pickN(dm.traits || [], TRAITS_TO_SHOW, seed + ':traits')
   const identityPills = pickN(dm.identityPills || [], PILLS_TO_SHOW, seed + ':pills')
+  const sifatPills = pickN(dm.sifatPills || [], SIFAT_TO_SHOW, seed + ':sifat')
 
   // Missing element takes priority over dominant — the skill prefers
   // surfacing one vulnerability over one strength.
@@ -82,11 +104,20 @@ export function getInterpretation(chart) {
     missingElement: missing || '',
   })
 
+  // Selaras / Pemicu archetypes from the 5-element cycle.
+  const dayElement = STEM_ELEMENTS[stem] || null
+  const { selarasStems, pemicuStems, selarasElement, pemicuElement } = getSelarasPemicuStems(dayElement)
+  const selarasArchetypes = stemsToArchetypes(selarasStems)
+  const pemicuArchetypes  = stemsToArchetypes(pemicuStems)
+
   return {
+    // Shared
     dayMasterName: dm.name || '',
-    dayMasterChinese: dm.chinese || `${stem}${STEM_ELEMENTS[stem] || ''}`,
-    dayMasterElement: STEM_ELEMENTS[stem] || null,
+    dayMasterChinese: dm.chinese || `${stem}${dayElement || ''}`,
+    dayMasterElement: dayElement,
     dayMasterPolarity: STEM_POLARITY[stem] || null,
+
+    // Reading-page fields (canonical first-person voice OK)
     shareTagline: dm.tagline || '',
     heroDescription: dm.hero || '',
     identityPills,
@@ -99,5 +130,16 @@ export function getInterpretation(chart) {
     compatibleDescription: db.harmony || '',
     clashDescription: db.clash || '',
     paidHook,
+
+    // Card-surface fields (no subject pronoun, watercolor canvas)
+    taglineCard: dm.taglineCard || '',
+    kekuatanDescriptors: dm.kekuatanDescriptors || [],
+    bayanganDescriptors: dm.bayanganDescriptors || [],
+    dampakDescriptors: dm.dampakDescriptors || [],
+    sifatPills,
+    selarasArchetypes,
+    pemicuArchetypes,
+    selarasElement,
+    pemicuElement,
   }
 }

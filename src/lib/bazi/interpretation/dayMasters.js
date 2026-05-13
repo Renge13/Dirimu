@@ -2,16 +2,31 @@
 // Day Master archetypes — keyed by Heavenly Stem character
 // ============================================================
 // 10 entries, one per Heavenly Stem. The Day Master is the
-// backbone of the BaZi reading (~80% of the user-facing copy).
+// backbone of the BaZi reading.
 //
 // FIELD SCHEMA per entry:
-//   name           Indonesian archetype name (canonical).
-//   chinese        Stem + element character.
-//   tagline        Canonical sharable line. Sharecard may override
-//                  via cardData.js shareTagline.
-//   hero           2–3 sentence Indonesian prose. Who you ARE.
-//   identityPills  12 short phrases; composer picks 5 per chart.
-//   traits         8 phrases; composer picks 6 per chart.
+//
+//   Reading-page fields (existing — drive the longer prose surfaces):
+//     name           Indonesian archetype name (canonical).
+//     chinese        Stem + element character (e.g. '丙火').
+//     tagline        Canonical first-person sharable line ("Aku ...").
+//     hero           2–3 sentence Indonesian prose. Who you ARE.
+//     identityPills  12 short phrases; composer picks 5 per chart.
+//     traits         8 phrases; composer picks 6 per chart.
+//
+//   Card-surface fields (TCG-style BaziCard, watercolor canvas):
+//     taglineCard          Pronoun-stripped variant ("Hadir untuk ...").
+//                          NO subject (no aku/kamu/dia).
+//     kekuatanDescriptors  3 noun phrases. Strengths. Per bazi-card skill.
+//     bayanganDescriptors  3 noun phrases. Shadows, not softened.
+//     dampakDescriptors    2–3 noun phrases. What OTHERS feel around them,
+//                          NOT self-descriptors.
+//     sifatPills           4–6 Gen-Z behavioral phrases for the card's
+//                          SIFAT zone ("drama sebentar, move on cepet"
+//                          register). Composer picks 4 per chart.
+//
+// Card fields ship empty for 9 archetypes; 丙 prefilled from the
+// reference screenshot. Card component hides empty rows gracefully.
 // ============================================================
 
 export const DAY_MASTERS = {
@@ -44,6 +59,11 @@ export const DAY_MASTERS = {
       'Kesabaran yang terlihat seperti keras kepala',
       'Selalu menepati janji yang tidak diucapkan',
     ],
+    taglineCard: '',
+    kekuatanDescriptors: [],
+    bayanganDescriptors: [],
+    dampakDescriptors: [],
+    sifatPills: [],
   },
   '乙': {
     name: 'Tanaman Rambat',
@@ -74,6 +94,11 @@ export const DAY_MASTERS = {
       'Selalu menemukan celah ketika semua pintu tertutup',
       'Tidak pernah lupa siapa yang membantu saat merambat',
     ],
+    taglineCard: '',
+    kekuatanDescriptors: [],
+    bayanganDescriptors: [],
+    dampakDescriptors: [],
+    sifatPills: [],
   },
   '丙': {
     name: 'Matahari',
@@ -103,6 +128,16 @@ export const DAY_MASTERS = {
       'Tiba-tiba hilang, lalu muncul lagi lebih terang',
       'Membakar jembatan yang memang harus putus',
       'Hangatnya membuat orang lupa dia juga bisa membakar',
+    ],
+    taglineCard: 'Hadir untuk menerangi, bukan untuk bersinar sendirian.',
+    kekuatanDescriptors: ['Pemimpin Alami', 'Tak Teredupkan', 'Optimisme Murni'],
+    bayanganDescriptors: ['Butuh Panggung', 'Mudah Terbakar', 'Susah Diam'],
+    dampakDescriptors: ['Penerang Ruangan', 'Kehangatan yang Dirasakan Orang Lain'],
+    sifatPills: [
+      'drama sebentar, move on cepet',
+      'kalau cinta, totalitas',
+      'kerja keras sampai lupa istirahat',
+      'butuh pengakuan',
     ],
   },
   '丁': {
@@ -134,6 +169,11 @@ export const DAY_MASTERS = {
       'Mengorbankan diri diam-diam, lalu pura-pura tidak lelah',
       'Tidak perlu sorotan karena sudah menjadi arti bagi sekelilingnya',
     ],
+    taglineCard: '',
+    kekuatanDescriptors: [],
+    bayanganDescriptors: [],
+    dampakDescriptors: [],
+    sifatPills: [],
   },
   '戊': {
     name: 'Gunung',
@@ -164,6 +204,11 @@ export const DAY_MASTERS = {
       'Leganya orang lain saat tahu dia masih di sana',
       'Tidak bereaksi cepat, tapi reaksinya adalah yang paling tepat',
     ],
+    taglineCard: '',
+    kekuatanDescriptors: [],
+    bayanganDescriptors: [],
+    dampakDescriptors: [],
+    sifatPills: [],
   },
   '己': {
     name: 'Ladang',
@@ -194,6 +239,11 @@ export const DAY_MASTERS = {
       'Mengerti bahwa memberi adalah menanam, bukan membuang',
       'Kesetiaan yang tidak pamer, tapi selalu ada panen',
     ],
+    taglineCard: '',
+    kekuatanDescriptors: [],
+    bayanganDescriptors: [],
+    dampakDescriptors: [],
+    sifatPills: [],
   },
   '庚': {
     name: 'Pedang',
@@ -224,6 +274,11 @@ export const DAY_MASTERS = {
       'Tidak ada abu-abu, hanya benar atau tidak benar',
       'Dihormati lebih dari disukai, dan itu cukup untuknya',
     ],
+    taglineCard: '',
+    kekuatanDescriptors: [],
+    bayanganDescriptors: [],
+    dampakDescriptors: [],
+    sifatPills: [],
   },
   '辛': {
     name: 'Permata',
@@ -254,6 +309,11 @@ export const DAY_MASTERS = {
       'Memilih siapa yang boleh melihat isi sebenarnya',
       'Menunggu waktu yang tepat untuk berkilau, bukan karena tidak mampu',
     ],
+    taglineCard: '',
+    kekuatanDescriptors: [],
+    bayanganDescriptors: [],
+    dampakDescriptors: [],
+    sifatPills: [],
   },
   '壬': {
     name: 'Samudra',
@@ -284,6 +344,11 @@ export const DAY_MASTERS = {
       'Menyembunyikan harta karun di kedalaman yang tidak sembarang orang selami',
       'Terlihat tidak terprediksi, padahal hanya mengikuti hukum alam yang lebih dalam',
     ],
+    taglineCard: '',
+    kekuatanDescriptors: [],
+    bayanganDescriptors: [],
+    dampakDescriptors: [],
+    sifatPills: [],
   },
   '癸': {
     name: 'Hujan',
@@ -314,5 +379,10 @@ export const DAY_MASTERS = {
       'Tidak banyak bicara, tapi kehadirannya adalah jawaban',
       'Orang yang membuatmu merasa lebih baik tanpa kamu sadari',
     ],
+    taglineCard: '',
+    kekuatanDescriptors: [],
+    bayanganDescriptors: [],
+    dampakDescriptors: [],
+    sifatPills: [],
   },
 }

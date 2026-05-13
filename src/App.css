@@ -589,3 +589,39 @@
   outline: 2px solid var(--gold);
   outline-offset: 3px;
 }
+
+/* ── BaziCard preview wrapper ───────────────────────────── */
+.bazi-card-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.bazi-card-preview .section-title {
+  align-self: flex-start;
+}
+
+.bazi-card-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 10px;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  font: 500 14px var(--sans);
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.bazi-card-download:hover     { opacity: 0.9; transform: translateY(-1px); }
+.bazi-card-download:active    { transform: translateY(0); }
+.bazi-card-download:disabled  { opacity: 0.5; cursor: not-allowed; transform: none; }
+.bazi-card-download:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
