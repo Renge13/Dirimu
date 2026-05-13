@@ -18,6 +18,16 @@ import { DAY_BRANCHES }                           from '../src/lib/bazi/interpre
 import { DOMINANT_ELEMENT, MISSING_ELEMENT }      from '../src/lib/bazi/interpretation/elementImpact.js'
 import { PAID_HOOK_TEMPLATE }                     from '../src/lib/bazi/interpretation/paidHooks.js'
 
+// Report passage banks (Phase 4)
+import REPORT_PEMBUKAAN              from '../src/lib/bazi/report/passages/pembukaan.js'
+import REPORT_CARA_KAMU_HADIR        from '../src/lib/bazi/report/passages/caraKamuHadir.js'
+import REPORT_POLA_DI_PEKERJAAN      from '../src/lib/bazi/report/passages/polaDiPekerjaan.js'
+import REPORT_POLA_DI_HUBUNGAN       from '../src/lib/bazi/report/passages/polaDiHubungan.js'
+import REPORT_POLA_DI_TUBUH          from '../src/lib/bazi/report/passages/polaDiTubuh.js'
+import REPORT_HUBUNGAN_DENGAN_REZEKI from '../src/lib/bazi/report/passages/hubunganDenganRezeki.js'
+import REPORT_PENUTUP                from '../src/lib/bazi/report/passages/penutup.js'
+import { PROMPTS as REPORT_PROMPTS } from '../src/lib/bazi/report/prompts.js'
+
 const EM_DASH = '—'
 const issues = []
 
@@ -45,6 +55,16 @@ walk(DOMINANT_ELEMENT,    'DOMINANT_ELEMENT')
 walk(MISSING_ELEMENT,     'MISSING_ELEMENT')
 walk(PAID_HOOK_TEMPLATE,  'PAID_HOOK_TEMPLATE')
 
+// Report passages + prompts (Phase 4 onward)
+walk(REPORT_PEMBUKAAN,              'REPORT.pembukaan')
+walk(REPORT_CARA_KAMU_HADIR,        'REPORT.caraKamuHadir')
+walk(REPORT_POLA_DI_PEKERJAAN,      'REPORT.polaDiPekerjaan')
+walk(REPORT_POLA_DI_HUBUNGAN,       'REPORT.polaDiHubungan')
+walk(REPORT_POLA_DI_TUBUH,          'REPORT.polaDiTubuh')
+walk(REPORT_HUBUNGAN_DENGAN_REZEKI, 'REPORT.hubunganDenganRezeki')
+walk(REPORT_PENUTUP,                'REPORT.penutup')
+walk(REPORT_PROMPTS,                'REPORT.PROMPTS')
+
 if (issues.length > 0) {
   console.error(`✗ Found em-dash in ${issues.length} copy string(s):\n`)
   for (const issue of issues) {
@@ -55,4 +75,4 @@ if (issues.length > 0) {
   process.exit(1)
 }
 
-console.log(`✓ No em-dashes in copy banks. Checked: DAY_MASTERS, DAY_BRANCHES, DOMINANT_ELEMENT, MISSING_ELEMENT, PAID_HOOK_TEMPLATE.`)
+console.log(`✓ No em-dashes in copy banks. Checked: DAY_MASTERS, DAY_BRANCHES, DOMINANT_ELEMENT, MISSING_ELEMENT, PAID_HOOK_TEMPLATE, 7 REPORT passage banks, REPORT.PROMPTS.`)

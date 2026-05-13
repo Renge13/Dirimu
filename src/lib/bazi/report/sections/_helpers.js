@@ -24,15 +24,27 @@
  * @param {string}   args.prompt        Reflection prompt string (may be '').
  * @returns {object|null}
  */
+/** Splits a multi-paragraph string on blank-line boundaries. */
+function splitParagraphs(text) {
+  if (!text || !text.trim()) return []
+  return text
+    .split(/\n\s*\n+/)
+    .map((p) => p.trim())
+    .filter(Boolean)
+}
+
 export function sectionFromPassage({ title, sectionKey, passage, chart, rules, prompt }) {
   if (!passage || !passage.core || !passage.core.trim()) return null
 
-  const parts = [passage.core]
+  // core may contain blank-line paragraph breaks. Split so each
+  // paragraph renders as its own <p> in Report.jsx.
+  const parts = splitParagraphs(passage.core)
 
   for (const rule of rules || []) {
     const insertKey = rule(chart)
     if (insertKey && passage.inserts?.[insertKey]) {
-      parts.push(passage.inserts[insertKey])
+      // Inserts may also be multi-paragraph.
+      parts.push(...splitParagraphs(passage.inserts[insertKey]))
     }
   }
 
