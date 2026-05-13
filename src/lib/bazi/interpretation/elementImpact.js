@@ -13,25 +13,21 @@
 // FIELD SCHEMA per entry:
 //   1–2 sentences, ~25 words, Bahasa Indonesia. What this
 //   imbalance CREATES in the reader's life right now. Specific,
-//   present-tense, addressed to "kamu". Not "people with missing
-//   X tend to..." — that's the chatbot voice. Write the
-//   observation directly.
-//
-// MVP SCOPE: 5 dominant + 5 missing = 10 fragments.
+//   present-tense, addressed to "kamu".
 // ============================================================
 
 export const DOMINANT_ELEMENT = {
-  Wood: '',   // TODO. What it creates when Wood (Kayu) is dominant in the chart.
-  Fire: '',   // TODO. What it creates when Fire (Api) is dominant.
-  Earth: '',  // TODO. What it creates when Earth (Bumi) is dominant.
-  Metal: '',  // TODO. What it creates when Metal (Logam) is dominant.
-  Water: '',  // TODO. What it creates when Water (Air) is dominant.
+  Wood: 'Kamu terus memberi ruang untuk orang lain tumbuh sampai lupa menyisakan tanah bagi akarmu sendiri. Ambisimu adalah berkah sekaligus beban yang tak terlihat.',
+  Fire: 'Kamu menyala paling terang saat dunia sedang kacau. Masalahnya kamu seringkali kehabisan napas di tengah keramaian sementara orang lain hanya sanggup melihat cahayamu.',
+  Earth: 'Kamu adalah jangkar bagi semua orang di sekitarmu. Namun diam-diam kamu merasa terjebak dalam peran yang kamu bangun sendiri tanpa tahu cara melangkah keluar.',
+  Metal: 'Logikamu yang presisi adalah senjata mematikan dalam karier. Namun di balik pintu tertutup kamu seringkali terluka oleh ketajaman standarmu yang tidak manusiawi itu.',
+  Water: 'Kamu memahami rahasia orang lain bahkan sebelum mereka bicara. Kedalaman ini membuatmu sulit menemukan seseorang yang sanggup menyelami pikiranmu tanpa merasa tenggelam.',
 }
 
 export const MISSING_ELEMENT = {
-  Wood: '',   // TODO. What's harder to access when Wood is absent.
-  Fire: '',   // TODO. What's harder to access when Fire is absent.
-  Earth: '',  // TODO. What's harder to access when Earth is absent.
-  Metal: '',  // TODO. What's harder to access when Metal is absent.
-  Water: '',  // TODO. What's harder to access when Water is absent.
+  Wood: 'Rencanamu seringkali berhenti di atas kertas tanpa pernah sempat berakar. Ada satu dorongan untuk mulai berani mengambil risiko yang selama ini kamu hindari.',
+  Fire: 'Hidupmu berjalan stabil namun tanpa binar yang membuatmu merasa hidup. Kamu butuh satu alasan kuat untuk berani menjadi pusat perhatian tanpa rasa takut.',
+  Earth: 'Kamu merasa melayang tanpa pijakan yang pasti meski segalanya tampak baik. Saatnya mencari jangkar yang bisa menahanmu tetap diam saat badai keinginan datang.',
+  Metal: 'Kamu kesulitan menarik garis tegas karena takut melukai perasaan orang. Padahal satu keputusan dingin bisa menyelamatkanmu dari kekacauan menahun yang terus menguras energi.',
+  Water: 'Segalanya terasa kaku dan dipaksakan dalam keseharianmu saat ini. Ada cara untuk mendapatkan apa yang kamu mau tanpa harus terus melawan arus yang melelahkan.',
 }
