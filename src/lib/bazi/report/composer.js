@@ -36,16 +36,17 @@ export function getReport(chart) {
   const dm = DAY_MASTERS[stem] || {}
   const prompts = PROMPTS[stem] || {}
 
-  // Each section composer reads its passage bank and returns
-  // a section object, or null if the bank is empty for this stem.
+  // Order = narrative arc: orient → personal → relational →
+  // practical → material → embodied → close. Each section composer
+  // returns a section object, or null if its bank is empty.
   const candidates = [
-    composePembukaan(chart,            prompts.pembukaan),
-    composeCaraKamuHadir(chart,        prompts.caraKamuHadir),
-    composePolaDiPekerjaan(chart,      prompts.polaDiPekerjaan),
-    composePolaDiHubungan(chart,       prompts.polaDiHubungan),
-    composePolaDiTubuh(chart,          prompts.polaDiTubuh),
-    composeHubunganDenganRezeki(chart, prompts.hubunganDenganRezeki),
-    composePenutup(chart,              prompts.penutup),
+    composePembukaan(chart,            prompts.pembukaan),            // Bab 1
+    composeCaraKamuHadir(chart,        prompts.caraKamuHadir),        // Bab 2
+    composePolaDiHubungan(chart,       prompts.polaDiHubungan),       // Bab 3
+    composePolaDiPekerjaan(chart,      prompts.polaDiPekerjaan),      // Bab 4
+    composeHubunganDenganRezeki(chart, prompts.hubunganDenganRezeki), // Bab 5
+    composePolaDiTubuh(chart,          prompts.polaDiTubuh),          // Bab 6
+    composePenutup(chart,              prompts.penutup),              // Bab 7
   ]
 
   const sections = candidates.filter(Boolean)

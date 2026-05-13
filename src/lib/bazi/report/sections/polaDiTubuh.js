@@ -10,7 +10,7 @@ import passages from '../passages/polaDiTubuh.js'
 import { sectionFromPassage } from './_helpers.js'
 import * as F from '../features.js'
 
-const TITLE = 'Pola di Tubuh & Energi'
+const TITLE = 'Tubuh & Energi'
 const SECTION_KEY = 'polaDiTubuh'
 
 const RULES = [

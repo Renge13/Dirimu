@@ -14,6 +14,17 @@ const ELEMENT_LABEL = {
   Water: 'Air',
 }
 
+/* One-line plainspoken meaning per element for the Keseimbangan card.
+   Without this caption, the bars + numbers don't communicate anything
+   to a reader without BaZi vocabulary. */
+const ELEMENT_MEANING = {
+  Wood:  'pertumbuhan dan inisiatif',
+  Fire:  'energi dan visibilitas',
+  Earth: 'stabilitas dan kepedulian',
+  Metal: 'ketegasan dan kejernihan',
+  Water: 'adaptasi dan kedalaman',
+}
+
 const ELEMENTS = ['Wood', 'Fire', 'Earth', 'Metal', 'Water']
 
 const PILLAR_LABELS = {
@@ -347,46 +358,37 @@ function App() {
             </div>
           )}
 
-          {/* Day Master + Balance */}
-          <div className="lower-grid">
-            <div className="info-card">
-              <div className="section-title">Energi Intimu</div>
-              <p className="section-caption">
-                Dalam 八字, energi inti diambil dari elemen pada hari kelahiranmu.
-              </p>
-              <div className="day-master-display">
-                <span className="day-master-stem">{result.dayMaster.stem}</span>
-                <span className="day-master-meta">
-                  {ELEMENT_LABEL[result.dayMaster.element]} · {result.dayMaster.polarity}
-                </span>
-              </div>
-            </div>
-
-            <div className="info-card">
-              <div className="section-title">Keseimbangan Elemen</div>
-              <div className="balance">
-                {ELEMENTS.map((el) => {
-                  const val = result.elementBalance[el] || 0
-                  const pct = Math.max((val / maxBalance) * 100, 0)
-                  return (
-                    <div className="balance-row" key={el}>
+          {/* Element balance — bars + plain-Indonesian meaning per element */}
+          <div className="info-card balance-card">
+            <div className="section-title">Komposisi Energimu</div>
+            <p className="section-caption">
+              Lima energi dasar yang membentuk dirimu. Yang paling kuat menggambarkan
+              cara kamu sering bertindak; yang paling lemah, sisi yang sering terlewat.
+            </p>
+            <div className="balance">
+              {ELEMENTS.map((el) => {
+                const val = result.elementBalance[el] || 0
+                const pct = Math.max((val / maxBalance) * 100, 0)
+                return (
+                  <div className="balance-row" key={el}>
+                    <div className="balance-label-group">
                       <span className="balance-label">{ELEMENT_LABEL[el]}</span>
-                      <div className="balance-bar">
-                        <div
-                          className="balance-fill"
-                          data-element={el}
-                          style={{ width: `${pct}%` }}
-                        />
-                      </div>
-                      <span className="balance-value">{val.toFixed(1)}</span>
+                      <span className="balance-meaning">{ELEMENT_MEANING[el]}</span>
                     </div>
-                  )
-                })}
-              </div>
-              {result.interpretation?.elementNote && (
-                <p className="element-note">{result.interpretation.elementNote}</p>
-              )}
+                    <div className="balance-bar">
+                      <div
+                        className="balance-fill"
+                        data-element={el}
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
+                  </div>
+                )
+              })}
             </div>
+            {result.interpretation?.elementNote && (
+              <p className="element-note">{result.interpretation.elementNote}</p>
+            )}
           </div>
 
           {/* Relations — archetype-named chips so reader doesn't have to remember branches */}

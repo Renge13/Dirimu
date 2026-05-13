@@ -11,7 +11,7 @@ import passages from '../passages/penutup.js'
 import { sectionFromPassage } from './_helpers.js'
 import * as F from '../features.js'
 
-const TITLE = 'Yang Perlu Kamu Ingat'
+const TITLE = 'Refleksi Akhir'
 const SECTION_KEY = 'penutup'
 
 const RULES = [

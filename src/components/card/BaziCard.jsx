@@ -11,7 +11,8 @@
 // ============================================================
 
 import { ELEMENT_CONFIG, ARCHETYPE_EMOJI } from '../../lib/bazi/elementConfig.js'
-import { WatercolorIllustration } from './WatercolorIllustration.jsx'
+// Zone 3 (watercolor illustration) is hidden in this build — the SVG render
+// was breaking layout. Reintroduce when art direction is finalized.
 import {
   IconFlame,
   IconLeaf,
@@ -183,7 +184,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
 
   const cardStyle = {
     width:        s(270),
-    height:       s(480),
+    height:       s(410),
     display:      'flex',
     flexDirection:'column',
     overflow:     'hidden',
@@ -235,10 +236,10 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         </span>
       </div>
 
-      {/* ── Zone 2 — Identity (78px) ──────────────────────── */}
+      {/* ── Zone 2 — Identity (115px, expanded to fit subtitle + tagline) ─ */}
       <div style={{
-        ...zone(78),
-        padding:        `${s(10)}px ${s(14)}px ${s(8)}px`,
+        ...zone(115),
+        padding:        `${s(14)}px ${s(14)}px ${s(12)}px`,
         display:        'flex',
         flexDirection:  'column',
         justifyContent: 'center',
@@ -295,20 +296,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         )}
       </div>
 
-      {/* ── Zone 3 — Image (104px) ─────────────────────────── */}
-      <div style={{
-        ...zone(104),
-        position:   'relative',
-        background: cfg.wash,
-        opacity:    0.95,
-      }}>
-        <WatercolorIllustration
-          element={element}
-          chineseChar={chineseChar}
-          width={s(270)}
-          height={s(104)}
-        />
-      </div>
+      {/* ── Zone 3 — REMOVED (watercolor image; reintroduce when art ready) ── */}
 
       {/* ── Zone 4 — Three Dimensions (111px) ─────────────── */}
       <div style={{
