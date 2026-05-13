@@ -62,10 +62,56 @@ function App() {
   function onSubmit(e) {
     e.preventDefault()
     setError(null)
+
+    // Parse DD-MM-YYYY (also accepts DD/MM/YYYY or DD.MM.YYYY)
+    const dateMatch = /^\s*(\d{1,2})[-/.](\d{1,2})[-/.](\d{4})\s*$/.exec(birthDate)
+    if (!dateMatch) {
+      setError('Format tanggal salah. Gunakan DD-MM-YYYY (contoh: 13-09-1989).')
+      setResult(null)
+      return
+    }
+    const [, ddStr, mmStr, yyyyStr] = dateMatch
+    const dd = parseInt(ddStr, 10)
+    const mm = parseInt(mmStr, 10)
+    const yyyy = parseInt(yyyyStr, 10)
+    const isoDate = `${yyyy}-${String(mm).padStart(2,'0')}-${String(dd).padStart(2,'0')}`
+    const checkDate = new Date(`${isoDate}T12:00:00+07:00`)
+    if (
+      isNaN(checkDate.getTime()) ||
+      checkDate.getUTCDate() !== dd ||
+      checkDate.getUTCMonth() + 1 !== mm ||
+      checkDate.getUTCFullYear() !== yyyy ||
+      yyyy < 1900 || yyyy > 2030
+    ) {
+      setError(`Tanggal tidak valid: ${birthDate}. Pastikan hari dan bulan benar, tahun antara 1900–2030.`)
+      setResult(null)
+      return
+    }
+
+    // Parse HH:MM 24-hour (optional)
+    let isoTime = null
+    const trimmedTime = birthTime.trim()
+    if (trimmedTime) {
+      const timeMatch = /^(\d{1,2})[:.](\d{2})$/.exec(trimmedTime)
+      if (!timeMatch) {
+        setError('Format jam salah. Gunakan HH:MM 24-jam (contoh: 09:00 atau 23:30).')
+        setResult(null)
+        return
+      }
+      const h = parseInt(timeMatch[1], 10)
+      const mi = parseInt(timeMatch[2], 10)
+      if (h < 0 || h > 23 || mi < 0 || mi > 59) {
+        setError(`Jam tidak valid: ${trimmedTime}. Gunakan 00:00 sampai 23:59.`)
+        setResult(null)
+        return
+      }
+      isoTime = `${String(h).padStart(2,'0')}:${String(mi).padStart(2,'0')}`
+    }
+
     try {
       const chart = calculateBaziChart({
-        birthDate,
-        birthTime: birthTime || null,
+        birthDate: isoDate,
+        birthTime: isoTime,
       })
       const interpretation = getInterpretation(chart)
       const cardData = getCardData(chart)
@@ -109,8 +155,11 @@ function App() {
               <input
                 id="birthDate"
                 className="field-input"
-                type="date"
-                lang="id-ID"
+                type="text"
+                inputMode="numeric"
+                placeholder="DD-MM-YYYY"
+                maxLength={10}
+                autoComplete="bday"
                 value={birthDate}
                 onChange={(e) => setBirthDate(e.target.value)}
                 required
@@ -123,9 +172,10 @@ function App() {
               <input
                 id="birthTime"
                 className="field-input"
-                type="time"
-                lang="id-ID"
-                step="60"
+                type="text"
+                inputMode="numeric"
+                placeholder="HH:MM (24-jam)"
+                maxLength={5}
                 value={birthTime}
                 onChange={(e) => setBirthTime(e.target.value)}
               />
