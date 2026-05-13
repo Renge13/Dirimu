@@ -100,9 +100,9 @@ function DimRow({ label, dotColor, labelColor, items, scale, showTopBorder }) {
           {label}
         </div>
         <div style={{
-          fontSize:   scale * 10.5,
+          fontSize:   scale * 9.5,
           color:      BASE.textPrimary,
-          lineHeight: 1.4,
+          lineHeight: 1.3,
         }}>
           {items.join(' · ')}
         </div>
@@ -184,7 +184,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
 
   const cardStyle = {
     width:        s(270),
-    height:       s(410),  // 28+115+135+76+56 = 410 (no footer)
+    height:       s(420),  // 28+115+145+76+56 = 420 (no footer)
     display:      'flex',
     flexDirection:'column',
     overflow:     'hidden',
@@ -298,9 +298,9 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
 
       {/* ── Zone 3 — REMOVED (watercolor image; reintroduce when art ready) ── */}
 
-      {/* ── Zone 4 — Three Dimensions (135px — expanded to fit DAMPAK without overflow clipping) */}
+      {/* ── Zone 4 — Three Dimensions (145px — fits all 3 rows incl. 2-line wraps) */}
       <div style={{
-        ...zone(135),
+        ...zone(145),
         padding:        `${s(6)}px ${s(14)}px`,
         display:        'flex',
         flexDirection:  'column',
@@ -335,39 +335,53 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
       </div>
 
       {/* ── Zone 5 — SIFAT (76px) ──────────────────────────── */}
+      {/* Same dot + label structure as Zone 4 DimRow for visual rhythm */}
       <div style={{
         ...zone(76),
         padding: `${s(10)}px ${s(14)}px ${s(16)}px`,
+        display: 'flex',
+        alignItems: 'flex-start',
+        gap: s(8),
       }}>
         <div style={{
-          fontSize:      s(9),
-          letterSpacing: s(1.5),
-          color:         BASE.muted,
-          marginBottom:  s(6),
-          fontWeight:    500,
-        }}>
-          SIFAT
-        </div>
-        <div style={{
-          display:  'flex',
-          flexWrap: 'wrap',
-          gap:      s(4),
-          overflow: 'hidden',
-        }}>
-          {sifatPills.map((trait, i) => (
-            <span key={i} style={{
-              fontSize:     s(9.5),
-              padding:      `${s(2)}px ${s(8)}px`,
-              border:       `${scale}px solid ${BASE.pillBorder}`,
-              borderRadius: s(20),
-              color:        BASE.textSecondary,
-              background:   BASE.pillBg,
-              whiteSpace:   'nowrap',
-              lineHeight:   1.3,
-            }}>
-              {trait}
-            </span>
-          ))}
+          width:        s(6),
+          height:       s(6),
+          borderRadius: '50%',
+          background:   BASE.muted,
+          marginTop:    s(4),
+          flexShrink:   0,
+        }} />
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{
+            fontSize:      s(9),
+            letterSpacing: s(1.5),
+            fontWeight:    600,
+            color:         BASE.muted,
+            marginBottom:  s(4),
+          }}>
+            SIFAT
+          </div>
+          <div style={{
+            display:  'flex',
+            flexWrap: 'wrap',
+            gap:      s(4),
+            overflow: 'hidden',
+          }}>
+            {sifatPills.map((trait, i) => (
+              <span key={i} style={{
+                fontSize:     s(9.5),
+                padding:      `${s(2)}px ${s(8)}px`,
+                border:       `${scale}px solid ${BASE.pillBorder}`,
+                borderRadius: s(20),
+                color:        BASE.textSecondary,
+                background:   BASE.pillBg,
+                whiteSpace:   'nowrap',
+                lineHeight:   1.3,
+              }}>
+                {trait}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
