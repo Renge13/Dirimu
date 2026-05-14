@@ -91,7 +91,7 @@ function DimRow({ label, dotColor, labelColor, items, scale, showTopBorder }) {
       }} />
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{
-          fontSize:      scale * 9,
+          fontSize:      scale * 8.5,
           letterSpacing: scale * 1.5,
           fontWeight:    600,
           color:         labelColor,
@@ -100,7 +100,7 @@ function DimRow({ label, dotColor, labelColor, items, scale, showTopBorder }) {
           {label}
         </div>
         <div style={{
-          fontSize:   scale * 9.5,
+          fontSize:   scale * 8.5,
           color:      BASE.textPrimary,
           lineHeight: 1.3,
         }}>
@@ -126,10 +126,10 @@ function SocialColumn({ label, element, archetypes, scale, align = 'left' }) {
         gap:           scale * 4,
         marginBottom:  scale * 3,
       }}>
-        <ElementIcon element={element} size={scale * 10} color={BASE.muted} />
+        <ElementIcon element={element} size={scale * 9} color={BASE.muted} />
         <span style={{
-          fontSize:      scale * 7.5,
-          letterSpacing: scale * 1.1,
+          fontSize:      scale * 7,
+          letterSpacing: scale * 1,
           color:         BASE.muted,
           fontWeight:    600,
           whiteSpace:    'nowrap',
@@ -139,9 +139,9 @@ function SocialColumn({ label, element, archetypes, scale, align = 'left' }) {
       </div>
       {archetypes.map((a) => (
         <div key={a.stem} style={{
-          fontSize:   scale * 10,
+          fontSize:   scale * 9,
           color:      BASE.textPrimary,
-          lineHeight: 1.55,
+          lineHeight: 1.5,
           whiteSpace: 'nowrap',
         }}>
           <span style={{ marginRight: scale * 4 }}>
@@ -184,7 +184,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
 
   const cardStyle = {
     width:        s(270),
-    height:       s(420),  // 28+115+145+76+56 = 420 (no footer)
+    height:       s(426),  // 28+115+145+82+56 = 426 (no footer)
     display:      'flex',
     flexDirection:'column',
     overflow:     'hidden',
@@ -221,13 +221,13 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         alignItems:     'center',
       }}>
         <span style={{
-          fontSize: s(9),
+          fontSize: s(8),
           color:    BASE.muted,
         }}>
           {formatBirthDate(chart.birthDate)}
         </span>
         <span style={{
-          fontSize:      s(9),
+          fontSize:      s(8),
           letterSpacing: s(1.5),
           color:         BASE.muted,
           fontWeight:    500,
@@ -250,20 +250,20 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
           alignItems:    'center',
           gap:           s(5),
           marginBottom:  s(4),
-          fontSize:      s(10),
+          fontSize:      s(9),
           color:         cfg.mid,
           letterSpacing: s(1.2),
         }}>
-          <ElementIcon element={element} size={s(12)} color={cfg.mid} />
+          <ElementIcon element={element} size={s(11)} color={cfg.mid} />
           <span>{dayMasterChinese} · {cfg.label}</span>
         </div>
         {/* Archetype name */}
         <div style={{
-          fontSize:      s(28),
+          fontSize:      s(25),
           fontFamily:    'Georgia, "Playfair Display", "Times New Roman", serif',
           fontWeight:    700,
           color:         cfg.deep,
-          letterSpacing: s(3),
+          letterSpacing: s(2.5),
           lineHeight:    1,
           textTransform: 'uppercase',
         }}>
@@ -272,7 +272,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         {/* Subtitle — person-first identity gloss */}
         {subtitle && (
           <div style={{
-            fontSize:    s(9.5),
+            fontSize:    s(8.5),
             color:       BASE.textSecondary,
             marginTop:   s(5),
             lineHeight:  1.4,
@@ -281,10 +281,10 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
             {subtitle}
           </div>
         )}
-        {/* Tagline (no subject pronoun) */}
+        {/* Tagline (no subject pronoun) — lowest priority, smallest */}
         {taglineCard && (
           <div style={{
-            fontSize:    s(10),
+            fontSize:    s(8.5),
             fontStyle:   'italic',
             fontFamily:  'Georgia, "Playfair Display", "Times New Roman", serif',
             color:       BASE.textSecondary,
@@ -334,11 +334,11 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         />
       </div>
 
-      {/* ── Zone 5 — SIFAT (76px) ──────────────────────────── */}
+      {/* ── Zone 5 — SIFAT (82px) ──────────────────────────── */}
       {/* Same dot + label structure as Zone 4 DimRow for visual rhythm */}
       <div style={{
-        ...zone(76),
-        padding: `${s(10)}px ${s(14)}px ${s(16)}px`,
+        ...zone(82),
+        padding: `${s(8)}px ${s(14)}px ${s(12)}px`,
         display: 'flex',
         alignItems: 'flex-start',
         gap: s(8),
@@ -353,7 +353,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         }} />
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{
-            fontSize:      s(9),
+            fontSize:      s(8.5),
             letterSpacing: s(1.5),
             fontWeight:    600,
             color:         BASE.muted,
@@ -364,13 +364,13 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
           <div style={{
             display:  'flex',
             flexWrap: 'wrap',
-            gap:      s(4),
+            gap:      s(3),
             overflow: 'hidden',
           }}>
             {sifatPills.map((trait, i) => (
               <span key={i} style={{
-                fontSize:     s(9.5),
-                padding:      `${s(2)}px ${s(8)}px`,
+                fontSize:     s(8.5),
+                padding:      `${s(2)}px ${s(7)}px`,
                 border:       `${scale}px solid ${BASE.pillBorder}`,
                 borderRadius: s(20),
                 color:        BASE.textSecondary,
