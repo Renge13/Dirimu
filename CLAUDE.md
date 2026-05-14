@@ -9,6 +9,7 @@ Personal project. Live at https://dirimu.vercel.app (private demo), code at http
 ## Current state (handoff snapshot)
 
 **Latest commit on `main`**: see `git log --oneline -5`. The recent arc:
+- **Phase 7d landed** — pillarMeanings.js audit. Two surgical fixes: `year['己']` swapped `selalu` → `sering` (banned forecast word slipped through Bank 9e), and all 10 `day[*]` entries softened from declarative opener `Inti dirimu adalah X` to observation-first `Inti dirimu sering tampak sebagai X` for cohesion with Phase 7c locks. Other 30 lines audited and left intact (audit, not demolish).
 - **Phase 7c COMPLETE (10/10)** — reading-page surfaces (hero / identityPills / traits) now in formal+spoken register for every archetype. Batch 4 (壬 Samudra + 癸 Hujan) was the cleanest C2 delivery of the session — every drift the prompt flagged was caught and fixed in-batch, zero inline corrections needed.
 - **Phase 7b COMPLETE (10/10)** with 己 catch-up (silently missed by earlier batches).
 - **Sharecard layout uniformity** — `SIFAT` zone merged into Zone 4 as a 4th `DimRow` (was a standalone 76px Zone 5 that looked visually larger than KEKUATAN/SISI LAIN/DAMPAK). All four dimensions share one packed container with consistent dividers. Zone 6 grown 56→76 with bumped bottom padding so `ENERGI MENYOKONG`/`ENERGI MENGUJI` chips have breathing room from the card edge. Card total unchanged at 420px.
@@ -39,8 +40,7 @@ ONE report titled "Bacaan Mendalam":
 
 ### Pending C2 work
 
-- **Phase 7d** (next): pillarMeanings.js audit. Pillar interpretations (年/月/日/時 × 10 stems = 40 lines) for the EMPAT PILARMU section on the reading page. Smaller scope than reading-page archetype work.
-- **Phase 7e**: 70 Refleksi passage cores (biggest content lift remaining in the free tier)
+- **Phase 7e** (next): 70 Refleksi passage cores. Biggest content lift remaining in the free tier — 7 sections × 10 archetypes, each a multi-paragraph reflective passage with conditional inserts. Should be batched (probably section-by-section, 10 archetypes per batch = 7 batches).
 - **Phase 8b**: paid tier content — Karier / Cinta / Kesehatan / Rezeki × 10 archetypes (~7,000-10,000 words)
 
 ### Open UX issues (lower priority)
