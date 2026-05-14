@@ -197,7 +197,7 @@ export const DAY_MASTERS = {
   '戊': {
     name: 'Gunung',
     chinese: '戊土',
-    subtitle: 'Sosok yang menjadi tempat bersandar, tanpa banyak bicara.',
+    subtitle: 'Orang yang diandalkan, meski tak banyak kata.',
     tagline: 'Aku tidak bergerak, karena semua orang butuh tempat berpijak.',
     hero: 'Kamu adalah fondasi yang tidak terlihat di bawah gedung tertinggi. Semua orang mengagumi puncak, tapi hanya sedikit yang tahu bahwa di bawah sana, kamulah yang menahan semuanya. Kamu tidak bergerak oleh tren, oleh pujian, atau oleh ancaman, karena di dalam dirimu sudah ada peta yang tidak bisa diguncang.',
     identityPills: [
@@ -224,15 +224,27 @@ export const DAY_MASTERS = {
       'Leganya orang lain saat tahu dia masih di sana',
       'Tidak bereaksi cepat, tapi reaksinya adalah yang paling tepat',
     ],
-    taglineCard: 'Tidak bergerak, karena semua orang butuh tempat berpijak.',
-    kekuatanDescriptors: ['Andalan Mutlak', 'Stabilitas Mental', 'Kesabaran Panjang'],
-    bayanganDescriptors: ['Sulit Berubah', 'Emosi Tertutup', 'Lambat Memutuskan'],
-    dampakDescriptors: ['Rasa Aman saat Kacau', 'Tempat Pulang yang Diam'],
+    taglineCard: 'Diam di tempat, karena semua orang butuh tempat berpijak.',
+    kekuatanDescriptors: [
+      'bisa diandalkan saat semuanya goyah',
+      'pikiran tenang meski sekitar kacau',
+      'sabar menunggu tanpa terburu-buru',
+    ],
+    bayanganDescriptors: [
+      'sulit beradaptasi saat keadaan berubah mendadak',
+      'cenderung menyimpan perasaan sendiri',
+      'lama menimbang sebelum memutuskan',
+    ],
+    dampakDescriptors: [
+      'orang merasa lebih aman saat dia ada',
+      'jadi tempat pulang yang sunyi tapi nyaman',
+    ],
     sifatPills: [
-      'tipe yang ditelepon jam 3 pagi',
-      'gak romantis tapi setia banget',
-      'males drama, fokus yang penting',
-      'ngomongnya dikit, kerjanya banyak',
+      'orang yang dicari saat semuanya berantakan',
+      'jarang mengumbar perasaan, tapi perhatiannya konsisten',
+      'lebih banyak menyelesaikan daripada mengumumkan',
+      'tidak suka drama, hanya peduli yang penting',
+      'kehadirannya membuat sekitar merasa stabil',
     ],
   },
   '己': {
