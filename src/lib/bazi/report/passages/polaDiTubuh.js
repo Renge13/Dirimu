@@ -22,18 +22,18 @@ export default {
   '乙': {
     core: `Pola tubuh Tanaman Rambat sering kali siap menyesuaikan. Otot-ototmu mungkin tidak pernah sepenuhnya mati; ada ketegangan rendah yang terus hadir, seperti tanaman yang merambat mencari pegangan bahkan di malam hari. Kamu mungkin merasa gelisah saat dipaksa diam terlalu lama, karena sistem sarafmu sudah terbiasa membaca dan merespons lingkungan. Sisi lain dari kelenturan ini adalah kelelahan yang muncul setelah kamu selesai beradaptasi dengan semua orang, seolah tubuhmu sudah membentuk dirinya berkali-kali dalam satu hari dan lupa bentuk aslinya.`,
     inserts: {
-      fireExcess: `Dengan Api berlebih, kamu membakar energi untuk orang lain tanpa sadar. Tubuhmu terasa hangat dan hidup saat bersama orang, tapi ketika sendiri, tiba-tiba sumbu itu padam dan menyisakan abu. Kehangatan yang kamu beri tidak menyisakan cukup bahan bakar untuk dirimu sendiri.`,
+      fireExcess: `Dengan Api berlebih, kamu membakar energi untuk orang lain tanpa sadar. Tubuhmu terasa hangat dan hidup saat bersama orang, tapi ketika sendiri, tiba-tiba tenagamu habis dan menyisakan keletihan. Kehangatan yang kamu beri tidak menyisakan cukup bahan bakar untuk dirimu sendiri.`,
       waterExcess: `Air berlebih membuatmu menyerap seperti spons. Kelembapan emosional dari sekitar menempel di tubuhmu: kepala terasa berat, anggota tubuh lamban, seolah hujan yang kamu serap tidak menemukan saluran untuk keluar. Kamu mungkin merasa perlu mengeringkan diri, tapi tidak tahu bagaimana caranya.`,
-      missingFire: `Tanpa Api yang cukup, ekstremitasmu mungkin terasa dingin, dan ada lapisan tipis "off" yang tidak hilang. Energi sosialmu rendah dan cepat habis. Kamu bisa berada di keramaian tapi tubuhmu terasa seperti tidak sepenuhnya hadir, seperti tanaman yang kurang sinar dan mulai merunduk.`,
+      missingFire: `Tanpa Api yang cukup, ekstremitasmu mungkin terasa dingin, dan ada lapisan tipis redup yang tidak hilang. Energi sosialmu rendah dan cepat habis. Kamu bisa berada di keramaian tapi tubuhmu terasa seperti tidak sepenuhnya hadir, seperti tanaman yang kurang sinar dan mulai merunduk.`,
     },
   },
 
   '丙': {
-    core: `Tubuh Matahari menyala tanpa kenal saklar. Pola yang sering muncul: tidur, tapi belum istirahat. Pikiranmu sudah selesai dengan hari ini, tapi tubuhmu belum dapat sinyal bahwa hari ini aman untuk turun. Beban yang tidak ditaruh dulu sebelum tubuh ambruk. Sumbumu masih terasa hangat dari dalam meski lampunya sudah dimatikan, seolah ada saklar internal yang lupa cara dimatikan. Kamu mungkin mengenali sensasi detak yang lebih cepat dari seharusnya, atau rahang yang mengatup rapat menahan semangat yang belum sempat diekspresikan.`,
+    core: `Tubuh Matahari menyala tanpa kenal saklar. Pola yang sering muncul: tidur, tapi belum istirahat. Pikiranmu sudah selesai dengan hari ini, tapi tubuhmu belum dapat sinyal bahwa hari ini aman untuk turun. Beban yang tidak ditaruh dulu sebelum tubuh ambruk. Panasmu masih terasa hangat dari dalam meski lampunya sudah dimatikan, seolah ada saklar internal yang lupa cara dimatikan. Kamu mungkin mengenali sensasi detak yang lebih cepat dari seharusnya, atau rahang yang mengatup rapat menahan semangat yang belum sempat diekspresikan.`,
     inserts: {
       fireExcess: `Api berlebih membuatmu seperti mesin yang terus menyala tanpa pendingin. Bahkan setelah pekerjaan selesai, putaran dalam dirimu tidak ikut berhenti. Tubuhmu menyimpan panas yang tidak bisa dilepaskan begitu saja; ini bukan demam, tapi suhu dari semua antusiasme yang tidak menemukan tombol "cukup."`,
       missingWater: `Tanpa Air yang memadai, sistem pendinginmu nyaris tidak ada. Kamu sulit benar-benar relaks, bahkan di akhir pekan. Tidurmu mungkin dangkal, dan kamu terbangun dengan rasa lelah yang sama seperti sebelum tidur, karena tidak ada kedalaman yang bisa menampung panasmu.`,
-      earthExcess: `Bumi berlebih menambahkan lapisan berat pada nyalamu. Energi yang seharusnya melenting ke atas malah tertahan, menciptakan sensasi sumuk di dalam: perut terasa penuh, napas pendek, seperti ada tanggung jawab yang mengendap dan menolak untuk dicerna.`,
+      earthExcess: `Bumi berlebih menambahkan lapisan berat pada nyalamu. Energi yang seharusnya melenting ke atas malah tertahan, menciptakan sensasi gerah di dalam: perut terasa penuh, napas pendek, seperti ada tanggung jawab yang mengendap dan menolak untuk dicerna.`,
     },
   },
 
@@ -41,7 +41,7 @@ export default {
     core: `Lilin menyala dengan api kecil yang nyaris tak terlihat, dan tubuhmu mungkin menyimpan pola serupa: energi yang tampak tenang dari luar, tapi sebenarnya terus mengonsumsi sumbu. Kamu mungkin sering merasa baik-baik saja sampai tiba-tiba tidak. Kelelahan tidak datang dengan peringatan keras, melainkan seperti lilin yang perlahan memendek, dan kamu baru sadar ketika nyalanya mulai goyah. Sensitivitasmu terhadap lingkungan juga terekam di tubuh: bahu yang mengetat saat ruangan tegang, atau napas yang menyesuaikan ritme dengan orang di dekatmu tanpa kamu perintahkan.`,
     inserts: {
       waterExcess: `Air berlebih menambah berat pada nyala kecilmu. Kepalamu mungkin terasa penuh dengan pikiran yang tidak bisa kamu ungkapkan, seperti kabut yang tidak bisa ditembus cahaya. Tubuhmu menyimpan kelembapan emosional dari sekitar, dan kamu sering merasa perlu mengeringkan diri, tapi caranya tidak jelas.`,
-      missingWater: `Tanpa Air yang cukup, istirahatmu seperti permukaan yang tidak pernah dalam. Kamu tidur, tapi sumbumu tidak benar-benar terendam dalam pemulihan. Ada kegelisahan laten yang membuatmu tidak bisa benar-benar melepaskan, seolah selalu ada satu bagian yang harus tetap terjaga.`,
+      missingWater: `Tanpa Air yang cukup, istirahatmu seperti permukaan yang tidak pernah dalam. Kamu tidur, tapi sumbumu tidak benar-benar terendam dalam pemulihan. Ada kegelisahan laten yang membuatmu tidak bisa benar-benar melepaskan, seolah ada satu bagian yang terus terjaga.`,
       earthExcess: `Bumi berlebih memberimu beban internal yang sering tersembunyi. Perutmu mungkin menjadi tempat penyimpanan semua yang kamu serap: sensasi penuh, tidak nyaman, seperti tanah yang terlalu banyak menampung air dan mulai kehilangan strukturnya sendiri.`,
     },
   },
@@ -50,7 +50,7 @@ export default {
     core: `Tubuh Gunung menyimpan bobot, bukan hanya dari tulang dan otot, tapi juga dari semua tanggung jawab yang tidak kamu lepaskan. Kamu mungkin merasa lambat di pagi hari, seolah gravitasi bekerja lebih keras sebelum kamu bisa bergerak. Inersia ini bisa menjadi teman atau musuh: begitu kamu diam, susah mulai; begitu kamu bergerak, susah berhenti. Ketegangan sering tersimpan di punggung bawah dan paha, sebagai fondasi yang menopang beban yang mungkin tidak perlu kamu pikul sendiri. Kamu jarang jatuh sakit tiba-tiba, tapi ketika tubuhmu memberi isyarat, itu biasanya isyarat yang sudah lama diabaikan.`,
     inserts: {
       earthExcess: `Bumi berlebih membuat stagnasi ini semakin kental. Langkahmu berat, keputusan terasa lambat, dan tubuhmu mungkin menyimpan kelebihan yang tidak bisa dicerna: di perut, di pikiran, di emosi. Ada sensasi penuh yang menetap, seperti tanah liat yang mengeras dan susah dibentuk ulang.`,
-      fireExcess: `Api berlebih menambahkan panas pada Gunung: energi yang seharusnya membangun fondasimu malah membuatmu sumuk dari dalam. Lambung yang sensitif di hari-hari padat, suhu yang naik bukan dari cuaca tapi dari beban yang tidak diakui. Tubuhmu menyimpan panas tanggung jawab yang kamu pikul tanpa minta jeda.`,
+      fireExcess: `Api berlebih menambahkan panas pada Gunung: energi yang seharusnya membangun fondasimu malah membuatmu gerah dari dalam. Lambung yang sensitif di hari-hari padat, suhu yang naik bukan dari cuaca tapi dari beban yang tidak diakui. Tubuhmu menyimpan panas tanggung jawab yang kamu pikul tanpa minta jeda.`,
       missingWood: `Tanpa Kayu yang cukup, tubuhmu terasa kaku dan susah memulai gerakan. Bahu dan leher mungkin mengetat, seolah tidak ada angin yang bisa menggerakkan dahan-dahanmu. Di pagi hari, ada rasa "beku" yang sulit dicairkan, dan kamu butuh waktu lebih lama dari kebanyakan orang untuk benar-benar bangun.`,
     },
   },
@@ -83,18 +83,18 @@ export default {
   },
 
   '壬': {
-    core: `Tubuh Samudra menyimpan kedalaman sebagai kabut. Kepalamu mungkin sering terasa penuh bukan dengan rasa sakit, tapi dengan sensasi berdesakan: pikiran yang tidak bisa kamu urutkan, skenario yang terus mengalir. Brain fog ini bukan kelupaan, melainkan terlalu banyak yang hadir sekaligus. Kakimu mungkin terasa ringan tapi tidak membumi; seperti berjalan di dasar laut, lambat dan terhambat oleh arus. Kamu bisa merasa sangat lelah secara mental sementara tubuhmu belum bergerak seharian, karena pikiranmu sudah berenang lebih jauh dari yang bisa diikuti oleh fisikmu.`,
+    core: `Tubuh Samudra menyimpan kedalaman sebagai kabut. Kepalamu mungkin sering terasa penuh bukan dengan rasa sakit, tapi dengan sensasi berdesakan: pikiran yang tidak bisa kamu urutkan, skenario yang terus mengalir. Kabut di kepala ini bukan kelupaan, melainkan terlalu banyak yang hadir sekaligus. Kakimu mungkin terasa ringan tapi tidak membumi; seperti berjalan di dasar laut, lambat dan terhambat oleh arus. Kamu bisa merasa sangat lelah secara mental sementara tubuhmu belum bergerak seharian, karena pikiranmu sudah berenang lebih jauh dari yang bisa diikuti oleh fisikmu.`,
     inserts: {
       waterExcess: `Air berlebih membuatmu nyaris tanpa pantai. Kamu meluap ke mana-mana secara internal, dan tubuhmu mungkin terasa berat, lamban, seperti kantong air yang susah diangkat. Melankolis muncul tanpa pemicu jelas, dan anggota badanmu terasa seperti terendam dalam kolam yang dingin.`,
       missingWood: `Tanpa Kayu yang cukup, tidak ada yang bisa menyalurkan airmu ke atas. Kamu mungkin merasa beku di pagi hari, susah memulai gerakan, seolah energi tidak bisa menemukan saluran. Visi besarmu tidak menemukan batang untuk merambat ke dunia fisik.`,
-      missingFire: `Tanpa Api yang cukup, suhu tubuhmu terasa rendah, terutama di jari dan kaki. Ada lapisan "off" yang membuatmu sulit bersemangat secara fisik. Kamu bisa kehabisan energi sosial dengan sangat cepat, dan musim hujan mungkin terasa lebih berat bagimu.`,
+      missingFire: `Tanpa Api yang cukup, suhu tubuhmu terasa rendah, terutama di jari dan kaki. Ada lapisan redup yang membuatmu sulit bersemangat secara fisik. Kamu bisa kehabisan energi sosial dengan sangat cepat, dan cuaca dingin mungkin terasa lebih berat bagimu.`,
     },
   },
 
   '癸': {
     core: `Hujan menyimpan kelelahan sebagai kelembapan yang tidak pernah benar-benar kering. Kamu mungkin sering merasa tidur tidak cukup, meski jam tidurmu panjang. Ini bukan insomnia, tapi kualitas istirahat yang dangkal: kamu tidur, tapi belum mengering. Tubuhmu menyerap atmosfer sekitar dan menyimpannya di otot-otot kecil; bahu yang terasa pegal setelah berada di ruangan penuh orang, atau kelopak mata yang berat menanggung emosi yang bukan milikmu. Batas antara "aku" dan "lingkungan" di tubuhmu sering kabur.`,
     inserts: {
-      waterExcess: `Air berlebih membuatmu menjadi spons yang tidak pernah kering. Kamu menampung lebih banyak dari yang bisa kamu lepaskan, dan tubuhmu menyimpannya sebagai rasa berat di seluruh anggota badan. Ada sensasi selalu "basah" secara energetik, dan kamu mungkin tidak ingat kapan terakhir kali merasa ringan.`,
+      waterExcess: `Air berlebih membuatmu menjadi spons yang tidak pernah kering. Kamu menampung lebih banyak dari yang bisa kamu lepaskan, dan tubuhmu menyimpannya sebagai rasa berat di seluruh anggota badan. Ada sensasi terus-menerus "basah" secara energetik, dan kamu mungkin tidak ingat kapan terakhir kali merasa ringan.`,
       missingFire: `Tanpa Api yang cukup, ekstremitasmu terasa dingin dan ada kelesuan yang tidak bisa dijelaskan. Energimu rendah, dan kamu mungkin merasa seperti hujan yang turun tanpa henti di musim yang salah, tidak ada matahari yang cukup untuk menguapkan.`,
       earthExcess: `Bumi berlebih membantumu menampung, tapi juga membuatmu stagnan. Semua air yang kamu serap mengendap menjadi lumpur di dalam: perut terasa berat, langkah lambat, dan kamu mungkin merasa tersumbat secara fisik dan emosional, seperti saluran yang sudah terlalu penuh.`,
     },
