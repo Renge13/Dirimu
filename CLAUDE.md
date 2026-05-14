@@ -1,6 +1,11 @@
-# Dirimu — BaZi reading webapp
+# RENA — emotional reflection webapp
 
-Personal project. Live at https://dirimu.vercel.app (private demo), code at https://github.com/Renge13/Dirimu.
+Personal project. Live at https://rena.vercel.app (after user's Vercel rename — was `dirimu.vercel.app`), code at https://github.com/Renge13/Rena (after user's GitHub rename — was `Renge13/Dirimu`).
+
+**Brand positioning (RENA, rebranded from DIRIMU):**
+RENA is a **modern emotional reflection brand** that quietly uses BaZi / Four Pillars behind the scenes but does **NOT** lead with metaphysics terminology in marketing surfaces. Brand feel: serene, emotionally intimate, literary, psychologically elegant, premium. Visual: watercolor on textured cream paper, "Muji + premium psychology journal + watercolor editorial design + Apple-level polish". The product is positioned as a reflective lens, not fortune-telling or astrology.
+
+Inner pages (post-form) retain light BaZi vocabulary (`EMPAT PILARMU` section header, sharecard Chinese characters like `丙火 · API`) as aesthetic signature — brand discipline applies to **landing surfaces only**.
 
 **Critical identity note**: this is a **personal** project on Reyner's personal GitHub (`Renge13`), not the Cata work account (`reynercata`). Local repo has `user.email = reynersoendojo@gmail.com` and `user.name = Reyner Soendojo` so commits attribute correctly even though the default global identity is the work one. Never push under work credentials; never amend git config globally from this repo.
 
@@ -9,6 +14,7 @@ Personal project. Live at https://dirimu.vercel.app (private demo), code at http
 ## Current state (handoff snapshot)
 
 **Latest commit on `main`**: see `git log --oneline -5`. The recent arc:
+- **DIRIMU → RENA rebrand in progress** — identity sweep (`Dirimu`/`DIRIMU`/`dirimu` → `RENA`/`RENA`/`rena` in user-facing strings, `package.json`, HTML title, sharecard Zone 1 eyebrow) and homepage redesign (new minimal navbar with Home + Methodology stub, reflection-first hero `Kamu punya pola.` + `Dan mungkin selama ini, kamu belum pernah melihatnya.`, dropped `Ba Zi · 八字` chrome from landing, CTA `Lihat Empat Pilarku →` → `Lihat Refleksiku`, static watercolor bloom background, form labels Title Case). Inner pages unchanged (`EMPAT PILARMU`, `KOMPOSISI ENERGIMU`, sharecard Chinese characters all stay — brand discipline applies to landing surfaces only). Filesystem rename + git remote URL update + GitHub/Vercel rename are done outside Claude session.
 - **Phase 7d landed** — pillarMeanings.js audit. Two surgical fixes: `year['己']` swapped `selalu` → `sering` (banned forecast word slipped through Bank 9e), and all 10 `day[*]` entries softened from declarative opener `Inti dirimu adalah X` to observation-first `Inti dirimu sering tampak sebagai X` for cohesion with Phase 7c locks. Other 30 lines audited and left intact (audit, not demolish).
 - **Phase 7c COMPLETE (10/10)** — reading-page surfaces (hero / identityPills / traits) now in formal+spoken register for every archetype. Batch 4 (壬 Samudra + 癸 Hujan) was the cleanest C2 delivery of the session — every drift the prompt flagged was caught and fixed in-batch, zero inline corrections needed.
 - **Phase 7b COMPLETE (10/10)** with 己 catch-up (silently missed by earlier batches).
@@ -163,7 +169,7 @@ Reyner himself is **丙 Matahari** (1989-09-13 09:00 → 丙子日). All voice l
 
 ## Reading flow (App.jsx surfaces, top to bottom)
 
-1. Hero — `DIRIMU` wordmark + `Empat Pilar Nasibmu...` tagline
+1. Hero — minimal navbar (Home + Methodology stub) → `RENA` wordmark + `Refleksi personal dari waktu kelahiranmu.` supporting line → `Kamu punya pola.` main statement + reflective sub. Replaces the old `DIRIMU` + `Empat Pilar Nasibmu` + `Ba Zi · 八字` eyebrow hero (rebranded for RENA).
 2. Form — date selectors + optional time + `Lihat Empat Pilarku →` submit (smooth-scrolls to result)
 3. **Empat Pilarmu** — 4-pillar grid with `Energi Intimu` badge on day pillar, per-pillar meaning captions
 4. **Persona** = sharecard (BaziCard) + Simpan Gambar (PNG download)
@@ -269,7 +275,7 @@ Pending content work:
 - **Phase 5a–b** — first tester legibility pass: archetype subtitles, person-first Ladang traits, BAYANGAN → SISI LAIN, SELARAS/PEMICU → COCOK DENGAN / PERLU DIJAGA DENGAN with archetype emoji
 - **Phase 4** — long-form report engine (composer + 70 passage cores)
 - **Phase 3** — TCG-style 7-zone sharecard on watercolor canvas (later reduced to 6 zones)
-- **Phase 2** — initial sharecard + project relocated from C:\ to D:\claude-projects\dirimu
+- **Phase 2** — initial sharecard + project relocated from C:\ to D:\claude-projects\dirimu (later renamed to D:\claude-projects\rena as part of the RENA rebrand)
 - **Phase 0–1** — Vite scaffold + BaZi engine integration
 
 ---
@@ -291,4 +297,4 @@ Pending content work:
 - Confirm the user wants you to write code before doing anything destructive. Default to plan mode for sizeable changes.
 - For copy work: draft a tightly-scoped C2 prompt, never write Indonesian copy directly unless the user explicitly delegates it.
 - Smoke chart is **1989-09-13 09:00** (Reyner, 丙 Matahari) unless the user is testing a different archetype.
-- Commit attribution must be the personal identity (`reynersoendojo@gmail.com`). Push only to `Renge13/Dirimu`.
+- Commit attribution must be the personal identity (`reynersoendojo@gmail.com`). Push only to `Renge13/Rena` (renamed from `Renge13/Dirimu` as part of the RENA rebrand).

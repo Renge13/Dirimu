@@ -1,47 +1,114 @@
+/* ── Body watercolor canvas (RENA brand: paper + soft pigment blooms) ─── */
+/* Layered radial gradients simulate watercolor blooms on cream paper.
+   Very low opacity (4-7%) so the canvas reads as texture, not decoration.
+   background-attachment: fixed so the bloom feels like a property of the
+   page surface, not part of the scrolling content. */
+body {
+  background-color: var(--kertas);
+  background-image:
+    radial-gradient(ellipse 720px 520px at 6% 12%, rgba(176, 132, 66, 0.07), transparent 60%),
+    radial-gradient(ellipse 620px 460px at 94% 22%, rgba(197, 111, 80, 0.05), transparent 55%),
+    radial-gradient(ellipse 800px 600px at 48% 78%, rgba(91, 58, 34, 0.04), transparent 65%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 /* ── Layout ─────────────────────────────────────────────── */
 .app {
   max-width: 780px;
   margin: 0 auto;
-  padding: 64px 24px 96px;
+  padding: 32px 24px 96px;
 }
 
-/* ── Hero ───────────────────────────────────────────────── */
-.hero {
-  text-align: center;
+/* ── Navbar (RENA minimal — Home + Methodology stub) ────── */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 28px;
   margin-bottom: 56px;
-}
-
-.hero-eyebrow {
-  display: inline-block;
   font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--gold);
-  border: 1px solid var(--gold-border);
-  border-radius: 20px;
-  padding: 4px 14px;
-  margin-bottom: 20px;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  color: var(--tinta-soft);
 }
 
-.hero h1 {
-  font-size: clamp(36px, 7vw, 60px);
-  letter-spacing: -1.5px;
-  line-height: 1.05;
-  margin-bottom: 14px;
-  background: linear-gradient(160deg, var(--kayu) 40%, var(--terra));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  padding: 4px 0;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+.nav-link--active {
+  color: var(--tinta);
+  border-bottom-color: var(--emas-glow);
+}
+.nav-link--active:hover {
+  border-bottom-color: var(--emas);
+}
+.nav-link--disabled {
+  opacity: 0.55;
+  cursor: default;
+  font-style: italic;
 }
 
-.tagline {
-  font-size: 16px;
-  color: var(--muted);
-  max-width: 420px;
+/* ── Landing hero (RENA — reflection-first, serene rhythm) ─ */
+.landing {
+  text-align: center;
+  margin-bottom: 48px;
+  padding-bottom: 8px;
+}
+
+.brand {
+  margin-bottom: 72px;
+}
+
+.brand-wordmark {
+  /* Cinzel works here because the wordmark is all-caps anyway */
+  font-family: var(--heading);
+  font-weight: 400;
+  font-size: clamp(46px, 8vw, 68px);
+  letter-spacing: 8px;
+  color: var(--kayu);
+  margin: 0 0 14px;
+  line-height: 1;
+}
+
+.brand-supporting {
+  /* Georgia for sentence-case body — Cinzel renders lowercase as small caps */
+  font-family: Georgia, 'Playfair Display', 'Times New Roman', serif;
+  font-size: 14px;
+  font-style: italic;
+  letter-spacing: 0.2px;
+  color: var(--tinta-soft);
+  max-width: 340px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.5;
+}
+
+.hero-statement-block {
+  margin-bottom: 8px;
+}
+
+.hero-statement {
+  font-family: Georgia, 'Playfair Display', 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(32px, 6vw, 46px);
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  color: var(--tinta);
+  margin: 0 0 24px;
+}
+
+.hero-sub {
+  font-family: Georgia, 'Playfair Display', 'Times New Roman', serif;
+  font-size: clamp(15px, 2.4vw, 17px);
+  font-style: italic;
+  color: var(--tinta-soft);
+  max-width: 380px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 /* ── Divider ────────────────────────────────────────────── */
@@ -66,12 +133,16 @@
 
 /* ── Form card ──────────────────────────────────────────── */
 .form-card {
-  background: var(--ink-2);
-  border: 1px solid var(--separator);
+  background: var(--kertas-2);
+  border: 1px solid var(--divider);
   border-radius: 16px;
   padding: 32px;
   margin: 0 auto 48px;
   max-width: 520px;
+  /* Subtle paper-on-paper lift (per RENA brand: 'subtle depth') */
+  box-shadow:
+    0 1px 2px rgba(42, 37, 32, 0.04),
+    0 8px 32px rgba(42, 37, 32, 0.04);
 }
 
 .form {
@@ -94,11 +165,13 @@
 .field { display: grid; gap: 8px; }
 
 .field-label {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
+  /* Georgia for sentence-case labels per brand spec ('Tanggal lahir' lowercase) */
+  font-family: Georgia, 'Playfair Display', 'Times New Roman', serif;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  color: var(--tinta-soft);
 }
 
 .field-input {

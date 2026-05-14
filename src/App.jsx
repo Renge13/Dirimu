@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { calculateBaziChart, getInterpretation, runValidation } from '@/lib/bazi'
 import BaziCard from '@/components/card/BaziCard.jsx'
+import Navbar from '@/components/Navbar.jsx'
 import Report from '@/components/Report.jsx'
 import { exportCardAsPNG } from '@/utils/exportCard.jsx'
 import { ARCHETYPE_EMOJI } from '@/lib/bazi/elementConfig.js'
@@ -240,20 +241,31 @@ function App() {
   return (
     <main className="app">
 
-      {/* Hero */}
-      <header className="hero">
-        <span className="hero-eyebrow">Ba Zi · 八字</span>
-        <h1>Dirimu</h1>
-        <p className="tagline">
-          Empat Pilar Nasibmu, terungkap dari tanggal dan jam lahirmu.
-        </p>
+      <Navbar />
+
+      {/* Landing — RENA hero (reflection-first) */}
+      <header className="landing">
+        <div className="brand">
+          <h1 className="brand-wordmark">RENA</h1>
+          <p className="brand-supporting">
+            Refleksi personal dari waktu kelahiranmu.
+          </p>
+        </div>
+
+        <div className="hero-statement-block">
+          <h2 className="hero-statement">Kamu punya pola.</h2>
+          <p className="hero-sub">
+            Dan mungkin selama ini,<br />
+            kamu belum pernah melihatnya.
+          </p>
+        </div>
       </header>
 
       {/* Form */}
       <div className="form-card">
         <form className="form" onSubmit={onSubmit}>
           <div className="field">
-            <label className="field-label">Tanggal Lahir</label>
+            <label className="field-label">Tanggal lahir</label>
             <div className="date-selects">
               <select
                 className="field-input select-input"
@@ -296,7 +308,7 @@ function App() {
 
           <div className="field">
             <label className="field-label">
-              Jam Lahir <span style={{ opacity: 0.5 }}>(opsional)</span>
+              Jam lahir <span style={{ opacity: 0.5 }}>(opsional)</span>
             </label>
             <div className="time-selects">
               <select
@@ -326,7 +338,7 @@ function App() {
           </div>
 
           <button className="submit" type="submit">
-            Lihat Empat Pilarku →
+            Lihat Refleksiku
           </button>
         </form>
       </div>
