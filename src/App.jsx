@@ -110,6 +110,46 @@ function PillarEmpty({ labelKey }) {
   )
 }
 
+/* Renders multi-paragraph reflection text + linkifies the phrase
+   'Bacaan Mendalam' as a CTA that smooth-scrolls to the paid-hook
+   section. Used by the element balance note and (later) relasi cabang
+   elaborations to open loops into the paid tier. */
+function OpenLoopText({ text }) {
+  if (!text) return null
+  const paragraphs = text.split(/\n\s*\n+/)
+  const scrollToPaywall = () => {
+    document.querySelector('.paid-hook-card')?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }
+  return (
+    <>
+      {paragraphs.map((para, i) => {
+        const parts = para.split(/(Bacaan Mendalam)/)
+        return (
+          <p key={i} className="open-loop-paragraph">
+            {parts.map((part, j) =>
+              part === 'Bacaan Mendalam' ? (
+                <button
+                  key={j}
+                  type="button"
+                  className="open-loop-cta"
+                  onClick={scrollToPaywall}
+                >
+                  {part}
+                </button>
+              ) : (
+                <span key={j}>{part}</span>
+              )
+            )}
+          </p>
+        )
+      })}
+    </>
+  )
+}
+
 /* ── Main App ───────────────────────────────────────────── */
 
 function App() {
@@ -398,7 +438,9 @@ function App() {
               })}
             </div>
             {result.interpretation?.elementNote && (
-              <p className="element-note">{result.interpretation.elementNote}</p>
+              <div className="element-note">
+                <OpenLoopText text={result.interpretation.elementNote} />
+              </div>
             )}
           </div>
 

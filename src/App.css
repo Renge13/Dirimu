@@ -624,14 +624,47 @@
 }
 
 /* ── Element note (under Keseimbangan Elemen bars) ─────── */
+/* Phase 8a.1: was a single italic sentence; now a 2-paragraph open-loop
+   reflection with an inline CTA into the paid tier. */
 .element-note {
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid var(--separator);
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.6;
-  font-style: italic;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--divider);
+}
+
+/* Open-loop pattern (Phase 8a): paragraph of reflection ending with an
+   inline 'Bacaan Mendalam' CTA that anchors to the paywall section.
+   Used here for element imbalance, later for relasi cabang too. */
+.open-loop-paragraph {
+  color: var(--tinta-soft);
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0 0 12px;
+}
+.open-loop-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.open-loop-cta {
+  display: inline;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--emas);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.open-loop-cta:hover {
+  color: var(--kayu);
+}
+.open-loop-cta:focus-visible {
+  outline: 2px solid var(--emas);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* ── Paid hook (gold-foil bordered premium insert) ──────── */

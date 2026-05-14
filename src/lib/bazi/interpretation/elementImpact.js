@@ -1,33 +1,35 @@
 // ============================================================
-// Element dominance and absence — short observational notes
+// Element dominance and absence — directional notes with CTA
 // ============================================================
 // Triggered by the chart's elementBalance counts (which include
 // hidden stem weights from each branch). The composer picks ONE
 // note to surface: missing element takes priority over dominant.
 //
-// WHY this priority: the bazi-interpreter skill is explicit —
-// "Do NOT dump all five elements' analysis on the user. Pick 2
-// things: Day Master identity (who you are), and ONE dominant
-// or missing element implication (what it creates RIGHT NOW)."
+// Phase 8a.1: each entry elaborated from 1 sentence → 2 paragraphs.
+//   Paragraph 1: pattern observation (smart-friend register).
+//   Paragraph 2: open-loop tease ending with 'Bacaan Mendalam' —
+//                rendered by the app as a CTA anchor link to the
+//                paid tier (Karier, Cinta, Kesehatan, Rezeki).
 //
-// FIELD SCHEMA per entry:
-//   1–2 sentences, ~25 words, Bahasa Indonesia. What this
-//   imbalance CREATES in the reader's life right now. Specific,
-//   present-tense, addressed to "kamu".
+// Voice: Phase 7 'smart friend talking to you'. Statement-of-fact,
+// not verb-action. Spoken cadence + standard grammar. No literary
+// drift, no slang heavy.
+//
+// FORMAT: paragraphs separated by '\n\n'. Renderer splits on this.
 // ============================================================
 
 export const DOMINANT_ELEMENT = {
-  Wood: 'Kamu terus memberi ruang untuk orang lain tumbuh sampai lupa menyisakan tanah bagi akarmu sendiri. Ambisimu adalah berkah sekaligus beban yang tak terlihat.',
-  Fire: 'Kamu menyala paling terang saat dunia sedang kacau. Masalahnya kamu seringkali kehabisan napas di tengah keramaian sementara orang lain hanya sanggup melihat cahayamu.',
-  Earth: 'Kamu adalah jangkar bagi semua orang di sekitarmu. Namun diam-diam kamu merasa terjebak dalam peran yang kamu bangun sendiri tanpa tahu cara melangkah keluar.',
-  Metal: 'Logikamu yang presisi adalah senjata mematikan dalam karier. Namun di balik pintu tertutup kamu seringkali terluka oleh ketajaman standarmu yang tidak manusiawi itu.',
-  Water: 'Kamu memahami rahasia orang lain bahkan sebelum mereka bicara. Kedalaman ini membuatmu sulit menemukan seseorang yang sanggup menyelami pikiranmu tanpa merasa tenggelam.',
+  Wood:  'Kayu yang dominan bikin kamu terus memulai dan merencanakan. Kamu sering jadi orang pertama yang angkat tangan untuk proyek baru, tapi di tengah jalan energi terpecah karena kamu juga sudah mulai yang lain. Fokusmu sering terbagi-bagi antara apa yang harusnya selesai dan apa yang segera ingin kamu mulai.\n\nPola ini erat kaitannya dengan arah karier dan cara kamu mengatur energi supaya tidak cepat habis. Bidang seperti apa yang bisa jadi tempatmu bertumbuh tanpa kehabisan napas? Itu dibahas lebih dalam di Bacaan Mendalam.',
+  Fire:  'Api yang dominan bikin kamu mudah jadi pusat perhatian. Kamu menyala cepat dalam obrolan, presentasi, atau ide-ide spontan. Tapi di balik itu, kamu sering merasa kehabisan bahan bakar saat tidak ada yang merespons, atau saat keramaian justru bikin kamu merasa sendirian.\n\nIni banyak berhubungan dengan caramu bekerja dan menjaga tubuh. Bidang apa yang bisa menampung intensitasmu tanpa bikin kamu padam? Jawabannya ada di Bacaan Mendalam.',
+  Earth: 'Bumi yang dominan bikin kamu sering jadi tempat orang pulang. Kamu menyediakan rasa aman dan ketenangan untuk sekitar. Tapi karena semua orang menganggapmu kokoh, kamu jarang bisa menunjukkan bahwa kamu juga butuh disandarkan, bukan cuma menjadi sandaran.\n\nPola ini punya dampak pada hubungan personal dan cara kamu mengelola beban emosional. Bagaimana menjaga keseimbangan antara menjadi jangkar dan tetap bisa bergerak? Itu dijawab di Bacaan Mendalam.',
+  Metal: 'Logam yang dominan bikin standarmu tinggi dan logikamu tajam. Kamu bisa melihat kelemahan dalam sebuah rencana atau omong kosong dalam sebuah argumen. Tapi ketajaman ini sering berbalik ke dirimu sendiri: kamu sulit puas, dan kritik internal bisa lebih keras dari kritik siapa pun.\n\nIni erat kaitannya dengan arah karier dan caramu menjaga kesehatan mental. Profesi seperti apa yang menghargai presisimu tanpa membuatmu jadi hakim bagi diri sendiri? Simak di Bacaan Mendalam.',
+  Water: 'Air yang dominan bikin kamu peka banget sama perasaan sekitar. Kamu sering sudah tahu isi hati orang sebelum mereka buka mulut. Tapi kedalaman ini juga bikin kamu kesulitan menemukan orang yang bisa memahami kamu dengan cara yang sama.\n\nIni banyak berhubungan dengan hubungan personal dan kepuasan batin. Bagaimana cara menyalurkan kepekaan ini tanpa tenggelam sendiri? Jawabannya ada di Bacaan Mendalam.',
 }
 
 export const MISSING_ELEMENT = {
-  Wood: 'Rencanamu seringkali berhenti di atas kertas tanpa pernah sempat berakar. Ada satu dorongan untuk mulai berani mengambil risiko yang selama ini kamu hindari.',
-  Fire: 'Hidupmu berjalan stabil namun tanpa binar yang membuatmu merasa hidup. Kamu butuh satu alasan kuat untuk berani menjadi pusat perhatian tanpa rasa takut.',
-  Earth: 'Kamu merasa melayang tanpa pijakan yang pasti meski segalanya tampak baik. Saatnya mencari jangkar yang bisa menahanmu tetap diam saat badai keinginan datang.',
-  Metal: 'Kamu kesulitan menarik garis tegas karena takut melukai perasaan orang. Padahal satu keputusan dingin bisa menyelamatkanmu dari kekacauan menahun yang terus menguras energi.',
-  Water: 'Segalanya terasa kaku dan dipaksakan dalam keseharianmu saat ini. Ada cara untuk mendapatkan apa yang kamu mau tanpa harus terus melawan arus yang melelahkan.',
+  Wood:  'Kayu yang kurang bikin kamu sering punya ide tapi jarang benar-benar memulai. Rencana matang di kepala, tapi begitu mau dieksekusi, kamu ragu atau kehilangan momentum. Akibatnya, kamu lebih sering menonton daripada menanam.\n\nIni berpengaruh ke arah karier dan kepercayaan diri dalam memulai langkah baru. Bidang apa yang cocok buat kamu yang butuh dorongan ekstra? Itu dibahas di Bacaan Mendalam.',
+  Fire:  'Api yang kurang bikin kehidupanmu stabil, tapi sering terasa datar. Kamu cenderung menghindari perhatian, bahkan ketika sebenarnya layak mendapat sorotan. Ada rasa takut untuk bersinar yang membuatmu lebih sering berada di latar belakang.\n\nIni berdampak pada kepercayaan diri dan caramu tampil di dunia kerja. Bagaimana menemukan keberanian untuk terlihat tanpa merasa terancam? Temukan di Bacaan Mendalam.',
+  Earth: 'Bumi yang kurang bikin kamu sering merasa melayang. Kamu bisa punya banyak aktivitas, tapi tidak ada yang benar-benar membuatmu merasa berpijak. Ada kerinduan akan rutinitas yang stabil, tapi kamu tidak yakin bagaimana membangunnya tanpa merasa terkekang.\n\nPola ini erat kaitannya dengan hubungan personal dan pencarian tempat berpulang. Bagaimana menemukan jangkar yang cocok untukmu? Itu dijelaskan di Bacaan Mendalam.',
+  Metal: 'Logam yang kurang bikin kamu susah mengambil keputusan tegas. Kamu sering menimbang terlalu lama, khawatir melukai orang lain, atau takut membuat pilihan yang salah. Akibatnya, batas-batasmu sering kabur dan itu melelahkan secara mental.\n\nIni banyak berhubungan dengan karier dan harga diri. Bagaimana cara membangun ketegasan tanpa kehilangan kelembutanmu? Simak di Bacaan Mendalam.',
+  Water: 'Air yang kurang bikin hidupmu terasa kaku. Kamu cenderung memaksakan rencana dan sulit beradaptasi saat keadaan berubah. Ada rasa lelah karena terus melawan arus, padahal yang kamu butuhkan justru belajar mengalir.\n\nIni berdampak pada kesehatan mental dan hubungan personal. Bagaimana melenturkan kontrol tanpa merasa kehilangan kendali? Jawabannya di Bacaan Mendalam.',
 }
