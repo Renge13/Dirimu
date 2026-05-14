@@ -6,6 +6,52 @@ Personal project. Live at https://dirimu.vercel.app (private demo), code at http
 
 ---
 
+## Current state (handoff snapshot)
+
+**Latest commit on `main`**: see `git log --oneline -5`. The recent arc:
+- **Phase 8a complete** (free tier polish + open-loop teasers, then consolidated into a single bridge section).
+- **Phase 7b batch 1+2 landed**: 甲乙丙丁庚辛 sharecards rewritten in the formal-vocabulary smart-friend voice register.
+- **Phase 7b batch 3 pending**: 壬癸 sharecards still in old voice; 戊 audit pass also pending if drift detected.
+- **Phase 8b not started**: paid tier content (Karier, Cinta, Kesehatan, Rezeki) inside the unified report.
+
+### Voice register (LOCKED — formal + spoken)
+
+After tester feedback, voice settled on **formal Indonesian vocabulary with spoken cadence**. NOT Gen-Z casual, NOT dense literary.
+
+- Banned casual: `nggak`, `bikin`, `ngerasa`, `udah`, `banget`, `pengen`, `mikir` (use `tidak`, `membuat`, `merasa`, `sudah`, `sangat`, `ingin`, `berpikir`).
+- Banned forecast: `akan`, `pasti`, `selalu` (negation OK).
+- Banned ornament: em-dashes, aphoristic compressions (`X, tapi Y` as standalone tagline).
+- Universal markers OK: `kalau`, `tapi`, `jadi`, `saat`.
+
+The smart-friend voice is "well-spoken intelligent observer" — premium signal comes from precision of insight in plain language, not ornate phrasing.
+
+### Unified report architecture
+
+ONE report titled "Bacaan Mendalam":
+- Collapsed state = bridge section (text + 4-domain list + italic CTA link). Sits between Relasi Cabang and the expanded report. NO container, centered, italic serif.
+- Expanded state = accordion with chapters. Currently 7 free chapters (pattern reflection). Phase 8b will add 4 paid directional chapters (Karier, Cinta, Kesehatan, Rezeki) inside the same report.
+- Standalone `.paid-hook-card` REMOVED. All open-loop CTAs consolidated into the bridge.
+
+### Pending C2 work
+
+- **Phase 7b batch 3** prompt: 壬 Samudra + 癸 Hujan sharecard rewrite (same template as batch 1+2; formal vocab rule; locked 戊 reference)
+- **Phase 7c**: reading page identity surfaces (hero paragraph, identityPills, traits) for all 10 archetypes
+- **Phase 7d**: pillarMeanings.js audit
+- **Phase 7e**: 70 Refleksi passage cores (biggest content lift)
+- **Phase 8b**: paid tier content — Karier / Cinta / Kesehatan / Rezeki × 10 archetypes (~7,000-10,000 words)
+
+### Open UX issues (lower priority)
+
+- Old dead CSS rules in App.css (`.paid-hook-card`, `.paid-hook`, `.paid-cta`, `.archetype-teaser`) — harmless but should clean up
+- 戊 bridge UI iterated commit `[next]` with italic link CTA + hairlines + ornament. If user feedback still says it feels cheap, next iteration could move further toward editorial-magazine register (drop the ornament glyph, add more vertical breathing)
+
+### Reading the plan history
+
+Full strategic context across all 8 phases lives in:
+`C:\Users\Reyner\.claude\plans\build-a-react-webapp-streamed-candle.md`
+
+---
+
 ## Product positioning
 
 A **reflective lens for emotionally intelligent skeptics** — urban millennial / Gen Z professionals, creatives, knowledge workers who use systems like MBTI / Human Design / tarot as **self-reflection interfaces**, not as oracles.

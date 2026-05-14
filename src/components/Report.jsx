@@ -41,24 +41,33 @@ export default function Report({ chart }) {
   if (!expanded) {
     return (
       <section className="bridge">
+        <div className="bridge-ornament" aria-hidden="true">✦</div>
+
         <p className="bridge-intro">
           Pola unikmu membawa pertanyaan-pertanyaan yang hanya bisa dijawab dari sudut chartmu sendiri.
         </p>
-        <ul className="bridge-domains">
-          <li>Bidang kerja yang sejalan dengan caramu, dan yang justru menguras energimu.</li>
-          <li>Tipe pasangan yang membawa keseimbangan, serta apa yang sering memicu konflik.</li>
-          <li>Pola tubuh dan energi yang perlu kamu perhatikan.</li>
-          <li>Cara membangun rezeki yang sesuai dengan polamu sendiri.</li>
-        </ul>
+
+        <div className="bridge-rule" aria-hidden="true" />
+
+        <div className="bridge-domains">
+          <p>Bidang kerja yang sejalan dengan caramu, dan yang justru menguras energimu.</p>
+          <p>Tipe pasangan yang membawa keseimbangan, serta apa yang sering memicu konflik.</p>
+          <p>Pola tubuh dan energi yang perlu kamu perhatikan.</p>
+          <p>Cara membangun rezeki yang sesuai dengan polamu sendiri.</p>
+        </div>
+
+        <div className="bridge-rule" aria-hidden="true" />
+
         <p className="bridge-frame">
-          Semua dijelaskan di Bacaan Mendalam. Bukan sebagai aturan, tapi sebagai panduan arah yang sesuai dengan caramu hidup.
+          Semua dijelaskan di Bacaan Mendalam. Bukan sebagai aturan, tetapi sebagai panduan arah yang sesuai dengan caramu hidup.
         </p>
+
         <button
           className="bridge-cta"
           type="button"
           onClick={() => { setExpanded(true); setOpenBab(0) }}
         >
-          Buka Bacaan Mendalam →
+          Buka Bacaan Mendalam <span aria-hidden="true">→</span>
         </button>
       </section>
     )

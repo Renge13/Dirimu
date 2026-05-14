@@ -20,79 +20,121 @@
   --rpt-prompt-bg: var(--emas-dim);
 }
 
-/* ── Bridge (collapsed state — the conversational prelude) ────────
-   No container, centered, talking-to-them voice. Sits between Relasi
-   Cabang and the expanded Bacaan Mendalam report. Replaces the
-   previous .report-cta-card + standalone .paid-hook-card. */
+/* ── Bridge (collapsed state — premium prelude, not a sales card) ──
+   Sits between Relasi Cabang and the expanded Bacaan Mendalam report.
+   Design intent: hand-set foreword in a hardcover book. Ornamental
+   glyph, italic serif body, hairline accents, italic underlined CTA
+   (NOT a chunky pill button — that read 'cheap' to the user). */
 
 .bridge {
-  max-width: 580px;
-  margin: 56px auto 48px;
+  max-width: 520px;
+  margin: 64px auto 56px;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 24px;
+}
+
+.bridge-ornament {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: var(--emas);
+  margin: 0 0 22px;
+  opacity: 0.7;
+  letter-spacing: 8px;
 }
 
 .bridge-intro {
   font-family: Georgia, 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: 17px;
   font-style: italic;
   line-height: 1.55;
-  color: var(--tinta);
-  margin: 0 0 24px;
+  color: var(--kayu);
+  margin: 0 0 28px;
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hairline accent between sections — subtle gold-toned divider that
+   feels handlettered rather than rule-line. */
+.bridge-rule {
+  width: 80px;
+  height: 1px;
+  background: var(--emas-glow);
+  margin: 0 auto 24px;
+  opacity: 0.6;
 }
 
 .bridge-domains {
-  list-style: none;
-  padding: 0;
   margin: 0 0 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.bridge-domains li {
-  font-family: var(--sans);
+.bridge-domains p {
+  font-family: Georgia, 'Playfair Display', serif;
   font-size: 14.5px;
-  line-height: 1.55;
+  line-height: 1.65;
   color: var(--tinta-soft);
+  margin: 0 0 12px;
+}
+
+.bridge-domains p:last-child {
+  margin-bottom: 0;
 }
 
 .bridge-frame {
   font-family: var(--sans);
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--tinta-soft);
-  margin: 0 auto 28px;
-  max-width: 500px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--muted-warm);
+  margin: 0 auto 32px;
+  max-width: 440px;
+  font-style: italic;
 }
 
+/* CTA as italic link, not pill button. Premium book "continue
+   reading" affordance. Bigger hit target via padding but no bg fill. */
 .bridge-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 13px 28px;
-  border-radius: 999px;
-  background: var(--emas);
-  color: var(--kertas);
+  gap: 6px;
+  padding: 10px 16px;
+  background: transparent;
   border: none;
-  font: 600 14px var(--sans);
-  letter-spacing: 0.4px;
+  font-family: Georgia, 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--emas);
   cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.2s;
+  text-decoration: underline;
+  text-decoration-color: var(--emas-glow);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  transition: color 0.15s, text-decoration-color 0.15s;
 }
 .bridge-cta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px -8px var(--emas-glow);
+  color: var(--kayu);
+  text-decoration-color: var(--kayu);
 }
 .bridge-cta:focus-visible {
   outline: 2px solid var(--emas);
-  outline-offset: 3px;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+.bridge-cta span {
+  font-style: normal;
+  font-size: 18px;
 }
 
 @media (max-width: 600px) {
-  .bridge { margin: 40px 16px 32px; }
-  .bridge-intro { font-size: 16px; }
-  .bridge-domains li { font-size: 13.5px; }
+  .bridge { margin: 44px 16px 36px; }
+  .bridge-intro { font-size: 15.5px; }
+  .bridge-domains p { font-size: 13.5px; }
+  .bridge-frame { font-size: 12.5px; }
+  .bridge-cta { font-size: 15px; }
 }
 
 /* ── Body (expanded state) ──────────────────────────────── */
