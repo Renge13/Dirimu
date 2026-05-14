@@ -353,7 +353,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         alignItems:          'center',
       }}>
         <SocialColumn
-          label="COCOK DENGAN"
+          label="ENERGI MENYOKONG"
           element={selarasElement}
           archetypes={selarasArchetypes}
           scale={scale}
@@ -365,7 +365,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
           width:      scale,
         }} />
         <SocialColumn
-          label="PERLU DIJAGA DENGAN"
+          label="ENERGI MENGUJI"
           element={pemicuElement}
           archetypes={pemicuArchetypes}
           scale={scale}

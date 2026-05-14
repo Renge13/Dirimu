@@ -62,7 +62,7 @@ export const ELEMENT_CONFIG = {
 }
 
 /* ── Per-archetype emoji ─────────────────────────────────────
-   Used by sharecard COCOK DENGAN / PERLU DIJAGA DENGAN chips and
+   Used by sharecard ENERGI MENYOKONG / ENERGI MENGUJI chips and
    the Relasi Cabang section on the reading page. Pictographic
    recall — reader recognizes the archetype without reading.
    ============================================================ */

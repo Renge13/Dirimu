@@ -9,9 +9,10 @@ Personal project. Live at https://dirimu.vercel.app (private demo), code at http
 ## Current state (handoff snapshot)
 
 **Latest commit on `main`**: see `git log --oneline -5`. The recent arc:
-- **Phase 8a complete** (free tier polish + open-loop teasers, then consolidated into a single bridge section).
-- **Phase 7b batch 1+2 landed**: 甲乙丙丁庚辛 sharecards rewritten in the formal-vocabulary smart-friend voice register.
-- **Phase 7b batch 3 pending**: 壬癸 sharecards still in old voice; 戊 audit pass also pending if drift detected.
+- **Phase 7b COMPLETE (10/10)** — sharecard voice register locked across every archetype. Batch 3 (壬 Samudra + 癸 Hujan) landed last; 戊 reference held without drift.
+- **Element note simplification** — `DOMINANT_ELEMENT` and `MISSING_ELEMENT` entries are now single-paragraph. The rhetorical-question paragraph-2 tail was stripped from all 10 entries. Open-loop framing lives in the Bridge alone.
+- **Sharecard chip relabel** — sharecard now says `ENERGI MENYOKONG` / `ENERGI MENGUJI` (signals element-family, universal for the archetype). Reading-page Relasi Cabang keeps `Cocok Dengan` / `Perlu Dijaga Dengan` (chart-specific, from day branch's 六合/六冲). Identical-looking labels were collapsing the architectural distinction; tester saw the mismatch as a bug.
+- **Phase 8a complete** (free tier polish + open-loop teasers, consolidated into the bridge section).
 - **Phase 8b not started**: paid tier content (Karier, Cinta, Kesehatan, Rezeki) inside the unified report.
 
 ### Voice register (LOCKED — formal + spoken)
@@ -34,8 +35,7 @@ ONE report titled "Bacaan Mendalam":
 
 ### Pending C2 work
 
-- **Phase 7b batch 3** prompt: 壬 Samudra + 癸 Hujan sharecard rewrite (same template as batch 1+2; formal vocab rule; locked 戊 reference)
-- **Phase 7c**: reading page identity surfaces (hero paragraph, identityPills, traits) for all 10 archetypes
+- **Phase 7c** (next): reading page identity surfaces (hero paragraph, identityPills, traits) for all 10 archetypes
 - **Phase 7d**: pillarMeanings.js audit
 - **Phase 7e**: 70 Refleksi passage cores (biggest content lift)
 - **Phase 8b**: paid tier content — Karier / Cinta / Kesehatan / Rezeki × 10 archetypes (~7,000-10,000 words)
