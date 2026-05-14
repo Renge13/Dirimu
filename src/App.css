@@ -20,85 +20,32 @@ body {
   padding: 32px 24px 96px;
 }
 
-/* ── Navbar (RENA minimal — Home + Methodology stub) ────── */
-.navbar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 28px;
-  margin-bottom: 56px;
-  font-family: var(--sans);
-  font-size: 13px;
-  letter-spacing: 0.4px;
-  color: var(--tinta-soft);
-}
-
-.nav-link {
-  text-decoration: none;
-  color: inherit;
-  padding: 4px 0;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s, color 0.2s;
-}
-.nav-link--active {
-  color: var(--tinta);
-  border-bottom-color: var(--emas-glow);
-}
-.nav-link--active:hover {
-  border-bottom-color: var(--emas);
-}
-.nav-link--disabled {
-  opacity: 0.55;
-  cursor: default;
-  font-style: italic;
-}
-
-/* ── Landing hero (RENA — reflection-first, serene rhythm) ─ */
-.landing {
-  text-align: center;
-  margin-bottom: 48px;
-  padding-bottom: 8px;
-}
-
-.brand {
-  margin-bottom: 72px;
-}
-
-.brand-wordmark {
-  /* Cinzel works here because the wordmark is all-caps anyway */
+/* ── Top-left brand mark (small, quiet, scrolls with page) ── */
+.site-logo {
   font-family: var(--heading);
-  font-weight: 400;
-  font-size: clamp(46px, 8vw, 68px);
-  letter-spacing: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 4px;
   color: var(--kayu);
-  margin: 0 0 14px;
+  margin: 0 0 72px;
   line-height: 1;
 }
 
-.brand-supporting {
-  /* Georgia for sentence-case body — Cinzel renders lowercase as small caps */
-  font-family: Georgia, 'Playfair Display', 'Times New Roman', serif;
-  font-size: 14px;
-  font-style: italic;
-  letter-spacing: 0.2px;
-  color: var(--tinta-soft);
-  max-width: 340px;
-  margin: 0 auto;
-  line-height: 1.5;
-}
-
-.hero-statement-block {
-  margin-bottom: 8px;
+/* ── Landing hero (centered title + sub) ────────────────── */
+.landing {
+  text-align: center;
+  padding: 80px 0 24px;
+  margin-bottom: 56px;
 }
 
 .hero-statement {
   font-family: Georgia, 'Playfair Display', 'Times New Roman', serif;
   font-weight: 400;
-  font-size: clamp(32px, 6vw, 46px);
+  font-size: clamp(36px, 7vw, 52px);
   letter-spacing: -0.5px;
-  line-height: 1.15;
+  line-height: 1.1;
   color: var(--tinta);
-  margin: 0 0 24px;
+  margin: 0 0 28px;
 }
 
 .hero-sub {
@@ -109,6 +56,11 @@ body {
   max-width: 380px;
   margin: 0 auto;
   line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .landing { padding: 56px 0 16px; margin-bottom: 40px; }
+  .site-logo { margin-bottom: 48px; }
 }
 
 /* ── Divider ────────────────────────────────────────────── */
@@ -663,26 +615,6 @@ body {
   border-radius: 16px;
 }
 
-/* Open-loop teaser at the end of the archetype card — soft italic
-   prompt that links into the Bacaan Mendalam Karier section. */
-.archetype-teaser {
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px solid var(--emas-glow);
-  max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.archetype-teaser .open-loop-paragraph {
-  font-style: italic;
-  font-size: 14px;
-  color: var(--tinta-soft);
-  line-height: 1.6;
-  text-align: center;
-  margin: 0;
-}
-
 /* ── Traits card ────────────────────────────────────────── */
 .traits-card {
   margin-bottom: 16px;
@@ -756,70 +688,6 @@ body {
   outline: 2px solid var(--emas);
   outline-offset: 2px;
   border-radius: 2px;
-}
-
-/* ── Paid hook (gold-foil bordered premium insert) ──────── */
-.paid-hook-card {
-  position: relative;
-  margin-top: 40px;
-  padding: 36px 28px 28px;
-  border-radius: 18px;
-  background:
-    radial-gradient(80% 60% at 50% 0%, var(--emas-dim), transparent 70%),
-    var(--kertas-2);
-  border: 1.5px solid var(--emas);
-  text-align: center;
-  box-shadow:
-    0 0 0 4px rgba(176, 132, 66, 0.08),
-    0 12px 32px -16px rgba(91, 58, 34, 0.25);
-}
-
-.paid-hook-eyebrow {
-  display: inline-block;
-  font-family: var(--sans);
-  font-size: 11px;
-  letter-spacing: 3px;
-  font-weight: 600;
-  color: var(--emas);
-  padding: 4px 14px;
-  border: 1px solid var(--emas-glow);
-  border-radius: 999px;
-  margin-bottom: 18px;
-  text-transform: uppercase;
-}
-
-.paid-hook {
-  color: var(--tinta);
-  font-family: Georgia, serif;
-  font-size: 16px;
-  font-style: italic;
-  line-height: 1.75;
-  max-width: 520px;
-  margin: 0 auto 24px;
-}
-
-.paid-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 13px 30px;
-  border-radius: 999px;
-  background: var(--emas);
-  color: var(--kertas);
-  border: none;
-  font: 600 14px var(--sans);
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.2s;
-}
-.paid-cta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px -8px var(--emas-glow);
-}
-.paid-cta:active { transform: translateY(0); }
-.paid-cta:focus-visible {
-  outline: 2px solid var(--emas);
-  outline-offset: 3px;
 }
 
 /* ── BaziCard preview wrapper ───────────────────────────── */

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { calculateBaziChart, getInterpretation, runValidation } from '@/lib/bazi'
 import BaziCard from '@/components/card/BaziCard.jsx'
-import Navbar from '@/components/Navbar.jsx'
 import Report from '@/components/Report.jsx'
 import { exportCardAsPNG } from '@/utils/exportCard.jsx'
 import { ARCHETYPE_EMOJI } from '@/lib/bazi/elementConfig.js'
@@ -112,14 +111,14 @@ function PillarEmpty({ labelKey }) {
 }
 
 /* Renders multi-paragraph reflection text + linkifies the phrase
-   'Bacaan Mendalam' as a CTA that smooth-scrolls to the paid-hook
+   'Bacaan Mendalam' as a CTA that smooth-scrolls to the paywall
    section. Used by the element balance note and (later) relasi cabang
    elaborations to open loops into the paid tier. */
 function OpenLoopText({ text }) {
   if (!text) return null
   const paragraphs = text.split(/\n\s*\n+/)
   const scrollToPaywall = () => {
-    document.querySelector('.paid-hook-card')?.scrollIntoView({
+    document.querySelector('.paywall-section')?.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     })
@@ -241,24 +240,16 @@ function App() {
   return (
     <main className="app">
 
-      <Navbar />
+      {/* Top-left brand mark — small, quiet, scrolls with page */}
+      <div className="site-logo">RENA</div>
 
-      {/* Landing — RENA hero (reflection-first) */}
+      {/* Landing — centered hero (title + sub only) */}
       <header className="landing">
-        <div className="brand">
-          <h1 className="brand-wordmark">RENA</h1>
-          <p className="brand-supporting">
-            Refleksi personal dari waktu kelahiranmu.
-          </p>
-        </div>
-
-        <div className="hero-statement-block">
-          <h2 className="hero-statement">Kamu punya pola.</h2>
-          <p className="hero-sub">
-            Dan mungkin selama ini,<br />
-            kamu belum pernah melihatnya.
-          </p>
-        </div>
+        <h1 className="hero-statement">Kamu punya pola.</h1>
+        <p className="hero-sub">
+          Dan mungkin selama ini,<br />
+          kamu belum pernah melihatnya.
+        </p>
       </header>
 
       {/* Form */}
@@ -509,12 +500,8 @@ function App() {
             </div>
           )}
 
-          {/* Bacaan Mendalam — single unified report. Collapsed state is
-              the bridge (text + domain list + CTA). Click to expand into
-              the full accordion. Replaces the previous separate
-              paid-hook-card; the report is now one continuous surface
-              (free pattern chapters + paid directional chapters in
-              the future). */}
+          {/* Bacaan Mendalam — collapsed state is the preview + paywall
+              gate; expanded state is the 7-chapter accordion. */}
           <Report chart={result} />
 
         </section>

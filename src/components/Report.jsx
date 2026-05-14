@@ -14,6 +14,15 @@
 // ============================================================
 
 import { useMemo, useState } from 'react'
+import {
+  IconLeaf,
+  IconCompass,
+  IconUsers,
+  IconUser,
+  IconHeart,
+  IconSun,
+  IconLock,
+} from '@tabler/icons-react'
 import { getReport } from '@/lib/bazi'
 import './Report.css'
 
@@ -40,35 +49,115 @@ export default function Report({ chart }) {
 
   if (!expanded) {
     return (
-      <section className="bridge">
-        <div className="bridge-ornament" aria-hidden="true">✦</div>
+      <section className="paywall-section" aria-label="Bacaan Mendalam">
+        <div className="preview">
+          <div className="preview-ornament" aria-hidden="true">✦</div>
 
-        <p className="bridge-intro">
-          Pola unikmu membawa pertanyaan-pertanyaan yang hanya bisa dijawab dari sudut chartmu sendiri.
-        </p>
+          <p className="preview-lead">
+            Beberapa pola dalam dirimu tidak selalu terlihat saat dijalani.
+          </p>
 
-        <div className="bridge-rule" aria-hidden="true" />
+          <div className="preview-rule" aria-hidden="true">
+            <span className="preview-rule-line" />
+            <span className="preview-rule-dot" />
+            <span className="preview-rule-line" />
+          </div>
 
-        <div className="bridge-domains">
-          <p>Bidang kerja yang sejalan dengan caramu, dan yang justru menguras energimu.</p>
-          <p>Tipe pasangan yang membawa keseimbangan, serta apa yang sering memicu konflik.</p>
-          <p>Pola tubuh dan energi yang perlu kamu perhatikan.</p>
-          <p>Cara membangun rezeki yang sesuai dengan polamu sendiri.</p>
+          <p className="preview-body">
+            Di Bacaan Mendalam, kamu akan menemukan bukan hanya siapa dirimu, tapi juga arah yang bisa membantumu melangkah lebih jelas.
+          </p>
+
+          <ul className="preview-features">
+            <li>
+              <span className="preview-feature-icon" aria-hidden="true">
+                <IconLeaf size={28} stroke={1.5} />
+              </span>
+              <div className="preview-feature-text">
+                <div className="preview-feature-title">Pahami Polamu</div>
+                <div className="preview-feature-desc">
+                  Memahami cara kamu bekerja, mencintai, dan mengambil keputusan.
+                </div>
+              </div>
+            </li>
+            <li>
+              <span className="preview-feature-icon" aria-hidden="true">
+                <IconCompass size={28} stroke={1.5} />
+              </span>
+              <div className="preview-feature-text">
+                <div className="preview-feature-title">Dapatkan Arah</div>
+                <div className="preview-feature-desc">
+                  Panduan karier, keuangan, dan kehidupan yang selaras dengan energimu.
+                </div>
+              </div>
+            </li>
+            <li>
+              <span className="preview-feature-icon" aria-hidden="true">
+                <IconUsers size={28} stroke={1.5} />
+              </span>
+              <div className="preview-feature-text">
+                <div className="preview-feature-title">Hubungan yang Selaras</div>
+                <div className="preview-feature-desc">
+                  Pahami tipe yang paling mendukung dan cara menjaga hubunganmu.
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
 
-        <div className="bridge-rule" aria-hidden="true" />
+        <div className="paywall">
+          <div className="paywall-label">
+            <IconLock size={14} stroke={2} className="paywall-label-icon" />
+            <span>BACAAN MENDALAM</span>
+          </div>
 
-        <p className="bridge-frame">
-          Semua dijelaskan di Bacaan Mendalam. Bukan sebagai aturan, tetapi sebagai panduan arah yang sesuai dengan caramu hidup.
-        </p>
+          <p className="paywall-headline">
+            Panduan personal untuk memahami dirimu dan melangkah dengan lebih tepat.
+          </p>
 
-        <button
-          className="bridge-cta"
-          type="button"
-          onClick={() => { setExpanded(true); setOpenBab(0) }}
-        >
-          Buka Bacaan Mendalam <span aria-hidden="true">→</span>
-        </button>
+          <ul className="paywall-features">
+            <li>
+              <IconUser size={22} stroke={1.5} />
+              <span>Refleksi Diri</span>
+            </li>
+            <li>
+              <IconCompass size={22} stroke={1.5} />
+              <span>Arah Karier &amp; Rezeki</span>
+            </li>
+            <li>
+              <IconHeart size={22} stroke={1.5} />
+              <span>Relasi &amp; Kecocokan</span>
+            </li>
+            <li>
+              <IconLeaf size={22} stroke={1.5} />
+              <span>Keseimbangan Energi</span>
+            </li>
+            <li>
+              <IconSun size={22} stroke={1.5} />
+              <span>Langkah Praktis</span>
+            </li>
+          </ul>
+
+          <div className="paywall-rule" aria-hidden="true">
+            <span className="paywall-rule-line" />
+            <span className="paywall-rule-dot">✦</span>
+            <span className="paywall-rule-line" />
+          </div>
+
+          <div className="paywall-price">Rp79.000</div>
+
+          <button
+            className="paywall-cta"
+            type="button"
+            onClick={() => { setExpanded(true); setOpenBab(0) }}
+          >
+            Buka Refleksiku
+          </button>
+
+          <div className="paywall-fineprint">
+            <IconLock size={12} stroke={2} className="paywall-fineprint-icon" />
+            <span>Sekali baca. Milikmu selamanya.</span>
+          </div>
+        </div>
       </section>
     )
   }
