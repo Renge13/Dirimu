@@ -34,7 +34,6 @@ export const DAY_MASTERS = {
     name: 'Pohon Oak',
     chinese: '甲木',
     subtitle: 'Pribadi yang jadi tumpuan, meski tak pernah meminta peran itu.',
-    karierTeaser: 'Jenis pekerjaan yang menghargai ketekunanmu tanpa menguras habis akarmu. Dibahas di Bacaan Mendalam.',
     tagline: 'Aku bukan yang paling keras, tapi aku yang paling teguh.',
     hero: 'Kamu tidak pernah berteriak, tapi seluruh ruangan berubah begitu kamu melangkah masuk. Bukan karena kamu mencari perhatian, kamu hanya ada, dan kehadiranmu menenangkan seperti pohon tertua di hutan. Kamu adalah tempat berteduh bagi banyak orang, meski akarmu sendiri sudah menembus bebatuan yang tidak dilihat siapa pun.',
     identityPills: [
@@ -55,22 +54,31 @@ export const DAY_MASTERS = {
       'Kesabaran yang terlihat seperti keras kepala',
       'Selalu menepati janji yang tidak diucapkan',
     ],
-    taglineCard: 'Bukan yang paling keras, tapi yang paling teguh.',
-    kekuatanDescriptors: ['Pelindung Sunyi', 'Pijakan Setia'],
-    bayanganDescriptors: ['Sulit Bergantung', 'Keras Kepala'],
-    dampakDescriptors: ['Tempat Bersandar saat Goyah', 'Pengingat untuk Tetap Berdiri'],
+    taglineCard: 'Tidak selalu bersuara, tapi selalu bisa dipegang.',
+    kekuatanDescriptors: [
+      'bisa diandalkan dalam situasi genting',
+      'memegang prinsip tanpa goyah',
+    ],
+    bayanganDescriptors: [
+      'sulit meminta bantuan kepada orang lain',
+      'kaku ketika harus berubah mendadak',
+    ],
+    dampakDescriptors: [
+      'orang merasa lebih tenang di dekatnya',
+      'menjadi tempat bertanya ketika bingung',
+    ],
     sifatPills: [
-      'mikir panjang, eksekusi tetap',
-      'temennya sedikit tapi loyal',
-      'tipe ngerencanain 5 tahun ke depan',
-      'males drama, langsung ngomong',
+      'berpikir panjang, eksekusi tetap berjalan',
+      'lingkaran teman kecil tetapi loyal',
+      'merencanakan jauh ke depan',
+      'tidak suka drama, langsung ke inti',
+      'kehadirannya membuat sekitar merasa aman',
     ],
   },
   '乙': {
     name: 'Tanaman Rambat',
     chinese: '乙木',
     subtitle: 'Sosok yang lentur dan tak mudah patah oleh keadaan.',
-    karierTeaser: 'Arah karier yang pas buat kamu yang suka merambat, biar nggak kehilangan bentuk sendiri. Ada di Bacaan Mendalam.',
     tagline: 'Aku meliuk, tapi aku tidak pernah patah.',
     hero: 'Kamu melihat sebelum orang lain sadar apa yang harus dilihat. Di permukaan kamu lentur, mengikuti alur, tapi di dalam kamu sudah membaca seluruh peta sebelum melangkah. Kamu adalah pengamat paling tajam di ruangan itu, yang tertawa pelan, mengangguk, lalu tahu persis ke mana harus merambat selanjutnya.',
     identityPills: [
@@ -91,22 +99,31 @@ export const DAY_MASTERS = {
       'Selalu menemukan celah ketika semua pintu tertutup',
       'Tidak pernah lupa siapa yang membantu saat merambat',
     ],
-    taglineCard: 'Meliuk, tapi tidak pernah patah.',
-    kekuatanDescriptors: ['Pengamat Tajam', 'Adaptor Cepat'],
-    bayanganDescriptors: ['Sulit Dibaca', 'Hindari Konfrontasi'],
-    dampakDescriptors: ['Ketenangan yang Menular', 'Solusi yang Tak Terduga'],
+    taglineCard: 'Tumbuh di celah yang orang lain lewatkan.',
+    kekuatanDescriptors: [
+      'membaca situasi dengan cepat',
+      'menyesuaikan diri di mana saja',
+    ],
+    bayanganDescriptors: [
+      'sering sulit ditebak isinya',
+      'cenderung menghindari konfrontasi',
+    ],
+    dampakDescriptors: [
+      'membawa ketenangan di tengah kacau',
+      'sering memberi solusi yang tak terduga',
+    ],
     sifatPills: [
-      'banyak rencana, ga semua diumumin',
-      'tahan banting tapi senyum terus',
-      'tipe yang tau gosip duluan',
-      'kalau ditolak, cari jalan lain',
+      'banyak rencana, tidak semua diumumkan',
+      'tahan banting tetapi tetap tenang',
+      'pandai membaca dinamika sosial',
+      'jika ditolak, mencari jalan lain',
+      'hadir tanpa perlu menarik perhatian',
     ],
   },
   '丙': {
     name: 'Matahari',
     chinese: '丙火',
     subtitle: 'Orang yang kehadirannya membuat sekitar terasa lebih hidup.',
-    karierTeaser: 'Bidang kerja apa yang bikin Matahari menyala, dan yang malah meredupkan? Jawabannya di Bacaan Mendalam.',
     tagline: 'Aku hadir untuk menerangi, bukan untuk bersinar sendirian.',
     hero: 'Kamu yang bicara lebih dulu ketika semua orang masih ragu-ragu, lalu ruangan ikut bicara setelahnya. Energimu bukan sekadar semangat, itu adalah api yang membuat orang lain ingat kalau mereka juga hidup. Kamu tidak perlu menjadi pusat perhatian, kamu sudah menjadi alasan orang lain berani melangkah.',
     identityPills: [
@@ -127,22 +144,31 @@ export const DAY_MASTERS = {
       'Membakar jembatan yang memang harus putus',
       'Hangatnya membuat orang lupa dia juga bisa membakar',
     ],
-    taglineCard: 'Hadir untuk menerangi, bukan untuk bersinar sendirian.',
-    kekuatanDescriptors: ['Pemimpin Alami', 'Tak Teredupkan'],
-    bayanganDescriptors: ['Butuh Panggung', 'Mudah Terbakar'],
-    dampakDescriptors: ['Penerang Ruangan', 'Kehangatan yang Dirasakan Orang Lain'],
+    taglineCard: 'Menerangi ruangan tanpa perlu diminta.',
+    kekuatanDescriptors: [
+      'mencairkan suasana dengan mudah',
+      'energinya menular ke sekitar',
+    ],
+    bayanganDescriptors: [
+      'butuh respons agar tetap menyala',
+      'mudah lelah tanpa sadar',
+    ],
+    dampakDescriptors: [
+      'orang merasa lebih hidup di dekatnya',
+      'menjadi sumber semangat untuk tim',
+    ],
     sifatPills: [
-      'drama sebentar, move on cepet',
-      'kalau cinta, totalitas',
+      'cepat pulih dari konflik, tidak berlarut',
+      'jika peduli, total sepenuhnya',
       'kerja keras sampai lupa istirahat',
-      'butuh pengakuan',
+      'senang ketika ada yang mengapresiasi',
+      'membuat suasana menjadi lebih hangat',
     ],
   },
   '丁': {
     name: 'Lilin',
     chinese: '丁火',
     subtitle: 'Pribadi yang menerangi sudut-sudut yang orang lain lewatkan.',
-    karierTeaser: 'Pekerjaan yang menghargai ketelitianmu, tapi nggak menguras sumbu kecilmu sampai habis. Pelajari di Bacaan Mendalam.',
     tagline: 'Cahayaku kecil, tapi aku yang membuat kamu melihat dalam gelap.',
     hero: 'Cahayamu tidak menggelegar, tapi tepat di tengah gelap, kamulah yang masih setia menyala. Kamu tidak perlu menerangi seluruh dunia, cukup satu sudut yang kamu jaga dengan diam-diam. Kehadiranmu adalah alasan seseorang akhirnya bisa melihat apa yang selama ini kabur bagi mereka.',
     identityPills: [
@@ -178,7 +204,6 @@ export const DAY_MASTERS = {
     name: 'Gunung',
     chinese: '戊土',
     subtitle: 'Orang yang diandalkan, meski tak banyak kata.',
-    karierTeaser: 'Kapan seorang Gunung yang stabil justru perlu bergeser jalur? Dijelaskan di Bacaan Mendalam.',
     tagline: 'Aku tidak bergerak, karena semua orang butuh tempat berpijak.',
     hero: 'Kamu adalah fondasi yang tidak terlihat di bawah gedung tertinggi. Semua orang mengagumi puncak, tapi hanya sedikit yang tahu bahwa di bawah sana, kamulah yang menahan semuanya. Kamu tidak bergerak oleh tren, oleh pujian, atau oleh ancaman, karena di dalam dirimu sudah ada peta yang tidak bisa diguncang.',
     identityPills: [
@@ -224,7 +249,6 @@ export const DAY_MASTERS = {
     name: 'Ladang',
     chinese: '己土',
     subtitle: 'Pribadi yang tumbuh pelan, tapi menguatkan banyak orang.',
-    karierTeaser: 'Bagaimana Ladang bisa tetap subur tanpa melupakan panennya sendiri? Temukan di Bacaan Mendalam.',
     tagline: 'Aku bukan latar belakang. Aku adalah tanahnya.',
     hero: 'Kamu adalah tanah tempat segala sesuatu bermula. Bukan kamu yang dipetik, tapi dari dirimulah semuanya tumbuh. Kamu menerima benih yang orang lain buang, lalu diam-diam mengubahnya menjadi panen. Jarang diingat, tapi tanpa kamu, tidak ada yang bisa berdiri.',
     identityPills: [
@@ -260,7 +284,6 @@ export const DAY_MASTERS = {
     name: 'Pedang',
     chinese: '庚金',
     subtitle: 'Pribadi yang memotong keraguan dengan keputusan tegas.',
-    karierTeaser: 'Karier yang butuh ketajamanmu, tapi nggak bikin orang lain menjauh. Dijawab di Bacaan Mendalam.',
     tagline: 'Aku memotong karena aku peduli pada yang benar.',
     hero: 'Kamu memotong bukan karena benci, tapi karena kamu tidak bisa melihat yang salah dan diam saja. Ada ketajaman dalam caramu melihat dunia, langsung, tanpa basa-basi, dan kadang membuat orang lain gentar. Tapi justru karena ketajaman itu, kamu tidak bisa dipakai untuk hal-hal yang tidak penting.',
     identityPills: [
@@ -296,7 +319,6 @@ export const DAY_MASTERS = {
     name: 'Permata',
     chinese: '辛金',
     subtitle: 'Sosok yang teliti, menghasilkan yang langka dan bernilai.',
-    karierTeaser: 'Pekerjaan yang sesuai standar tinggimu tanpa bikin kamu terus merasa kurang. Dibahas di Bacaan Mendalam.',
     tagline: 'Bukan semua orang bisa melihat nilaimu. Itu bukan masalahmu.',
     hero: 'Kamu tidak berkilau untuk semua mata. Harganya hanya bisa dibaca oleh mereka yang sudah cukup lama mencari. Di dunia yang memuja yang mencolok, kamu adalah kemewahan yang tenang, tidak butuh pengakuan, tapi nilaimu tidak berkurang sedikit pun karena diabaikan.',
     identityPills: [
@@ -332,7 +354,6 @@ export const DAY_MASTERS = {
     name: 'Samudra',
     chinese: '壬水',
     subtitle: 'Pribadi yang melihat jauh ke depan, melampaui yang tampak.',
-    karierTeaser: 'Cara menerjemahkan visi seluas samudra jadi langkah nyata tanpa tenggelam. Ada di Bacaan Mendalam.',
     tagline: 'Aku tidak bisa dijelaskan. Aku hanya bisa dirasakan.',
     hero: 'Kamu tidak bisa dijelaskan, hanya bisa dirasakan. Seperti lautan yang luas, di permukaan kamu tenang, tapi di dalam menyimpan arus yang bisa membawa siapa saja ke tempat yang tidak terduga. Kamu adalah misteri yang tidak pernah selesai diungkap, dan itu bukan kelemahan, itu kekuatan.',
     identityPills: [
@@ -368,7 +389,6 @@ export const DAY_MASTERS = {
     name: 'Hujan',
     chinese: '癸水',
     subtitle: 'Pribadi yang meresap dalam, memahami yang tak terucap.',
-    karierTeaser: 'Bidang kerja yang memanfaatkan kepekaanmu, tapi nggak bikin kamu banjir perasaan orang lain. Simak di Bacaan Mendalam.',
     tagline: 'Aku tidak selalu terlihat, tapi aku yang membuat segalanya tumbuh.',
     hero: 'Kamu datang tanpa suara, tapi setelah kepergianmu, semuanya tumbuh. Tidak semua orang menyadari kehadiranmu sampai mereka melihat tunas yang muncul di tanah yang kemarin masih kering. Kamu adalah kelembutan yang meresap paling dalam, menyentuh bagian yang tidak bisa dijangkau oleh kekuatan apa pun.',
     identityPills: [

@@ -394,11 +394,6 @@ function App() {
                   ))}
                 </div>
               )}
-              {result.interpretation.karierTeaser && (
-                <div className="archetype-teaser">
-                  <OpenLoopText text={result.interpretation.karierTeaser} />
-                </div>
-              )}
             </div>
           )}
 
@@ -473,12 +468,7 @@ function App() {
                   </div>
                   {result.interpretation?.compatibleDescription && (
                     <div className="relation-description">
-                      <OpenLoopText
-                        text={
-                          result.interpretation.compatibleDescription +
-                          '\n\nTipe pasangan seperti apa yang paling cocok untukmu? Pelajari di Bacaan Mendalam.'
-                        }
-                      />
+                      <OpenLoopText text={result.interpretation.compatibleDescription} />
                     </div>
                   )}
                 </div>
@@ -499,12 +489,7 @@ function App() {
                   </div>
                   {result.interpretation?.clashDescription && (
                     <div className="relation-description">
-                      <OpenLoopText
-                        text={
-                          result.interpretation.clashDescription +
-                          '\n\nApa yang sering memicu konflik dan bagaimana mengelolanya? Itu dibahas di Bacaan Mendalam.'
-                        }
-                      />
+                      <OpenLoopText text={result.interpretation.clashDescription} />
                     </div>
                   )}
                 </div>
@@ -512,17 +497,13 @@ function App() {
             </div>
           )}
 
-          {/* Reflective Report — free deep reading, gated behind CTA */}
+          {/* Bacaan Mendalam — single unified report. Collapsed state is
+              the bridge (text + domain list + CTA). Click to expand into
+              the full accordion. Replaces the previous separate
+              paid-hook-card; the report is now one continuous surface
+              (free pattern chapters + paid directional chapters in
+              the future). */}
           <Report chart={result} />
-
-          {/* Paid hook — gold-foil bordered premium insert */}
-          {result.interpretation?.paidHook && (
-            <div className="paid-hook-card">
-              <span className="paid-hook-eyebrow">Bacaan Mendalam</span>
-              <p className="paid-hook">{result.interpretation.paidHook}</p>
-              <button className="paid-cta" type="button">Buka Bacaan Mendalam →</button>
-            </div>
-          )}
 
         </section>
       )}

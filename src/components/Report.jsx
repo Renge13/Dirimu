@@ -40,21 +40,27 @@ export default function Report({ chart }) {
 
   if (!expanded) {
     return (
-      <div className="report-cta-card">
-        <div className="report-cta-eyebrow">REFLEKSI · 反思</div>
-        <h2 className="report-cta-title">Pola Pribadi</h2>
-        <p className="report-cta-blurb">
-          Bukan ramalan tentang masa depan. Tapi cermin pola yang sering muncul
-          tanpa kamu sadari — refleksi mendalam untuk konfigurasi {report.chinese}.
+      <section className="bridge">
+        <p className="bridge-intro">
+          Pola unikmu membawa pertanyaan-pertanyaan yang hanya bisa dijawab dari sudut chartmu sendiri.
+        </p>
+        <ul className="bridge-domains">
+          <li>Bidang kerja yang sejalan dengan caramu, dan yang justru menguras energimu.</li>
+          <li>Tipe pasangan yang membawa keseimbangan, serta apa yang sering memicu konflik.</li>
+          <li>Pola tubuh dan energi yang perlu kamu perhatikan.</li>
+          <li>Cara membangun rezeki yang sesuai dengan polamu sendiri.</li>
+        </ul>
+        <p className="bridge-frame">
+          Semua dijelaskan di Bacaan Mendalam. Bukan sebagai aturan, tapi sebagai panduan arah yang sesuai dengan caramu hidup.
         </p>
         <button
-          className="report-cta-btn"
+          className="bridge-cta"
           type="button"
           onClick={() => { setExpanded(true); setOpenBab(0) }}
         >
-          Buka Refleksi →
+          Buka Bacaan Mendalam →
         </button>
-      </div>
+      </section>
     )
   }
 
@@ -62,7 +68,7 @@ export default function Report({ chart }) {
     <article className="report-body">
 
       <header className="report-header">
-        <div className="report-eyebrow">REFLEKSI · {report.chinese}</div>
+        <div className="report-eyebrow">BACAAN MENDALAM · {report.chinese}</div>
         <h2 className="report-archetype">{report.archetype}</h2>
         {meta && <div className="report-meta">{meta}</div>}
       </header>
@@ -115,7 +121,7 @@ export default function Report({ chart }) {
         type="button"
         onClick={() => setExpanded(false)}
       >
-        Tutup Refleksi
+        Tutup Bacaan
       </button>
     </article>
   )

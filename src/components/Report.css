@@ -20,66 +20,79 @@
   --rpt-prompt-bg: var(--emas-dim);
 }
 
-/* ── CTA card (collapsed state) ─────────────────────────── */
+/* ── Bridge (collapsed state — the conversational prelude) ────────
+   No container, centered, talking-to-them voice. Sits between Relasi
+   Cabang and the expanded Bacaan Mendalam report. Replaces the
+   previous .report-cta-card + standalone .paid-hook-card. */
 
-.report-cta-card {
-  background: var(--rpt-bg);
-  border: 1px solid var(--rpt-border);
-  border-radius: 16px;
-  padding: 32px 28px;
-  margin: 32px auto;
-  max-width: 640px;
+.bridge {
+  max-width: 580px;
+  margin: 56px auto 48px;
   text-align: center;
-  color: var(--rpt-ink);
-  box-shadow: 0 8px 32px -16px rgba(0, 0, 0, 0.4);
+  padding: 0 20px;
 }
 
-.report-cta-eyebrow {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 3px;
-  color: var(--rpt-muted);
-  margin-bottom: 14px;
-}
-
-.report-cta-title {
+.bridge-intro {
   font-family: Georgia, 'Playfair Display', serif;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  margin: 0 0 14px;
-  color: var(--rpt-accent);
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--tinta);
+  margin: 0 0 24px;
 }
 
-.report-cta-blurb {
+.bridge-domains {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bridge-domains li {
   font-family: var(--sans);
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--rpt-ink-soft);
-  margin: 0 auto 22px;
-  max-width: 440px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--tinta-soft);
 }
 
-.report-cta-btn {
+.bridge-frame {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--tinta-soft);
+  margin: 0 auto 28px;
+  max-width: 500px;
+}
+
+.bridge-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px;
-  border-radius: 10px;
-  background: var(--rpt-accent);
-  color: #FEFCF8;
+  padding: 13px 28px;
+  border-radius: 999px;
+  background: var(--emas);
+  color: var(--kertas);
   border: none;
-  font: 500 14px var(--sans);
-  letter-spacing: 0.3px;
+  font: 600 14px var(--sans);
+  letter-spacing: 0.4px;
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.15s;
+  transition: transform 0.15s, box-shadow 0.2s;
 }
-.report-cta-btn:hover  { opacity: 0.92; transform: translateY(-1px); }
-.report-cta-btn:active { transform: translateY(0); }
-.report-cta-btn:focus-visible {
-  outline: 2px solid var(--rpt-accent);
+.bridge-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px -8px var(--emas-glow);
+}
+.bridge-cta:focus-visible {
+  outline: 2px solid var(--emas);
   outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .bridge { margin: 40px 16px 32px; }
+  .bridge-intro { font-size: 16px; }
+  .bridge-domains li { font-size: 13.5px; }
 }
 
 /* ── Body (expanded state) ──────────────────────────────── */
