@@ -1,6 +1,6 @@
 # RENA — emotional reflection webapp
 
-Personal project. Live at https://rena.vercel.app (after user's Vercel rename — was `dirimu.vercel.app`), code at https://github.com/Renge13/Rena (after user's GitHub rename — was `Renge13/Dirimu`).
+Personal project. Live at https://rena-id.vercel.app (renamed from `dirimu.vercel.app` — `rena.vercel.app` was taken by another Vercel account, so `-id` locale suffix used. Old URL 307-redirects to new). Code at https://github.com/Renge13/Rena (after user's GitHub rename — was `Renge13/Dirimu`).
 
 **Brand positioning (RENA, rebranded from DIRIMU):**
 RENA is a **modern emotional reflection brand** that quietly uses BaZi / Four Pillars behind the scenes but does **NOT** lead with metaphysics terminology in marketing surfaces. Brand feel: serene, emotionally intimate, literary, psychologically elegant, premium. Visual: watercolor on textured cream paper, "Muji + premium psychology journal + watercolor editorial design + Apple-level polish". The product is positioned as a reflective lens, not fortune-telling or astrology.
