@@ -9,7 +9,8 @@ Personal project. Live at https://dirimu.vercel.app (private demo), code at http
 ## Current state (handoff snapshot)
 
 **Latest commit on `main`**: see `git log --oneline -5`. The recent arc:
-- **Phase 7b COMPLETE (10/10)** — sharecard voice register locked across every archetype. Batch 3 (壬 Samudra + 癸 Hujan) landed last; 戊 reference held without drift.
+- **Phase 7c batch 1+2 landed (4/10)** — reading-page surfaces (`hero` paragraph, `identityPills`, `traits`) rewritten in voice-register for 丙 (pilot) and 甲乙丁 (batch 2). Voice flows from the sharecard surface into the reading-page surface as one coherent register. 6 archetypes remaining (戊己庚辛壬癸).
+- **Phase 7b COMPLETE (10/10)** — sharecard voice register locked across every archetype.
 - **Element note simplification** — `DOMINANT_ELEMENT` and `MISSING_ELEMENT` entries are now single-paragraph. The rhetorical-question paragraph-2 tail was stripped from all 10 entries. Open-loop framing lives in the Bridge alone.
 - **Sharecard chip relabel** — sharecard now says `ENERGI MENYOKONG` / `ENERGI MENGUJI` (signals element-family, universal for the archetype). Reading-page Relasi Cabang keeps `Cocok Dengan` / `Perlu Dijaga Dengan` (chart-specific, from day branch's 六合/六冲). Identical-looking labels were collapsing the architectural distinction; tester saw the mismatch as a bug.
 - **Phase 8a complete** (free tier polish + open-loop teasers, consolidated into the bridge section).
@@ -35,7 +36,8 @@ ONE report titled "Bacaan Mendalam":
 
 ### Pending C2 work
 
-- **Phase 7c** (next): reading page identity surfaces (hero paragraph, identityPills, traits) for all 10 archetypes
+- **Phase 7c batch 3** (next): 戊 Gunung + 己 Ladang + 庚 Pedang + 辛 Permata reading-page hero/identityPills/traits. Same template as batches 1+2; locked 丙 reference.
+- **Phase 7c batch 4**: 壬 Samudra + 癸 Hujan reading-page (final 2 of Phase 7c).
 - **Phase 7d**: pillarMeanings.js audit
 - **Phase 7e**: 70 Refleksi passage cores (biggest content lift)
 - **Phase 8b**: paid tier content — Karier / Cinta / Kesehatan / Rezeki × 10 archetypes (~7,000-10,000 words)
