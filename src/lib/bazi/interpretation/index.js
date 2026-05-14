@@ -67,13 +67,46 @@ function interpolate(template, vars) {
 /**
  * Maps an array of stem characters to { stem, name } objects using
  * DAY_MASTERS for the Indonesian archetype name lookup. Used for
- * Selaras / Pemicu archetype rendering on the card.
+ * Selaras / Pemicu archetype rendering on the SHARECARD (driven
+ * by the stem-element generation/control cycle).
  */
 function stemsToArchetypes(stems) {
   return stems.map((stem) => ({
     stem,
     name: DAY_MASTERS[stem]?.name || stem,
   }))
+}
+
+/**
+ * Maps an Earthly Branch to the archetype most strongly associated
+ * with it — typically the branch's primary hidden stem.
+ *
+ * Used for the READING PAGE's Relasi Cabang section, where chips
+ * + descriptions are about 六合/六冲 branch dynamics (different
+ * relationship than the sharecard's stem-element cycle).
+ *
+ * Notes:
+ * - 丑 and 未 both map to 己 Ladang (both Earth Yin primary stem)
+ * - 辰 and 戌 both map to 戊 Gunung (both Earth Yang primary stem)
+ * - This is per BaZi tradition; same archetype showing up twice
+ *   is structurally correct (the seasonal Earth branches share a
+ *   primary stem).
+ */
+const BRANCH_PRIMARY_STEM = {
+  '子': '癸', '丑': '己', '寅': '甲', '卯': '乙',
+  '辰': '戊', '巳': '丙', '午': '丁', '未': '己',
+  '申': '庚', '酉': '辛', '戌': '戊', '亥': '壬',
+}
+
+function branchesToArchetypes(branches) {
+  return branches.map((branch) => {
+    const primaryStem = BRANCH_PRIMARY_STEM[branch] || ''
+    return {
+      branch,
+      stem: primaryStem,
+      name: DAY_MASTERS[primaryStem]?.name || branch,
+    }
+  })
 }
 
 export function getInterpretation(chart) {
@@ -104,11 +137,17 @@ export function getInterpretation(chart) {
     missingElement: missing || '',
   })
 
-  // Selaras / Pemicu archetypes from the 5-element cycle.
+  // Selaras / Pemicu archetypes for the SHARECARD (5-element cycle).
   const dayElement = STEM_ELEMENTS[stem] || null
   const { selarasStems, pemicuStems, selarasElement, pemicuElement } = getSelarasPemicuStems(dayElement)
   const selarasArchetypes = stemsToArchetypes(selarasStems)
   const pemicuArchetypes  = stemsToArchetypes(pemicuStems)
+
+  // Branch-archetype chips for the READING PAGE's Relasi Cabang
+  // section (六合/六冲 branch dynamics — different relationship from
+  // the sharecard's stem-cycle harmony/clash).
+  const compatibleBranchArchetypes = branchesToArchetypes(chart.harmonyBranches || [])
+  const clashBranchArchetypes      = branchesToArchetypes(chart.clashBranches || [])
 
   return {
     // Shared
@@ -127,6 +166,8 @@ export function getInterpretation(chart) {
     missingElement: missing,
     compatibleBranches: chart.harmonyBranches,
     clashBranches: chart.clashBranches,
+    compatibleBranchArchetypes,
+    clashBranchArchetypes,
     compatibleDescription: db.harmony || '',
     clashDescription: db.clash || '',
     paidHook,

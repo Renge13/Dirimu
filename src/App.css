@@ -517,10 +517,8 @@
 }
 
 .relation-description {
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.6;
+  margin-top: 8px;
+  /* Inner content rendered by OpenLoopText with its own paragraph styling */
 }
 
 /* ── Archetype card (Day Master narrative) ──────────────── */

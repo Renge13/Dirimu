@@ -444,19 +444,22 @@ function App() {
             )}
           </div>
 
-          {/* Relations — archetype-named chips so reader doesn't have to remember branches */}
-          {((result.interpretation?.selarasArchetypes?.length > 0) ||
-            (result.interpretation?.pemicuArchetypes?.length > 0)) && (
+          {/* Relasi Cabang — branch 六合/六冲 dynamics (different from
+              sharecard's stem-cycle harmony). Chips use branch's primary
+              archetype so chip + description match. Each block's
+              description ends with an open-loop CTA into Bacaan Mendalam. */}
+          {((result.interpretation?.compatibleBranchArchetypes?.length > 0) ||
+            (result.interpretation?.clashBranchArchetypes?.length > 0)) && (
             <div className="relations-card">
               <div className="section-title">Relasi Cabang</div>
 
-              {result.interpretation?.selarasArchetypes?.length > 0 && (
+              {result.interpretation?.compatibleBranchArchetypes?.length > 0 && (
                 <div className="relation-block relation-block--harmony">
                   <div className="relation-header">
                     <span className="relation-label">Cocok Dengan</span>
                     <span className="relation-chips">
-                      {result.interpretation.selarasArchetypes.map((a) => (
-                        <span className="chip chip--harmony" key={a.stem}>
+                      {result.interpretation.compatibleBranchArchetypes.map((a) => (
+                        <span className="chip chip--harmony" key={a.branch}>
                           <span className="chip-emoji" aria-hidden="true">{ARCHETYPE_EMOJI[a.stem] || ''}</span>
                           {a.name}
                         </span>
@@ -464,18 +467,25 @@ function App() {
                     </span>
                   </div>
                   {result.interpretation?.compatibleDescription && (
-                    <p className="relation-description">{result.interpretation.compatibleDescription}</p>
+                    <div className="relation-description">
+                      <OpenLoopText
+                        text={
+                          result.interpretation.compatibleDescription +
+                          '\n\nTipe pasangan seperti apa yang paling cocok untukmu? Pelajari di Bacaan Mendalam.'
+                        }
+                      />
+                    </div>
                   )}
                 </div>
               )}
 
-              {result.interpretation?.pemicuArchetypes?.length > 0 && (
+              {result.interpretation?.clashBranchArchetypes?.length > 0 && (
                 <div className="relation-block relation-block--clash">
                   <div className="relation-header">
                     <span className="relation-label">Perlu Dijaga Dengan</span>
                     <span className="relation-chips">
-                      {result.interpretation.pemicuArchetypes.map((a) => (
-                        <span className="chip chip--clash" key={a.stem}>
+                      {result.interpretation.clashBranchArchetypes.map((a) => (
+                        <span className="chip chip--clash" key={a.branch}>
                           <span className="chip-emoji" aria-hidden="true">{ARCHETYPE_EMOJI[a.stem] || ''}</span>
                           {a.name}
                         </span>
@@ -483,7 +493,14 @@ function App() {
                     </span>
                   </div>
                   {result.interpretation?.clashDescription && (
-                    <p className="relation-description">{result.interpretation.clashDescription}</p>
+                    <div className="relation-description">
+                      <OpenLoopText
+                        text={
+                          result.interpretation.clashDescription +
+                          '\n\nApa yang sering memicu konflik dan bagaimana mengelolanya? Itu dibahas di Bacaan Mendalam.'
+                        }
+                      />
+                    </div>
                   )}
                 </div>
               )}
