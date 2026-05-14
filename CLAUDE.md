@@ -9,10 +9,11 @@ Personal project. Live at https://dirimu.vercel.app (private demo), code at http
 ## Current state (handoff snapshot)
 
 **Latest commit on `main`**: see `git log --oneline -5`. The recent arc:
-- **Phase 7c batch 3 landed (8/10)** — reading-page surfaces for 戊己庚辛 rewritten in voice-register. C2 delivery was unusually clean — no inline drift fixes needed. 2 archetypes remaining (壬癸 = batch 4).
-- **Phase 7b actually 10/10 (gap fix)** — 己 sharecard was silently missed by Phase 7b batches 1-3; descriptors were still Title Case nouns (`Pengasuh Alami`) and sifatPills were casual Gen-Z (`rela ngalah tapi ngitungin diam-diam`). Bundled into the Phase 7c batch 3 prompt and migrated alongside reading-page work. All 10 sharecards now in target voice.
-- **Sharecard layout uniformity** — `SIFAT` zone merged into Zone 4 as a 4th `DimRow` (was a standalone 76px Zone 5 that looked visually larger than KEKUATAN/SISI LAIN/DAMPAK). All four dimensions now share the same packed-and-spaced container with consistent dividers. Zone 6 grown 56→76 with bumped bottom padding so `ENERGI MENYOKONG`/`ENERGI MENGUJI` chips have breathing room from the card edge. Card total unchanged at 420px.
-- **Phase 7c batch 1+2 landed earlier** — reading-page voice for 丙 (pilot) and 甲乙丁 (batch 2). Plus inline fix: 甲 hero `ditoleh` → `dicari` (unusual word choice flagged on live read).
+- **Phase 7c COMPLETE (10/10)** — reading-page surfaces (hero / identityPills / traits) now in formal+spoken register for every archetype. Batch 4 (壬 Samudra + 癸 Hujan) was the cleanest C2 delivery of the session — every drift the prompt flagged was caught and fixed in-batch, zero inline corrections needed.
+- **Phase 7b COMPLETE (10/10)** with 己 catch-up (silently missed by earlier batches).
+- **Sharecard layout uniformity** — `SIFAT` zone merged into Zone 4 as a 4th `DimRow` (was a standalone 76px Zone 5 that looked visually larger than KEKUATAN/SISI LAIN/DAMPAK). All four dimensions share one packed container with consistent dividers. Zone 6 grown 56→76 with bumped bottom padding so `ENERGI MENYOKONG`/`ENERGI MENGUJI` chips have breathing room from the card edge. Card total unchanged at 420px.
+- **Sharecard chip relabel** — `COCOK DENGAN` / `PERLU DIJAGA DENGAN` → `ENERGI MENYOKONG` / `ENERGI MENGUJI` (element-family signal, separate from chart-specific Relasi Cabang).
+- **Element note simplification** — single-paragraph format; open-loop framing lives in the Bridge alone.
 - **Element note simplification** — `DOMINANT_ELEMENT` and `MISSING_ELEMENT` entries are now single-paragraph. The rhetorical-question paragraph-2 tail was stripped from all 10 entries. Open-loop framing lives in the Bridge alone.
 - **Sharecard chip relabel** — sharecard now says `ENERGI MENYOKONG` / `ENERGI MENGUJI` (signals element-family, universal for the archetype). Reading-page Relasi Cabang keeps `Cocok Dengan` / `Perlu Dijaga Dengan` (chart-specific, from day branch's 六合/六冲). Identical-looking labels were collapsing the architectural distinction; tester saw the mismatch as a bug.
 - **Phase 8a complete** (free tier polish + open-loop teasers, consolidated into the bridge section).
@@ -38,9 +39,8 @@ ONE report titled "Bacaan Mendalam":
 
 ### Pending C2 work
 
-- **Phase 7c batch 4** (next): 壬 Samudra + 癸 Hujan reading-page hero/identityPills/traits. Final 2 of Phase 7c. Same template as batches 1-3.
-- **Phase 7d**: pillarMeanings.js audit
-- **Phase 7e**: 70 Refleksi passage cores (biggest content lift)
+- **Phase 7d** (next): pillarMeanings.js audit. Pillar interpretations (年/月/日/時 × 10 stems = 40 lines) for the EMPAT PILARMU section on the reading page. Smaller scope than reading-page archetype work.
+- **Phase 7e**: 70 Refleksi passage cores (biggest content lift remaining in the free tier)
 - **Phase 8b**: paid tier content — Karier / Cinta / Kesehatan / Rezeki × 10 archetypes (~7,000-10,000 words)
 
 ### Open UX issues (lower priority)
