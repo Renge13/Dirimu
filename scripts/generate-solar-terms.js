@@ -49,7 +49,9 @@ function fmt(d) {
 }
 
 // ── Config ──────────────────────────────────────────────────
-const START_YEAR = 1975;
+// Range must cover the form's YEAR_MIN..YEAR_MAX (App.jsx).
+// astronomia (VSOP87) is accurate well past these bounds.
+const START_YEAR = 1900;
 const END_YEAR = 2030;
 const OUTPUT_PATH = path.join(__dirname, '../src/lib/bazi/solarTerms.js');
 
