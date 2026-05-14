@@ -36,7 +36,7 @@ import { getSelarasPemicuStems } from '../elementCycle.js'
 
 const ELEMENTS = ['Wood', 'Fire', 'Earth', 'Metal', 'Water']
 const TRAITS_TO_SHOW = 6
-const PILLS_TO_SHOW = 5
+const PILLS_TO_SHOW = 4
 const SIFAT_TO_SHOW = 2
 
 function getDominantElement(balance) {
