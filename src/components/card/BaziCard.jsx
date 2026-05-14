@@ -170,7 +170,6 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
   const {
     dayMasterName,
     dayMasterChinese,
-    taglineCard,
     subtitle,
     kekuatanDescriptors = [],
     bayanganDescriptors = [],
@@ -181,10 +180,13 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
     selarasElement,
     pemicuElement,
   } = interpretation
+  // taglineCard intentionally not destructured — removed from card surface
+  // (Phase 7a addendum). Still available on interpretation object for
+  // reading-page render below the card.
 
   const cardStyle = {
     width:        s(270),
-    height:       s(420),  // 28+115+145+76+56 = 420 (no footer)
+    height:       s(420),  // 28+92+168+76+56 = 420 (no tagline, expanded Z4)
     display:      'flex',
     flexDirection:'column',
     overflow:     'hidden',
@@ -236,10 +238,10 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
         </span>
       </div>
 
-      {/* ── Zone 2 — Identity (115px, expanded to fit subtitle + tagline) ─ */}
+      {/* ── Zone 2 — Identity (92px, tagline removed) ─────────────── */}
       <div style={{
-        ...zone(115),
-        padding:        `${s(14)}px ${s(14)}px ${s(12)}px`,
+        ...zone(92),
+        padding:        `${s(12)}px ${s(14)}px ${s(10)}px`,
         display:        'flex',
         flexDirection:  'column',
         justifyContent: 'center',
@@ -281,27 +283,16 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
             {subtitle}
           </div>
         )}
-        {/* Tagline (no subject pronoun) — lowest priority, smallest */}
-        {taglineCard && (
-          <div style={{
-            fontSize:    s(8.5),
-            fontStyle:   'italic',
-            fontFamily:  'Georgia, "Playfair Display", "Times New Roman", serif',
-            color:       BASE.textSecondary,
-            marginTop:   s(subtitle ? 3 : 6),
-            lineHeight:  1.4,
-          }}>
-            “{taglineCard}”
-          </div>
-        )}
+        {/* Tagline removed from card surface — still rendered on the
+            reading page below as the canonical first-person line. */}
       </div>
 
       {/* ── Zone 3 — REMOVED (watercolor image; reintroduce when art ready) ── */}
 
-      {/* ── Zone 4 — Three Dimensions (145px — fits all 3 rows incl. 2-line wraps) */}
+      {/* ── Zone 4 — Three Dimensions (168px — sized for spoken-phrase voice; 2 items per row at ~28-char budget) */}
       <div style={{
-        ...zone(145),
-        padding:        `${s(6)}px ${s(14)}px`,
+        ...zone(168),
+        padding:        `${s(8)}px ${s(14)}px`,
         display:        'flex',
         flexDirection:  'column',
         justifyContent: 'space-around',
