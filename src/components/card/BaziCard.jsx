@@ -186,7 +186,7 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
 
   const cardStyle = {
     width:        s(270),
-    height:       s(420),  // 28+92+168+76+56 = 420 (no tagline, expanded Z4)
+    height:       s(420),  // 28+92+224+76 = 420 (SIFAT merged into Z4 for uniform DimRow sizing; Z6 grown for bottom breathing room)
     display:      'flex',
     flexDirection:'column',
     overflow:     'hidden',
@@ -289,9 +289,14 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
 
       {/* ── Zone 3 — REMOVED (watercolor image; reintroduce when art ready) ── */}
 
-      {/* ── Zone 4 — Three Dimensions (168px — sized for spoken-phrase voice; 2 items per row at ~28-char budget) */}
+      {/* ── Zone 4 — Four Dimensions (224px — KEKUATAN/SISI LAIN/DAMPAK/SIFAT) */}
+      {/* All four use the same DimRow primitive for uniform sizing.
+          Previously SIFAT lived in its own Zone 5 at 76px, making it look
+          larger/looser than the other three. Merging into one zone with
+          space-around distributes the 4 rows at ~56px each — matching the
+          old per-row size of the original Zone 4. */}
       <div style={{
-        ...zone(168),
+        ...zone(224),
         padding:        `${s(8)}px ${s(14)}px`,
         display:        'flex',
         flexDirection:  'column',
@@ -323,31 +328,27 @@ export default function BaziCard({ chart, interpretation, mode = 'preview' }) {
             kekuatanDescriptors.length > 0 || bayanganDescriptors.length > 0
           }
         />
-      </div>
-
-      {/* ── Zone 5 — SIFAT (76px) ──────────────────────────── */}
-      {/* Uses DimRow for full visual parity with KEKUATAN/SISI LAIN/DAMPAK */}
-      <div style={{
-        ...zone(76),
-        padding: `${s(6)}px ${s(14)}px`,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-      }}>
         <DimRow
           label="SIFAT"
           dotColor={BASE.muted}
           labelColor={BASE.muted}
           items={sifatPills}
           scale={scale}
-          showTopBorder={false}
+          showTopBorder={
+            kekuatanDescriptors.length > 0 ||
+            bayanganDescriptors.length > 0 ||
+            dampakDescriptors.length > 0
+          }
         />
       </div>
 
-      {/* ── Zone 6 — Selaras / Pemicu (56px, last zone — no bottom border) */}
+      {/* ── Zone 6 — Selaras / Pemicu (76px, last zone — no bottom border) */}
+      {/* Grown from 56 to 76 to give chips more breathing room from the
+          card edge; bottom padding bumped from 14 → 20 (user feedback:
+          content felt too close to the edge). */}
       <div style={{
-        ...lastZone(56),
-        padding:             `${s(10)}px ${s(14)}px ${s(14)}px`,
+        ...lastZone(76),
+        padding:             `${s(12)}px ${s(14)}px ${s(20)}px`,
         display:             'grid',
         gridTemplateColumns: `1fr ${scale}px 1fr`,
         alignItems:          'center',
