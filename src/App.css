@@ -76,6 +76,7 @@
 
 .form {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -164,8 +165,20 @@
 }
 
 @media (max-width: 480px) {
+  /* Stack: day on row 1 (full width), month + year split row 2.
+     Avoids the year column being too narrow for '1989' + chevron. */
   .date-selects {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  .date-selects > :first-child {
+    grid-column: 1 / -1;
+  }
+  /* Tighter chevron padding so values don't get crushed */
+  .select-input {
+    padding-right: 30px;
+    background-position:
+      calc(100% - 14px) 50%,
+      calc(100% - 10px) 50%;
   }
 }
 
