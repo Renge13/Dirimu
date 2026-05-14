@@ -394,6 +394,11 @@ function App() {
                   ))}
                 </div>
               )}
+              {result.interpretation.karierTeaser && (
+                <div className="archetype-teaser">
+                  <OpenLoopText text={result.interpretation.karierTeaser} />
+                </div>
+              )}
             </div>
           )}
 

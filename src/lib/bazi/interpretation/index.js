@@ -161,6 +161,7 @@ export function getInterpretation(chart) {
     heroDescription: dm.hero || '',
     identityPills,
     personalityTraits: traits,
+    karierTeaser: dm.karierTeaser || '',
     elementNote,
     dominantElement: dominant,
     missingElement: missing,

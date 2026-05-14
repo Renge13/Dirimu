@@ -590,6 +590,26 @@
   border-radius: 16px;
 }
 
+/* Open-loop teaser at the end of the archetype card — soft italic
+   prompt that links into the Bacaan Mendalam Karier section. */
+.archetype-teaser {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--emas-glow);
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.archetype-teaser .open-loop-paragraph {
+  font-style: italic;
+  font-size: 14px;
+  color: var(--tinta-soft);
+  line-height: 1.6;
+  text-align: center;
+  margin: 0;
+}
+
 /* ── Traits card ────────────────────────────────────────── */
 .traits-card {
   margin-bottom: 16px;
