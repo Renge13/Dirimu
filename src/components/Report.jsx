@@ -13,7 +13,7 @@
 // Watercolor canvas styling unified with the site palette.
 // ============================================================
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useRef, useEffect } from 'react'
 import {
   IconLeaf,
   IconCompass,
@@ -41,10 +41,31 @@ export default function Report({ chart }) {
   const [openBab, setOpenBab] = useState(0)
   const report = useMemo(() => getReport(chart), [chart])
 
+  // Scroll anchoring: on first expand, snap to top of report body so
+  // the reader sees the header + entry moment + Bab 1 in natural order.
+  // On subsequent chapter clicks, snap to the top of the newly-opened
+  // bab so the reader starts at the chapter heading, not mid-content.
+  const bodyRef = useRef(null)
+  const babRefs = useRef([])
+  const isFirstExpand = useRef(true)
+
+  useEffect(() => {
+    if (!expanded) {
+      isFirstExpand.current = true
+      return
+    }
+    if (isFirstExpand.current) {
+      bodyRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      isFirstExpand.current = false
+    } else {
+      babRefs.current[openBab]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [expanded, openBab])
+
   if (!report?.sections?.length) return null
 
   const meta = chart?.dayMaster
-    ? `untuk ${report.archetype} · ${ELEMENT_LABEL_ID[chart.dayMaster.element] || ''} ${chart.dayMaster.polarity || ''}`.trim()
+    ? `${ELEMENT_LABEL_ID[chart.dayMaster.element] || ''} ${chart.dayMaster.polarity || ''}`.trim()
     : ''
 
   if (!expanded) {
@@ -163,7 +184,7 @@ export default function Report({ chart }) {
   }
 
   return (
-    <article className="report-body">
+    <article className="report-body" ref={bodyRef}>
 
       <header className="report-header">
         <div className="report-eyebrow">BACAAN MENDALAM · {report.chinese}</div>
@@ -187,6 +208,7 @@ export default function Report({ chart }) {
             <div
               key={section.sectionKey}
               className={`bab-item${isOpen ? ' bab-item--open' : ''}`}
+              ref={(el) => { babRefs.current[i] = el }}
             >
               <button
                 type="button"
