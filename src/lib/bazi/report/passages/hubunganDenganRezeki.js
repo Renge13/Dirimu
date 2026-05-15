@@ -39,7 +39,7 @@ export default {
       waterFlow: `Air yang berlebih mendinginkan nyalamu. Arus uang yang deras justru bisa membuatmu kehilangan panas; kamu mungkin merasa kewalahan mengelola pemasukan yang seharusnya menggairahkan, karena terlalu banyak yang harus dikendalikan.`,
     },
     deepInsight: {
-      pola: `Hubungan Matahari dengan uang jarang yang datar; ia sering melekat dengan emosi dan pengakuan. Kamu cenderung mendapatkan pemasukan saat energimu terlihat: dari proyek yang menampilkan karisma, bonus yang mengikuti performa, atau peluang yang muncul karena orang melihat potensimu. Tapi uang juga bisa menjadi pelampiasan: saat merasa redup atau tidak dihargai, pengeluaran tiba-tiba terasa seperti cara mengambil kembali kendali.`,
+      pola: `Bagi Matahari, uang diam-diam bukan sekadar alat transaksi, melainkan meteran sinar. Setiap pemasukan adalah konfirmasi bahwa hangatmu dihargai; setiap pengeluaran emosional adalah upaya mengembalikan nyala yang meredup. Kamu mungkin mengejar rezeki bukan karena takut miskin, tapi karena takut tak lagi bernilai.`,
       simpul: `Yang sering jadi simpul: uang datang dari sorotan, tapi sorotan tidak selalu bisa dijadwalkan. Di masa-masa sunyi (saat kamu tidak sedang dilihat) kekhawatiran finansial bisa membesar, meskipun secara angka belum tentu kritis. Kamu mungkin mengejar pemasukan bukan untuk kestabilan, melainkan untuk memastikan sinarmu masih bernilai di mata orang.`,
       bentukHidup: [
         `Kamu sering mengalami siklus: pendapatan melonjak saat proyek besar selesai, lalu menukik tajam saat memasuki periode di mana tidak ada yang membutuhkan kehadiranmu, dan masa jeda ini terasa sebagai kekosongan yang mencemaskan.`,
@@ -121,7 +121,7 @@ export default {
       waterFlow: `Air berlebih membuatmu seperti hujan deras yang tak berhenti. Uang datang dan pergi tanpa jejak jelas. Kamu bisa lupa ke mana perginya, karena bagimu uang hanyalah air yang lewat, bukan sesuatu yang harus ditampung.`,
     },
     deepInsight: {
-      pola: `Hubungan Hujan dengan uang sering kali dibentuk oleh emosi, bukan logika. Kamu mungkin mendapatkan rezeki dari kemampuan merawat, mendengarkan, atau menciptakan ruang yang nyaman bagi orang lain. Uang bisa datang dari peran-peran yang menuntut kepekaan. Tapi ada kecenderungan untuk memberi tanpa menghitung, lalu merasa canggung saat menerima. Bagimu, uang mungkin terasa seperti air hujan yang harus segera dialirkan; menyimpannya sendirian terasa egois, seolah menampung untuk diri sendiri adalah pelanggaran.`,
+      pola: `Bagi Hujan, menerima imbalan sering terasa seperti mengakui bahwa kehadiranmu adalah beban. Kamu mungkin percaya bahwa nilai dirimu hanya terjamin selama kamu memberi tanpa menghitung, dan memasang harga adalah mengubah air yang seharusnya bebas menjadi barang yang harus dibeli.`,
       simpul: `Yang sering menjadi simpul: kamu ingin merasa cukup, tapi mengaitkan meminta imbalan dengan keserakahan. Kamu bisa begitu murah hati sampai lupa bahwa memberi tanpa batas mengeringkan sumbermu sendiri. Di satu sisi, berbagi memberimu rasa kelimpahan; di sisi lain, diam-diam kamu mungkin mencatat siapa yang tidak pernah mengembalikan, dan catatan itu menumpuk menjadi keletihan. Keuanganmu menjadi cermin dari batas yang sulit kamu pasang di relasi.`,
       bentukHidup: [
         `Kamu sering mematok harga lebih rendah dari yang pantas untuk jasamu, karena merasa bahwa kemampuanmu yang alami (seperti mendengarkan atau memahami) tidak layak dinilai tinggi.`,
