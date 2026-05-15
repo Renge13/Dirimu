@@ -48,10 +48,20 @@ export function sectionFromPassage({ title, sectionKey, passage, chart, rules, p
     }
   }
 
+  // Phase 8b — optional deeper-insight block, rendered below the
+  // Refleksi narrative inside the same chapter. Present only on the
+  // 4 domain chapters (Hubungan / Pekerjaan / Rezeki / Tubuh).
+  // Shape: { pola, simpul, bentukHidup[], saatMenguras[], yangStabilkan[] }.
+  // Gated on `pola` being non-empty so a partially-filled entry
+  // doesn't render half a block.
+  const di = passage.deepInsight
+  const deepInsight = di && di.pola && di.pola.trim() ? di : null
+
   return {
     sectionKey,
     title,
     paragraphs: parts,
     reflectionPrompt: prompt && prompt.trim() ? prompt : null,
+    deepInsight,
   }
 }

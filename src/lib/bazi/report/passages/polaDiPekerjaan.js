@@ -1,5 +1,5 @@
 // ============================================================
-// Passages — Pola di Pekerjaan (Work Patterns)
+// Passages - Pola di Pekerjaan (Work Patterns)
 // ============================================================
 // ~150 word reflective core per archetype on recurring work
 // patterns. NOT career advice. Voice locked from Banks 1 + 2.
@@ -31,6 +31,25 @@ export default {
     inserts: {
       fireExcess: `Api berlebih membuatmu menyala tanpa saklar untuk padam. Tenggat demi tenggat kamu terjang, tapi pola ini sering membuatmu mengabaikan istirahat. Di mata rekan, kamu terlihat tidak pernah lelah, padahal di dalam kamu sudah berjalan dengan sisa bahan bakar yang makin tipis.`,
       metalAtDay: `Logam di cabang hari memberimu ketajaman eksekusi yang tersembunyi. Di balik sorotan panggung, kamu menyimpan kemampuan menyelesaikan pekerjaan teknis dengan presisi yang mengejutkan, seolah itu adalah harga diri pribadi yang tidak bisa ditawar.`,
+    },
+    deepInsight: {
+      pola: `TODO 8b pilot - Karier - POLA YANG MUNCUL (paragraph, ~50-70 kata). Bagaimana Matahari muncul spesifik di domain karier: posisi yang sering dijatuhi, motivasi tersembunyi, gaya kerja yang berulang.`,
+      simpul: `TODO 8b pilot - Karier - SIMPUL YANG SERING TERJADI (paragraph, ~40-60 kata). Kontradiksi internal yang berulang di karier - struktur "kamu ingin X, tapi Y sering membuat langkah terasa berat."`,
+      bentukHidup: [
+        `TODO 8b - bentuk hidup #1 (workplace role yang sering tidak sadar dijatuhi)`,
+        `TODO 8b - bentuk hidup #2 (recurring emotional labor di tempat kerja)`,
+        `TODO 8b - bentuk hidup #3 (environment kerja yang sering tidak sadar diciptakan/dipilih)`,
+      ],
+      saatMenguras: [
+        `TODO 8b - saat menguras #1 (early warning sign di karier)`,
+        `TODO 8b - saat menguras #2 (kondisi yang biasanya tipping point exhaustion)`,
+        `TODO 8b - saat menguras #3 (perilaku yang mulai muncul sebelum disadari)`,
+      ],
+      yangStabilkan: [
+        `TODO 8b - yang stabilkan #1 (kondisi kerja yang sering membantu)`,
+        `TODO 8b - yang stabilkan #2 (rhythm/structure yang sering jadi anchor)`,
+        `TODO 8b - yang stabilkan #3 (pertanyaan/lensa internal yang sering memperjelas)`,
+      ],
     },
   },
 

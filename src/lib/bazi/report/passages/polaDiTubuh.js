@@ -1,11 +1,11 @@
 // ============================================================
-// Passages — Pola di Tubuh & Energi (Body & Energy Patterns)
+// Passages - Pola di Tubuh & Energi (Body & Energy Patterns)
 // ============================================================
 // ~100 word reflective core per archetype on somatic patterns.
 // NEVER prescriptive. Frame as "what your body might be telling
 // you", never "what to do about it". Voice locked from Banks 1–4.
 //
-// Per-archetype framing for element excess/missing — each
+// Per-archetype framing for element excess/missing - each
 // archetype experiences imbalance somatically through its own lens.
 // ============================================================
 
@@ -34,6 +34,25 @@ export default {
       fireExcess: `Api berlebih membuatmu seperti mesin yang terus menyala tanpa pendingin. Bahkan setelah pekerjaan selesai, putaran dalam dirimu tidak ikut berhenti. Tubuhmu menyimpan panas yang tidak bisa dilepaskan begitu saja; ini bukan demam, tapi suhu dari semua antusiasme yang tidak menemukan tombol "cukup."`,
       missingWater: `Tanpa Air yang memadai, sistem pendinginmu nyaris tidak ada. Kamu sulit benar-benar relaks, bahkan di akhir pekan. Tidurmu mungkin dangkal, dan kamu terbangun dengan rasa lelah yang sama seperti sebelum tidur, karena tidak ada kedalaman yang bisa menampung panasmu.`,
       earthExcess: `Bumi berlebih menambahkan lapisan berat pada nyalamu. Energi yang seharusnya melenting ke atas malah tertahan, menciptakan sensasi gerah di dalam: perut terasa penuh, napas pendek, seperti ada tanggung jawab yang mengendap dan menolak untuk dicerna.`,
+    },
+    deepInsight: {
+      pola: `TODO 8b pilot - Kesehatan - POLA YANG MUNCUL (paragraph, ~50-70 kata). Bagaimana Matahari muncul spesifik di domain tubuh/kesehatan: ritme energi, motivasi tersembunyi terkait tubuh, kebiasaan fisik yang berulang.`,
+      simpul: `TODO 8b pilot - Kesehatan - SIMPUL YANG SERING TERJADI (paragraph, ~40-60 kata). Kontradiksi internal yang berulang di tubuh - struktur "kamu ingin X, tapi Y sering membuat langkah terasa berat."`,
+      bentukHidup: [
+        `TODO 8b - bentuk hidup #1 (body/energy pattern yang sering tidak sadar terbentuk)`,
+        `TODO 8b - bentuk hidup #2 (recurring rest/burnout cycle)`,
+        `TODO 8b - bentuk hidup #3 (environment fisik yang sering tidak sadar diciptakan)`,
+      ],
+      saatMenguras: [
+        `TODO 8b - saat menguras #1 (early warning sign tubuh)`,
+        `TODO 8b - saat menguras #2 (kondisi yang biasanya tipping point exhaustion fisik)`,
+        `TODO 8b - saat menguras #3 (perilaku tubuh yang mulai muncul sebelum disadari)`,
+      ],
+      yangStabilkan: [
+        `TODO 8b - yang stabilkan #1 (kondisi tubuh yang sering membantu)`,
+        `TODO 8b - yang stabilkan #2 (rhythm/structure fisik yang sering jadi anchor)`,
+        `TODO 8b - yang stabilkan #3 (pertanyaan/lensa internal yang sering memperjelas)`,
+      ],
     },
   },
 

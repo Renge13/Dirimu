@@ -204,6 +204,40 @@ export default function Report({ chart }) {
                       {p}
                     </p>
                   ))}
+                  {section.deepInsight && (
+                    <div className="deep-insight">
+                      <div className="deep-insight-rule" aria-hidden="true">
+                        <span className="deep-insight-rule-line" />
+                        <span className="deep-insight-rule-dot">✦</span>
+                        <span className="deep-insight-rule-line" />
+                      </div>
+                      <div className="deep-insight-label">Wawasan lebih dalam</div>
+
+                      <p className="deep-insight-para">{section.deepInsight.pola}</p>
+                      <p className="deep-insight-para">{section.deepInsight.simpul}</p>
+
+                      <h4 className="deep-insight-h">Bentuk hidup yang sering terbentuk</h4>
+                      <ul className="deep-insight-list">
+                        {section.deepInsight.bentukHidup.map((b, k) => (
+                          <li key={k}>{b}</li>
+                        ))}
+                      </ul>
+
+                      <h4 className="deep-insight-h">Saat pola ini mulai mengurasmu</h4>
+                      <ul className="deep-insight-list">
+                        {section.deepInsight.saatMenguras.map((b, k) => (
+                          <li key={k}>{b}</li>
+                        ))}
+                      </ul>
+
+                      <h4 className="deep-insight-h">Yang sering membuat pola ini lebih stabil</h4>
+                      <ul className="deep-insight-list">
+                        {section.deepInsight.yangStabilkan.map((b, k) => (
+                          <li key={k}>{b}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                   {section.reflectionPrompt && (
                     <p className="report-prompt">{section.reflectionPrompt}</p>
                   )}

@@ -1,5 +1,5 @@
 // ============================================================
-// Passages — Pola di Hubungan (Relationship Patterns)
+// Passages - Pola di Hubungan (Relationship Patterns)
 // ============================================================
 // ~150 word core per archetype on how this archetype gives,
 // receives, and withholds in close relationships. Inserts ~60-90
@@ -36,6 +36,25 @@ export default {
       dayBranchWood: `Kayu di cabang hari adalah bahan bakar bagi Apimu. Kamu mungkin tertarik pada pasangan visioner yang idealismenya menyulut semangatmu. Hubungan ini bisa saling mengisi: dia memberi arah, kamu memberi energi. Tapi hati-hati, dua elemen yang saling membesar bisa membakar lebih cepat dari yang disadari.`,
       fireExcess: `Dengan Api berlebih, intensitas emosimu sulit dipendam. Kamu mencintai dengan sepenuh hati; separuh-separuh bukan caramu. Pasangan bisa kewalahan oleh suhu yang cepat meninggi, sementara kamu sendiri mungkin sulit menemukan tombol untuk meredam. Mencintai dengan cara ini melelahkan, terutama jika balasannya tak sebanding.`,
       dayBranchWater: `Air di cabang hari adalah unsur yang mengontrol Apimu. Kamu mungkin tertarik pada pasangan yang tenang dan dalam, yang bisa menenangkan nyalamu saat hampir membakar segalanya. Tapi ini bukan hubungan yang mudah; tarik-menarik antara panas dan dingin bisa menjadi medan ketegangan yang terus berulang.`,
+    },
+    deepInsight: {
+      pola: `TODO 8b pilot - Cinta - POLA YANG MUNCUL (paragraph, ~50-70 kata). Bagaimana Matahari muncul spesifik di domain cinta: posisi emosional, motivasi tersembunyi, gaya interaksi yang berulang.`,
+      simpul: `TODO 8b pilot - Cinta - SIMPUL YANG SERING TERJADI (paragraph, ~40-60 kata). Kontradiksi internal yang berulang - struktur "kamu ingin X, tapi Y sering membuat langkah terasa berat."`,
+      bentukHidup: [
+        `TODO 8b - bentuk hidup #1 (relational dynamic spesifik untuk Matahari di cinta)`,
+        `TODO 8b - bentuk hidup #2 (recurring emotional labor pattern)`,
+        `TODO 8b - bentuk hidup #3 (environment yang sering tidak sadar diciptakan)`,
+      ],
+      saatMenguras: [
+        `TODO 8b - saat menguras #1 (early warning sign emotional/relational)`,
+        `TODO 8b - saat menguras #2 (kondisi yang biasanya tipping point)`,
+        `TODO 8b - saat menguras #3 (perilaku yang mulai muncul sebelum disadari)`,
+      ],
+      yangStabilkan: [
+        `TODO 8b - yang stabilkan #1 (kondisi relational yang sering membantu)`,
+        `TODO 8b - yang stabilkan #2 (rhythm/structure yang sering jadi anchor)`,
+        `TODO 8b - yang stabilkan #3 (pertanyaan/lensa internal yang sering memperjelas)`,
+      ],
     },
   },
 

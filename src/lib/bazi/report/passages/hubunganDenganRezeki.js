@@ -1,5 +1,5 @@
 // ============================================================
-// Passages — Hubunganmu dengan Rezeki (Resources)
+// Passages - Hubunganmu dengan Rezeki (Resources)
 // ============================================================
 // ~100 word reflective core per archetype on psychological
 // relationship with money / abundance / scarcity. NEVER financial
@@ -37,6 +37,25 @@ export default {
       fireMeetsMetal: `Api mengontrol Logam sebagai sumber rezeki. Uangmu datang dari kemampuanmu melelehkan yang keras menjadi bentuk presisi: ide yang kamu bakar menjadi produk, karisma yang kamu ubah menjadi kesepakatan. Tapi api yang terlalu besar bisa melelehkan logam yang seharusnya kamu simpan.`,
       earthDominantSavings: `Kamu terus memberi cahaya dan energi sampai tanah di sekitarmu subur, tapi jarang ada yang kembali. Dompetmu mungkin seperti tanah yang kamu sinari untuk orang lain, sementara sinarmu sendiri mulai redup.`,
       waterFlow: `Air yang berlebih mendinginkan nyalamu. Arus uang yang deras justru bisa membuatmu kehilangan panas; kamu mungkin merasa kewalahan mengelola pemasukan yang seharusnya menggairahkan, karena terlalu banyak yang harus dikendalikan.`,
+    },
+    deepInsight: {
+      pola: `TODO 8b pilot - Rezeki - POLA YANG MUNCUL (paragraph, ~50-70 kata). Bagaimana Matahari muncul spesifik di domain rezeki: hubungan dengan uang, motivasi tersembunyi, kebiasaan keuangan yang berulang.`,
+      simpul: `TODO 8b pilot - Rezeki - SIMPUL YANG SERING TERJADI (paragraph, ~40-60 kata). Kontradiksi internal yang berulang di rezeki - struktur "kamu ingin X, tapi Y sering membuat langkah terasa berat."`,
+      bentukHidup: [
+        `TODO 8b - bentuk hidup #1 (money habit yang sering tidak sadar terbentuk)`,
+        `TODO 8b - bentuk hidup #2 (recurring relational dynamic seputar uang)`,
+        `TODO 8b - bentuk hidup #3 (financial environment yang sering tidak sadar diciptakan)`,
+      ],
+      saatMenguras: [
+        `TODO 8b - saat menguras #1 (early warning sign keuangan-emotional)`,
+        `TODO 8b - saat menguras #2 (kondisi yang biasanya tipping point boros/scarcity)`,
+        `TODO 8b - saat menguras #3 (perilaku finansial yang mulai muncul sebelum disadari)`,
+      ],
+      yangStabilkan: [
+        `TODO 8b - yang stabilkan #1 (kondisi rezeki yang sering membantu)`,
+        `TODO 8b - yang stabilkan #2 (rhythm/structure finansial yang sering jadi anchor)`,
+        `TODO 8b - yang stabilkan #3 (pertanyaan/lensa internal yang sering memperjelas)`,
+      ],
     },
   },
 
