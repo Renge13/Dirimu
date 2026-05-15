@@ -400,17 +400,11 @@ function App() {
             </div>
           )}
 
-          {/* Personality traits */}
-          {result.interpretation && result.interpretation.personalityTraits.length > 0 && (
-            <div className="info-card traits-card">
-              <div className="section-title">Sifat-sifatmu</div>
-              <ul className="traits-list">
-                {result.interpretation.personalityTraits.map((t, i) => (
-                  <li key={i}>{t}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+          {/* Personality traits section removed — the sharecard SIFAT
+              zone already covers the at-a-glance trait scan, so the
+              standalone list above the element bars was a duplicate
+              surface. The `personalityTraits` data is still emitted by
+              getInterpretation and could be re-attached later if needed. */}
 
           {/* Element balance — bars + plain-Indonesian meaning per element */}
           <div className="info-card balance-card">
