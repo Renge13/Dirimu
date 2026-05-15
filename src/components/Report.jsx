@@ -234,17 +234,32 @@ export default function Report({ chart }) {
                       {p}
                     </p>
                   ))}
-                  {section.deepInsight && (
-                    <div className="deep-insight">
-                      <div className="deep-insight-rule" aria-hidden="true">
-                        <span className="deep-insight-rule-line" />
-                        <span className="deep-insight-rule-dot">✦</span>
-                        <span className="deep-insight-rule-line" />
-                      </div>
-                      <div className="deep-insight-label">Wawasan lebih dalam</div>
+                  {section.deepInsight && (() => {
+                    // When the chapter has no Refleksi narrative above
+                    // (paragraphs empty), the deepInsight IS the chapter's
+                    // primary content. Style the pola as the chapter's
+                    // opening paragraph (with drop cap) and skip the
+                    // "Wawasan lebih dalam" divider — there's nothing
+                    // shallower to be "deeper than".
+                    const isPrimary = section.paragraphs.length === 0
+                    const paraClass = isPrimary
+                      ? 'report-paragraph'
+                      : 'deep-insight-para'
+                    return (
+                    <div className={`deep-insight${isPrimary ? ' deep-insight--primary' : ''}`}>
+                      {!isPrimary && (
+                        <>
+                          <div className="deep-insight-rule" aria-hidden="true">
+                            <span className="deep-insight-rule-line" />
+                            <span className="deep-insight-rule-dot">✦</span>
+                            <span className="deep-insight-rule-line" />
+                          </div>
+                          <div className="deep-insight-label">Wawasan lebih dalam</div>
+                        </>
+                      )}
 
-                      <p className="deep-insight-para">{section.deepInsight.pola}</p>
-                      <p className="deep-insight-para">{section.deepInsight.simpul}</p>
+                      <p className={isPrimary ? `${paraClass} report-paragraph--first` : paraClass}>{section.deepInsight.pola}</p>
+                      <p className={paraClass}>{section.deepInsight.simpul}</p>
 
                       <h4 className="deep-insight-h">Bentuk hidup yang sering terbentuk</h4>
                       <ul className="deep-insight-list">
@@ -269,7 +284,8 @@ export default function Report({ chart }) {
                         </ul>
                       </div>
                     </div>
-                  )}
+                    )
+                  })()}
                   {section.reflectionPrompt && (
                     <p className="report-prompt">{section.reflectionPrompt}</p>
                   )}

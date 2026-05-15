@@ -596,6 +596,15 @@
   margin: 36px 0 0;
 }
 
+/* When deepInsight is the chapter's PRIMARY content (no Refleksi
+   narrative above), zero out the top margin so the pola paragraph
+   sits flush under BAB heading + drop cap, and shrink vertical
+   rhythm so it reads as the chapter's main flow not as a deeper
+   layer dropped in. */
+.deep-insight--primary {
+  margin-top: 0;
+}
+
 .deep-insight-rule {
   display: flex;
   align-items: center;
