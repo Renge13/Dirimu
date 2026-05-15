@@ -23,7 +23,7 @@ export default {
   },
 
   '乙': {
-    core: `Tanaman Rambat menemukan rezeki dari jaringan dan adaptasi. Uangmu sering datang dari banyak arah kecil: koneksi yang tidak terduga, peluang yang muncul dari percakapan, atau keahlian menyesuaikan diri di berbagai medan. Kamu jarang bergantung pada satu sumber, tapi justru di situlah letak ketidakpastian: karena terlalu banyak merambat, kamu bisa kehilangan jejak mana yang benar-benar menghasilkan. Kamu mungkin juga merasa bersalah saat mengeluarkan uang untuk hal yang tidak "produktif," seolah setiap rupiah harus bertumbuh menjadi sesuatu.`,
+    core: `Tanaman Rambat menemukan rezeki dari jaringan dan adaptasi. Uangmu sering datang dari banyak arah kecil: koneksi yang tidak terduga, peluang yang muncul dari percakapan, atau keahlian menyesuaikan diri di berbagai medan. Kamu jarang bergantung pada satu sumber, tapi justru di situlah letak ketidakpastian: karena terlalu banyak merambat, kamu bisa kehilangan jejak mana yang benar-benar menghasilkan. Kamu mungkin juga merasa bersalah saat mengeluarkan uang untuk hal yang tidak menghasilkan, seolah setiap rupiah harus bertumbuh menjadi sesuatu.`,
     inserts: {
       woodMeetsEarth: `Rezekimu hadir saat kamu menembus tanah dengan kelembutan. Kamu tidak perlu membajak keras, cukup merambat ke celah yang orang lain lewatkan. Tapi tanah yang terlalu banyak justru membuatmu bingung harus berakar di mana.`,
       earthDominantSavings: `Bumi yang luas adalah ladang potensial, tapi kamu bisa kewalahan memilih. Tabunganmu mungkin tersebar ke berbagai bentuk, dan kamu sulit fokus pada satu jalur rezeki karena semua terlihat menjanjikan.`,
@@ -35,13 +35,13 @@ export default {
     core: `Bagi Matahari, uang sering kali bukan sekadar angka; ia adalah validasi, pengakuan, bukti bahwa sinarmu bernilai. Kamu bisa menghasilkan dengan melimpah saat bersinar, tapi juga bisa kehabisan saat sorotan meredup. Pola yang sering muncul: pendapatanmu naik-turun mengikuti antusiasme. Kamu mungkin juga mengeluarkan uang untuk orang lain atau pengalaman tanpa banyak pikir, karena momen itu terasa memberi makna. Tapi di balik itu, ada kecemasan yang muncul ketika tidak ada yang melihatmu bersinar.`,
     inserts: {
       fireMeetsMetal: `Api mengontrol Logam sebagai sumber rezeki. Uangmu datang dari kemampuanmu melelehkan yang keras menjadi bentuk presisi: ide yang kamu bakar menjadi produk, karisma yang kamu ubah menjadi kesepakatan. Tapi api yang terlalu besar bisa melelehkan logam yang seharusnya kamu simpan.`,
-      earthDominantSavings: `Kamu terus memberi cahaya dan energi sampai tanah di sekitarmu subur, tapi jarang ada yang kembali. Dompetmu mungkin seperti tanah yang kamu sirami untuk orang lain, sementara dirimu sendiri mulai kering.`,
+      earthDominantSavings: `Kamu terus memberi cahaya dan energi sampai tanah di sekitarmu subur, tapi jarang ada yang kembali. Dompetmu mungkin seperti tanah yang kamu sinari untuk orang lain, sementara sinarmu sendiri mulai redup.`,
       waterFlow: `Air yang berlebih mendinginkan nyalamu. Arus uang yang deras justru bisa membuatmu kehilangan panas; kamu mungkin merasa kewalahan mengelola pemasukan yang seharusnya menggairahkan, karena terlalu banyak yang harus dikendalikan.`,
     },
   },
 
   '丁': {
-    core: `Lilin mendapatkan rezeki dari ketelitian dan kedalaman, bukan dari volume. Uangmu sering muncul setelah proses yang panjang dan sunyi: proyek yang kamu poles berulang kali, nasihat yang kamu berikan pada orang yang tepat, atau keahlian spesifik yang hanya sedikit yang punya. Tapi karena kontribusimu sering tidak mencolok, kamu mungkin ragu memasang harga, atau merasa belum cukup sempurna untuk menagih. Ada kecenderungan menunda menerima rezeki sampai semuanya "rasa benar."`,
+    core: `Lilin mendapatkan rezeki dari ketelitian dan kedalaman, bukan dari jumlah. Uangmu sering muncul setelah proses yang panjang dan sunyi: proyek yang kamu poles berulang kali, nasihat yang kamu berikan pada orang yang tepat, atau keahlian spesifik yang hanya sedikit yang punya. Tapi karena kontribusimu sering tidak mencolok, kamu mungkin ragu memasang harga, atau merasa belum cukup sempurna untuk menagih. Ada kecenderungan menunda menerima rezeki sampai semuanya "rasa benar."`,
     inserts: {
       fireMeetsMetal: `Api kecilmu mengontrol Logam dengan presisi. Rezeki lahir dari kemampuanmu memanaskan detail hingga menjadi emas. Tapi karena apimu kecil, kamu butuh waktu lama untuk melihat hasil, dan kadang logam itu mendingin sebelum sempat kamu bentuk.`,
       earthDominantSavings: `Kamu memberi cahaya dan kehangatan terus-menerus, mengubahnya menjadi fondasi untuk orang lain, tapi lupa bahwa lilin pun butuh sumbu baru. Tabunganmu mungkin habis untuk menopang sekitar tanpa disadari.`,
@@ -70,7 +70,7 @@ export default {
   '庚': {
     core: `Pedang mencari rezeki dari ketegasan memotong yang tidak perlu. Uangmu sering datang dari keputusan-keputusan cepat, efisiensi yang kamu bawa ke dalam sistem, atau kemampuanmu menyelesaikan masalah yang orang lain hindari. Kamu tidak suka bertele-tele dalam soal uang, dan mungkin cenderung transaksional. Namun, ada pola yang perlu diperhatikan: saat frustrasi, kamu bisa mengeluarkan uang untuk melampiaskan, atau memotong pengeluaran yang sebenarnya penting hanya demi prinsip. Bagimu, uang terasa paling berarti saat ia bisa dipakai untuk menyelesaikan sesuatu, bukan saat ia menumpuk tanpa tujuan.`,
     inserts: {
-      metalMeetsWood: `Logam mengontrol Kayu sebagai rezeki: kamu memotong opsi yang banyak menjadi satu yang berkualitas. Pendapatanmu sering dari mengubah visi orang lain menjadi produk nyata, atau dari mengambil keputusan tegas di tengah kebingungan.`,
+      metalMeetsWood: `Logam mengontrol Kayu sebagai rezeki: kamu memotong pilihan yang banyak menjadi satu yang berkualitas. Pendapatanmu sering dari mengubah visi orang lain menjadi produk nyata, atau dari mengambil keputusan tegas di tengah kebingungan.`,
       earthDominantSavings: `Bumi memberimu banyak sumber daya, tapi justru membuatmu terlalu lama menimbang sebelum bertindak. Uangmu mungkin banyak yang mengendap karena kamu menunggu momen sempurna untuk memotong.`,
       waterFlow: `Logam menghasilkan Air; artinya, kamu menciptakan aliran kekayaan, tapi sulit menampungnya kembali. Uang yang kamu hasilkan cepat berubah menjadi peluang baru, dan kamu bisa merasa terus bekerja keras tapi tabungan tidak bertambah.`,
     },
@@ -79,7 +79,7 @@ export default {
   '辛': {
     core: `Permata mendapatkan rezeki dari kualitas yang langka dan presisi yang tinggi. Uangmu sering datang setelah proses panjang memoles diri atau karya, dan kamu mungkin hanya mau menerima harga yang setara dengan standarmu. Ini bisa berarti kamu dibayar mahal untuk sesuatu yang sangat spesifik, tapi juga bisa berarti kamu menolak banyak peluang yang dianggap "murahan." Pola lain: kamu bisa sangat hemat untuk hal-hal yang tidak kamu anggap bernilai, tapi tiba-tiba rela mengeluarkan banyak untuk sesuatu yang langka dan berarti.`,
     inserts: {
-      metalMeetsWood: `Kamu memotong Kayu dengan sangat selektif. Rezeki lahir dari kemampuanmu memilih proyek yang tepat, bukan banyak proyek. Tapi terlalu selektif bisa membuatmu kehilangan aliran yang sebenarnya bisa diasah menjadi lebih berharga.`,
+      metalMeetsWood: `Kamu memotong Kayu dengan sangat cermat. Rezeki lahir dari kemampuanmu memilih proyek yang tepat, bukan banyak proyek. Tapi terlalu cermat bisa membuatmu kehilangan bahan yang sebenarnya bisa diasah menjadi lebih berharga.`,
       earthDominantSavings: `Fondasi yang kuat memberimu rasa aman, tapi kamu mungkin terlalu berhati-hati mengeluarkan uang, bahkan untuk investasi pada dirimu sendiri. Tabunganmu terasa seperti brankas yang jarang dibuka.`,
       waterFlow: `Air yang kamu hasilkan dari ketajamanmu seringkali mengalir keluar tanpa kamu sadari. Kamu mungkin tidak memperhatikan pengeluaran kecil yang justru menggerus, karena fokusmu pada nilai besar yang lebih terlihat.`,
     },
@@ -97,7 +97,7 @@ export default {
   '癸': {
     core: `Hujan berelasi dengan uang secara intuitif, kadang tidak terlalu memikirkannya sampai tiba-tiba habis. Rezekimu sering datang dari kepekaanmu: kamu bisa membaca kebutuhan orang dan menawarkan sesuatu yang tepat, meski kamu sendiri tidak menyadari itu adalah aset. Pola yang sering muncul: kamu memberi tanpa menghitung, dan merasa canggung menerima. Uang terasa seperti air hujan yang harus dibagi; menampungnya sendirian terasa egois. Akibatnya, kamu mungkin sering kehabisan untuk diri sendiri.`,
     inserts: {
-      waterMeetsFire: `Air mengontrol Api sebagai sumber rezeki. Uangmu hadir ketika kamu berhasil mengubah kepekaan menjadi sesuatu yang hangat dan dibutuhkan. Tapi api itu kecil, dan kamu sering ragu meniupkannya menjadi lebih besar.`,
+      waterMeetsFire: `Air mengontrol Api sebagai sumber rezeki. Uangmu hadir ketika kamu berhasil mengubah kepekaan menjadi sesuatu yang hangat dan dibutuhkan. Tapi api itu kecil, dan kamu sering ragu mendekat karena takut memadamkannya.`,
       earthDominantSavings: `Tanah yang dominan membatasimu; struktur atau kewajiban membendung aliran keuanganmu. Kamu mungkin merasa punya banyak tanggungan yang membuat airmu tidak bisa mencari jalannya sendiri.`,
       waterFlow: `Air berlebih membuatmu seperti hujan deras yang tak berhenti. Uang datang dan pergi tanpa jejak jelas. Kamu bisa lupa ke mana perginya, karena bagimu uang hanyalah air yang lewat, bukan sesuatu yang harus ditampung.`,
     },
