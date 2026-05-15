@@ -49,9 +49,9 @@ export default {
         `Senyum masih bisa dipasang, tapi di dalam ada kabut tebal yang membuatmu lamban berpikir, dan kamu tidak ingat kapan terakhir kali kepala terasa jernih.`,
       ],
       yangStabilkan: [
-        `Banyak Matahari melaporkan bahwa istirahat singkat tapi berkualitas (misalnya 10 menit duduk diam tanpa layar setelah 90 menit fokus) lebih memulihkan daripada tidur siang panjang yang justru meninggalkan rasa malas.`,
-        `Ada yang merasa lebih seimbang ketika menambahkan satu rutinitas fisik yang tidak kompetitif, seperti jalan kaki tanpa tujuan, karena tubuh bergerak tanpa beban untuk menang.`,
-        `Beberapa orang dengan pola ini menemukan bahwa mencatat tingkat energi tiga kali sehari (pagi, siang, sore) membantu mereka mengenali kapan puncak dan lembah terjadi, sehingga bisa menyesuaikan beban tanpa merasa gagal.`,
+        `Matahari sering merasa lebih utuh setelah satu malam tanpa harus jadi yang menyemangati siapapun, bahkan jika itu artinya pergi tidur sebelum ada yang mengirim pesan.`,
+        `Tubuh sering terasa lebih ringan saat ada satu pekan di mana tidak ada batas waktu yang menempelkan namamu di atasnya, dan kelelahanmu boleh muncul tanpa harus dibungkus menjadi cerita.`,
+        `Beberapa Matahari merasa pulih bukan dari istirahat yang panjang, tapi dari satu jam yang dilewati tanpa ada yang tahu di mana mereka berada, tanpa harus melaporkan apa-apa setelahnya.`,
       ],
     },
   },

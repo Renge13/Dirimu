@@ -171,6 +171,14 @@ export default function Report({ chart }) {
         {meta && <div className="report-meta">{meta}</div>}
       </header>
 
+      <p className="report-entry">
+        Sampai di sini, kamu sudah mengenal siapa dirimu. Bagian ini berbeda:
+        bukan lagi tentang sifat, tapi tentang bentuk hidup yang sering muncul
+        karena sifat itu. Bagaimana pola yang sama terus terbentuk di hubungan,
+        di pekerjaan, di rezeki, di tubuhmu. Bukan ramalan, bukan saran.
+        Untuk dilihat, supaya yang tidak terlihat berhenti menggerakkanmu diam-diam.
+      </p>
+
       <div className="report-accordion">
         {report.sections.map((section, i) => {
           const isOpen = i === openBab
@@ -230,12 +238,14 @@ export default function Report({ chart }) {
                         ))}
                       </ul>
 
-                      <h4 className="deep-insight-h">Yang sering membuat pola ini lebih stabil</h4>
-                      <ul className="deep-insight-list">
-                        {section.deepInsight.yangStabilkan.map((b, k) => (
-                          <li key={k}>{b}</li>
-                        ))}
-                      </ul>
+                      <div className="deep-insight-stabilkan">
+                        <h4 className="deep-insight-h">Yang sering membuat pola ini lebih stabil</h4>
+                        <ul className="deep-insight-list">
+                          {section.deepInsight.yangStabilkan.map((b, k) => (
+                            <li key={k}>{b}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   )}
                   {section.reflectionPrompt && (
