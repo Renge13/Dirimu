@@ -252,6 +252,11 @@
 }
 
 .paywall-price {
+  /* Hidden during tester validation — price was deterring tester
+     clicks before they could read the 8b content. Re-enable when
+     payment infra (QRIS) lands. Revert by removing the `display:
+     none` line below. */
+  display: none;
   font-family: Georgia, 'Playfair Display', serif;
   font-size: clamp(28px, 4.8vw, 34px);
   font-weight: 400;
