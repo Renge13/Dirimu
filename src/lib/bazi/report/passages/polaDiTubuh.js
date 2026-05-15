@@ -117,5 +117,24 @@ export default {
       missingFire: `Tanpa Api yang cukup, ekstremitasmu terasa dingin dan ada kelesuan yang tidak bisa dijelaskan. Energimu rendah, dan kamu mungkin merasa seperti hujan yang turun tanpa henti di musim yang salah, tidak ada matahari yang cukup untuk menguapkan.`,
       earthExcess: `Bumi berlebih membantumu menampung, tapi juga membuatmu stagnan. Semua air yang kamu serap mengendap menjadi lumpur di dalam: perut terasa berat, langkah lambat, dan kamu mungkin merasa tersumbat secara fisik dan emosional, seperti saluran yang sudah terlalu penuh.`,
     },
+    deepInsight: {
+      pola: `Tubuh Hujan adalah seismograf yang merekam setiap getaran emosi di sekitarnya. Kamu mungkin merasa segar setelah hujan sungguhan, tapi lesu setelah terlalu lama di ruangan yang dipenuhi ketegangan tak terucap. Energimu tidak habis karena aktivitas fisik, melainkan karena menyerap suasana hati orang lain. Gejala seperti sakit kepala tanpa sebab, pencernaan yang sensitif, atau rasa berat di bahu sering muncul bukan dari dirimu sendiri, melainkan dari beban yang kamu pinjam dari sekitar dan lupa kamu kembalikan.`,
+      simpul: `Simpul yang terus berulang: tubuhmu adalah alat perasa yang sangat peka, tapi kamu jarang memberinya jeda untuk kembali ke titik nol. Kamu mungkin tahu persis kapan temanmu butuh istirahat, tapi tidak bisa membaca sinyal yang sama untuk dirimu sendiri. Kelelahan sering baru dikenali setelah berubah menjadi gejala fisik, karena bagimu "merasakan" adalah fungsi alami yang tidak perlu dihentikan. Padahal, air yang terus meresap tanpa menguap menggenang dan kehilangan kejernihannya.`,
+      bentukHidup: [
+        `Kamu sering jatuh sakit tepat setelah periode intens mendampingi orang lain, seolah tubuhmu sengaja memaksamu berhenti karena kamu tidak akan berhenti sendiri.`,
+        `Ketegangan di rahang, leher, atau perut muncul bukan saat kamu sendiri yang punya masalah, melainkan saat orang terdekat sedang kacau, dan kamu menanggungnya secara fisik tanpa sadar.`,
+        `Tidurmu mungkin penuh mimpi yang mengolah kisah-kisah yang kamu serap seharian, sehingga bangun tidur terasa seperti melanjutkan pekerjaan emosional yang belum selesai.`,
+      ],
+      saatMenguras: [
+        `Bahu terasa semakin berat setelah percakapan yang seharusnya ringan, dan kamu tidak bisa menjelaskan kenapa.`,
+        `Kopi atau teh tidak lagi menyegarkan, hanya menunda rasa lelah yang mendekati permukaan seperti genangan yang siap meluap.`,
+        `Kamu tidak bisa lagi membedakan apakah kamu lelah karena hidupmu sendiri atau karena kamu menampung kehidupan orang lain.`,
+      ],
+      yangStabilkan: [
+        `Hujan sering merasa lebih pulih setelah satu hari di mana ia tidak diminta mengerti siapapun, bukan karena mengisolasi diri, tapi karena lingkungan kebetulan tidak membutuhkan kepekaannya.`,
+        `Beberapa orang dengan pola ini menemukan bahwa berada di dekat air (danau, sungai, atau sekadar berendam lama) membantu meluruhkan emosi yang bukan miliknya; seolah air di luar menarik air di dalam kembali ke asalnya.`,
+        `Ada yang mulai mengenali batas tubuhnya setelah membiasakan satu pertanyaan sebelum tidur: "apakah rasa lelah ini milikku?", dan perlahan tubuh belajar membedakan.`,
+      ],
+    },
   },
 }

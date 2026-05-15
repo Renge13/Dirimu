@@ -119,5 +119,24 @@ export default {
       waterExcess: `Air berlebih membuatmu semakin sulit memisahkan dirimu dari pasangan. Kamu bisa larut sepenuhnya, merasakan apa yang dia rasakan, dan itu menciptakan keintiman yang luar biasa. Tapi tanpa batas, dua hujan yang bertemu bisa menciptakan banjir yang meluluhlantakkan kalian berdua.`,
       doubledEnergies: `Hujan ganda bisa menjadi simfoni yang lembut atau kabut tebal yang tidak bisa ditembus. Kamu mungkin mendapati hubungan dengan orang yang sama-sama intuitif dan sensitif. Ini bisa menjadi tempat paling aman di dunia, atau ruang yang terlalu lembap untuk bernapas.`,
     },
+    deepInsight: {
+      pola: `Hujan dalam hubungan dekat meresap tanpa suara. Kamu sering memahami perasaan pasangan sebelum mereka sempat mengatakannya, hadir dengan kepekaan yang tidak perlu diumumkan. Kehangatanmu bukan dalam sorotan, melainkan dalam cara kamu menerima dan tidak menghakimi. Tapi karena begitu mudah menyerap, kamu bisa lupa mana yang milikmu dan mana yang milik pasangan. Tanpa sadar, hubungan bisa menjadi wadah di mana kamu terus menampung emosi orang lain, dan jarang meminta ruang yang sama untuk dirimu sendiri.`,
+      simpul: `Yang sering menjadi simpul: kamu ingin dikenal sepenuhnya, tapi begitu sibuk mengenali pasanganmu sehingga lupa menampakkan diri. Kamu mungkin merasa bahwa mengungkapkan kebutuhan adalah beban, seolah permintaan adalah setitik polusi di genangan yang harus tetap jernih. Padahal, justru dalam menahan itulah bentukmu perlahan hilang. Keinginan untuk menyatu tanpa batas bisa berubah menjadi ketakutan bahwa dirimu sendiri tidak layak untuk ditampung.`,
+      bentukHidup: [
+        `Sering menjadi pihak yang bertanya "kamu kenapa?" dengan telinga yang sungguh-sungguh mendengar, tapi setelahnya pulang dengan keheningan sendiri, karena tidak ada yang balik menanyakan hal yang sama dengan kedalaman setara.`,
+        `Tanpa sadar memilih pasangan yang sedang butuh dipahami, lalu mengulang pola menjadi penampung emosional yang tidak pernah kehabisan tempat; bagian dirimu yang ingin merawat malah dihabiskan untuk orang yang belum siap merawat balik.`,
+        `Ada hubungan di mana kamu tinggal terlalu lama bukan karena masih cinta, melainkan karena masih bisa merasakan luka pasangan; empatimu mengaburkan batas antara peduli dan mengorbankan diri.`,
+      ],
+      saatMenguras: [
+        `Kamu mulai menghitung berapa kali kamu mendengarkan, dan merasa kosong saat sadar tidak ada yang menghitungmu.`,
+        `Suaramu sendiri terdengar asing ketika kamu mencoba menjelaskan perasaanmu, karena lebih terbiasa menyuarakan perasaan orang lain.`,
+        `Keheningan di antara kalian terasa bukan sebagai kedekatan, melainkan sebagai kelelahan yang tidak sempat diungkapkan.`,
+      ],
+      yangStabilkan: [
+        `Hujan sering merasa lebih utuh saat ada satu hubungan di mana ia tidak perlu menjadi yang paling memahami; di sana, ia boleh sesekali bilang "aku tidak tahu" tanpa merasa gagal.`,
+        `Beberapa orang dengan pola ini menemukan kelegaan ketika percakapan berlangsung tanpa mereka harus memimpin kedalaman: hanya kehadiran yang saling menerima tanpa ada yang harus ditampung.`,
+        `Ada yang mulai kembali mengenali batasnya ketika diberi ruang untuk menyebut satu keinginan tanpa harus menjelaskan kenapa; "aku ingin ini" cukup tanpa disambung "karena kamu..."`,
+      ],
+    },
   },
 }

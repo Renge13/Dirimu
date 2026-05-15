@@ -120,5 +120,24 @@ export default {
       earthDominantSavings: `Tanah yang dominan membatasimu; struktur atau kewajiban membendung aliran keuanganmu. Kamu mungkin merasa punya banyak tanggungan yang membuat airmu tidak bisa mencari jalannya sendiri.`,
       waterFlow: `Air berlebih membuatmu seperti hujan deras yang tak berhenti. Uang datang dan pergi tanpa jejak jelas. Kamu bisa lupa ke mana perginya, karena bagimu uang hanyalah air yang lewat, bukan sesuatu yang harus ditampung.`,
     },
+    deepInsight: {
+      pola: `Hubungan Hujan dengan uang sering kali dibentuk oleh emosi, bukan logika. Kamu mungkin mendapatkan rezeki dari kemampuan merawat, mendengarkan, atau menciptakan ruang yang nyaman bagi orang lain. Uang bisa datang dari peran-peran yang menuntut kepekaan. Tapi ada kecenderungan untuk memberi tanpa menghitung, lalu merasa canggung saat menerima. Bagimu, uang mungkin terasa seperti air hujan yang harus segera dialirkan; menyimpannya sendirian terasa egois, seolah menampung untuk diri sendiri adalah pelanggaran.`,
+      simpul: `Yang sering menjadi simpul: kamu ingin merasa cukup, tapi mengaitkan meminta imbalan dengan keserakahan. Kamu bisa begitu murah hati sampai lupa bahwa memberi tanpa batas mengeringkan sumbermu sendiri. Di satu sisi, berbagi memberimu rasa kelimpahan; di sisi lain, diam-diam kamu mungkin mencatat siapa yang tidak pernah mengembalikan, dan catatan itu menumpuk menjadi keletihan. Keuanganmu menjadi cermin dari batas yang sulit kamu pasang di relasi.`,
+      bentukHidup: [
+        `Kamu sering mematok harga lebih rendah dari yang pantas untuk jasamu, karena merasa bahwa kemampuanmu yang alami (seperti mendengarkan atau memahami) tidak layak dinilai tinggi.`,
+        `Ada pola memberi pinjaman atau hadiah tanpa pamrih, lalu di dalam hati menyimpan tanya: "kenapa tidak ada yang melakukan ini untukku?", dan tanya itu tidak pernah sampai ke mulut.`,
+        `Saat merasa lelah secara emosional, kamu mungkin membeli hal-hal kecil yang cepat habis (kopi, kado dadakan untuk teman) sebagai upaya mengisi kembali diri, hanya untuk mendapati saldo berkurang tanpa jejak.`,
+      ],
+      saatMenguras: [
+        `Kamu menghindari memeriksa rekening bukan karena takut angkanya, tapi karena takut menghadapi berapa banyak yang sudah kamu berikan tanpa kembali.`,
+        `Kalimat "aku pantas dapat ini" muncul sebagai pembenaran untuk pengeluaran yang sebenarnya berasal dari rasa kosong, bukan kebutuhan.`,
+        `Uang mulai terasa seperti sesuatu yang hanya berhak dimiliki orang lain, sementara kamu terus-menerus merasa harus memberi agar tetap bernilai.`,
+      ],
+      yangStabilkan: [
+        `Hujan sering merasa lebih tenang ketika memiliki sumber pemasukan yang tidak tergantung pada emosi orang lain (seperti pendapatan pasif atau sistem otomatis), karena itu menjadi pengingat bahwa nilainya tidak selalu terikat pada seberapa banyak ia memberi.`,
+        `Beberapa orang dengan pola ini menemukan kelegaan saat menetapkan tarif tetap yang transparan untuk jasanya, karena angka yang jelas mengurangi rasa bersalah yang biasa menyertai proses menagih.`,
+        `Ada yang merasa lebih utuh ketika secara sadar memisahkan "uang untuk dibagikan" dari "uang untuk hidup sendiri", sehingga kemurahan hati tidak lagi menggerus fondasinya.`,
+      ],
+    },
   },
 }

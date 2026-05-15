@@ -107,5 +107,24 @@ export default {
       waterExcess: `Air berlebih membuat kepekaan ini semakin intens. Kamu menyerap atmosfer kantor seperti spons, dan tanpa sistem drainase yang baik, kamu bisa tenggelam dalam emosi kolektif yang sebenarnya bukan tanggung jawabmu.`,
       earthDominant: `Bumi dominan sebagai elemen yang membendung Air membuatmu mampu menampung banyak emosi sekitar, tapi akhirnya bisa merasa tersumbat sendiri. Kamu menahan semuanya dengan sabar, namun tanpa saluran untuk melepaskan, beban itu mengendap dan membuatmu berat melangkah.`,
     },
+    deepInsight: {
+      pola: `Di tempat kerja, Hujan adalah orang yang membaca dinamika sebelum orang lain menyadarinya. Kamu sering tahu siapa yang sedang tertekan, siapa yang perlu didekati, dan ide mana yang terlalu rapuh untuk langsung dikritik. Kontribusimu cenderung halus: meredakan konflik tanpa drama, menyempurnakan gagasan tanpa mencolok. Tapi kamu bisa begitu tenggelam dalam menjaga suasana sehingga kontribusimu sendiri jarang terlihat. Peranmu mungkin jadi perawat tim, sementara suaramu tertinggal di catatan yang tidak dibacakan.`,
+      simpul: `Simpul yang sering muncul: kamu memiliki wawasan yang dalam, tapi menyampaikannya secara asertif terasa berisiko, karena kamu juga bisa merasakan bagaimana kata-katamu didengar. Kamu ingin diakui, tapi tidak mau mengganggu harmoni. Akibatnya, ide-idemu sering disampaikan sebagai bisikan di sela rapat, bukan sebagai pijakan keputusan. Orang mungkin menganggapmu penurut, padahal kamu hanya tidak ingin menginjak perasaan siapapun saat melangkah.`,
+      bentukHidup: [
+        `Kamu sering menjadi konselor tidak resmi di tim: rekan kerja curhat soal atasan atau masalah pribadi, lalu kamu menyerap semuanya, dan pulang membawa beban yang bukan pekerjaanmu.`,
+        `Ada kecenderungan melakukan kerja emosional yang tidak dibayar, seperti meredakan ketegangan, menjadi penengah, atau memastikan semua merasa didengar, sementara pencapaianmu sendiri jarang kamu suarakan.`,
+        `Dalam rapat, kamu mungkin menyampaikan ide sebagai pertanyaan lembut alih-alih pernyataan, sehingga gagasanmu mudah terlewat di ruang yang menghargai volume.`,
+      ],
+      saatMenguras: [
+        `Kamu mulai merasa bahwa satu-satunya fungsimu adalah menjadi tempat sampah emosi rekan kerja, tanpa ada yang menanyakan kabarmu yang sebenarnya.`,
+        `Pikiran tentang rapat berikutnya memunculkan rasa berat yang tidak bisa dijelaskan, karena kamu tahu ada lagi suasana yang harus kamu kelola.`,
+        `Kamu meragukan nilaimu sendiri karena tidak pernah "bersuara lantang", dan mulai percaya bahwa kontribusi yang diam tidak dihitung.`,
+      ],
+      yangStabilkan: [
+        `Hujan sering bekerja lebih jelas ketika diberi ruang untuk menuliskan pemikirannya alih-alih harus bersaing secara lisan, karena kejernihan muncul saat tidak ada arus orang yang harus dibaca.`,
+        `Beberapa orang dengan pola ini merasa lebih dihargai ketika memiliki atasan yang peka membaca kontribusi diam mereka, sehingga mereka tidak perlu menjual diri dengan cara yang asing.`,
+        `Ada yang menemukan ritme stabil saat tim mengakui perannya sebagai penyeimbang, bukan sebagai "yang mengerti semua", melainkan sebagai yang membuat suasana tetap layak dihuni.`,
+      ],
+    },
   },
 }
